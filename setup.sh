@@ -8,7 +8,7 @@ rm -rf ~/.vimrc
 cp ./vim_configuration/.vimrc ~/.vimrc
 echo Vim configured
 
-echo '---------Checking machine OS--------'
+echo '--------Checking machine OS--------'
 # Check the operating system
 if [[ "$(uname)" == "Linux" ]]; then
     # Action for Linux
