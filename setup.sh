@@ -8,6 +8,10 @@ rm -rf ~/.vimrc
 cp ./vim_configuration/.vimrc ~/.vimrc
 echo Vim configured
 
+# # Setup neovim
+# echo '--------Setting up NeoVim configuration--------'
+# echo Vim configured
+
 echo '--------Checking machine OS--------'
 # Check the operating system
 if [[ "$(uname)" == "Linux" ]]; then
