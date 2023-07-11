@@ -1,6 +1,6 @@
 nnoremap <CR> O<Esc>j
-nnoremap j jzz
-nnoremap k kzz
+nmap j jzz
+nmap k kzz
 nnoremap <BS> kdd
 nnoremap J gT
 nnoremap K gt

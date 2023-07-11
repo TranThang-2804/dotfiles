@@ -1,8 +1,6 @@
 """ Optixal's Neovim Init.vim
 
 """ Vimrc configuration
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath=&runtimepath
 source ~/.vimrc
 
 """ Vim-Plug
