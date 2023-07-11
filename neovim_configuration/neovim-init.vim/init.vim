@@ -1,12 +1,12 @@
 """ Optixal's Neovim Init.vim
 
-""" Vim file
+""" Vimrc configuration
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
 
 """ Vim-Plug
-call plug#begin()
+call plug#begin('~/.config/nvim/pluggin')
 
 " Core (treesitter, nvim-lspconfig, nvim-cmp, nvim-telescope, nvim-lualine)
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
@@ -43,10 +43,6 @@ Plug 'KabbAmine/vCoolor.vim'
 Plug 'dkarter/bullets.vim'
 Plug 'wellle/context.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
-
-" Functionalities - Python
-Plug 'psf/black', { 'branch': 'stable' }
-Plug 'heavenshell/vim-pydocstring'
 
 " Aesthetics - Colorschemes
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -118,7 +114,6 @@ augroup MyColors
     "autocmd ColorScheme * call TransparentBackground() " uncomment if you are using a translucent terminal and you want nvim to use that
 augroup END
 
-color dracula
 set termguicolors
 
 """ Core plugin configuration (vim)
@@ -163,21 +158,6 @@ autocmd BufLeave term://* stopinsert
 " Python
 let g:python3_host_prog = '~/.config/nvim/env/bin/python3'
 let g:pydocstring_doq_path = '~/.config/nvim/env/bin/doq'
-
-""" Core plugin configuration (lua)
-lua << EOF
-servers = {
-    'pyright',
-    --'tsserver', -- uncomment for typescript. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md for other language servers
-}
-require('treesitter-config')
-require('nvim-cmp-config')
-require('lspconfig-config')
-require('telescope-config')
-require('lualine-config')
-require('nvim-tree-config')
-require('diagnostics')
-EOF
 
 """ Custom Functions
 

@@ -5,13 +5,13 @@
 # Installs neovim and all necessary dependencies for Optixal's neovim-init.vim. Does not check if dependencies have already been installed. Highly recommended to go through each command and run them manually instead of using this convenience script, especially if you are running macOS or other Linux distros. For macOS, use homebrew instead of apt.
 
 # Vars used when downloading and installing neovim and dependencies
-NEOVIM_VERSION=0.7.0
 NVM_VERSION=0.39.1
 NODE_VERSION=18.0.0
 
 # Check if this script is being run in the "convenience" directory
 if ! [[ "$PWD" = */convenience ]]; then
     echo '[-] Please run the installation script within the "convenience" directory: cd convenience && ./install.sh'
+    exit 1
 fi
 
 # Check if existing nvim config is present
@@ -39,7 +39,7 @@ if [[ "$OSTYPE" = "darwin"* ]]; then
         git \
         gcc \
         ripgrep \
-        lua \
+        nvim \
         python3
 else
     sudo apt update
@@ -52,7 +52,22 @@ else
         python3 \
         python3-pip \
         python3-venv \
+        nvim
         -y
+fi
+
+# Add ~/.local/bin to PATH if it's not already in it
+if ! [[ ":$PATH:" == *":$HOME/.local/bin:"* ]]; then
+    echo "[*] Adding ~/.local/bin to PATH"
+    if [ -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
+        SHELL_CONFIG_FILE=~/.zshrc
+    elif [ -n "`$SHELL -c 'echo $BASH_VERSION'`" ]; then
+        SHELL_CONFIG_FILE=~/.profile
+    else
+        echo "[-] Could not detect what shell you are using. Ensure to manually add ~/.local/bin to your PATH"
+    fi
+    echo -e '\nPATH="$HOME/.local/bin:$PATH"' >> $SHELL_CONFIG_FILE
+    export PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Install nvm, node, npm, language servers
@@ -82,12 +97,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 # Enter Neovim and install plugins with vim-plug's :PlugInstall using a temporary init.vim, which avoids warnings about missing colorschemes, functions, etc
 echo -e '[*] Running :PlugInstall within nvim ...'
-sed '/call plug#end/q' ../init.vim > ~/.config/nvim/init.vim
+cp ../init.vim  ~/.config/nvim/init.vim
 nvim -c 'PlugInstall' -c 'qa'
-
-# Copy init.vim and lua scripts in current working directory to nvim's config location
-echo '[*] Copying init.vim & lua/ -> ~/.config/nvim/'
-cp -r ../init.vim ../lua/ ~/.config/nvim/
 
 echo -e "[+] Done, welcome to your new \033[1m\033[92mneovim\033[0m experience! Try it by running: nvim. (NOTE, remember to: source $SHELL_CONFIG_FILE) Want to customize it? Modify ~/.config/nvim/init.vim! Remember to change your terminal font to a nerd font :)"
 nvm use --delete-prefix v18.0.0 --silent
