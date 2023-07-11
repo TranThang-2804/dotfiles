@@ -16,8 +16,10 @@ elif [[ "$(uname)" == "Darwin" ]]; then
     cd $WORKING_DIR
     echo '--------Setting up ZSH configuration-------'
     rm -rf ~/.zshrc
-    cp ./zsh_configuration/.zshrc ~/.zshrc
+    cd $WORKING_DIR/zsh_configuration
+    . ./mac.sh
     echo ZSH configured
+    cd $WORKING_DIR
 fi
 
 # Setup vim
