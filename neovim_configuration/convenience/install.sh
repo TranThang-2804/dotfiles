@@ -8,12 +8,6 @@
 NVM_VERSION=0.39.1
 NODE_VERSION=18.0.0
 
-# Check if this script is being run in the "convenience" directory
-if ! [[ "$PWD" = */convenience ]]; then
-    echo '[-] Please run the installation script within the "convenience" directory: cd convenience && ./install.sh'
-    exit 1
-fi
-
 # Check if existing nvim config is present
 if [ -f ~/.config/nvim/init.vim ] || [ -f ~/.config/nvim/init.lua ]; then
     echo '[-] Existing nvim init config file found in ~/.config/nvim/. Please backup or remove it first before running this script.'
