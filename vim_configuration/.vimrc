@@ -8,3 +8,11 @@ nnoremap <C-e> <C-e>zz
 nnoremap <BS> kdd
 nnoremap J gT
 nnoremap K gt
+
+nmap g* g*zz
+nmap g# g#zz
+nmap gD gDzz
+nmap gd gdZZ
+
+vmap <Tab> >gv
+vmap <S-Tab> <gv
