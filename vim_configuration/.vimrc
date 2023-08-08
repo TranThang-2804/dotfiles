@@ -16,3 +16,7 @@ nmap gd gdZZ
 
 vmap <Tab> >gv
 vmap <S-Tab> <gv
+
+call plug#begin()
+Plug 'tpope/vim-surround'
+call plug#end()

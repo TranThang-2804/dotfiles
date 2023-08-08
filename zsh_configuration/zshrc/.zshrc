@@ -116,3 +116,5 @@ if [ -f '/Users/tranthang/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then
 
 # Alias
 source ~/.alias
+
+export WS="/Users/tranthang/Library/Mobile Documents/com~apple~CloudDocs/Documents/"
