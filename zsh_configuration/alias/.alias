@@ -2,3 +2,14 @@
 alias tera='terraform'
 
 alias WS="/Users/tranthang/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/"
+
+# K8s aliases
+alias k=kubectl
+
+alias d=delete
+alias c=create
+alias r=run
+alias rp=replace
+alias dry=--dry-run=client -o yaml
+alias ds=describe
+alias g=get
