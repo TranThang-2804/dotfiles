@@ -5,11 +5,14 @@ alias WS="/Users/tranthang/Library/Mobile\ Documents/com~apple~CloudDocs/Documen
 
 # K8s aliases
 
+export dry="--dry-run=client -o yaml"
+
 alias k='kubectl'
+alias ka='kubectl apply -f'
 alias kd='kubectl delete'
 alias kc='kubectl create'
 alias kr='kubectl run'
 alias krp='kubectl replace'
-export dry="--dry-run=client -o yaml"
+alias krpf='kubectl replace --force -f'
 alias kds='kubectl describe'
-alias g='kubectl get'
+alias kg='kubectl get'
