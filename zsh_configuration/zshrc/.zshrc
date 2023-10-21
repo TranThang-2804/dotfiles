@@ -114,5 +114,8 @@ if [ -f '/Users/tranthang/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/U
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/tranthang/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tranthang/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
+# Adding binary path
+export PATH="$PATH:/Users/tranthang/Documents/development/flutter/bin"
+
 # Alias
 source ~/.alias
