@@ -116,6 +116,7 @@ if [ -f '/Users/tranthang/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then
 
 # Adding binary path
 export PATH="$PATH:/Users/tranthang/Documents/development/flutter/bin"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # Alias
 source ~/.alias
