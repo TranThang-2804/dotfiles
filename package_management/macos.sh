@@ -5,3 +5,4 @@ brew install kubectl
 brew install helm
 brew install awscli
 brew install docker
+brew install go
