@@ -29,8 +29,12 @@ rm -rf ~/.vimrc
 cp ./vim_configuration/.vimrc ~/.vimrc
 echo Vim configured
 
-# Setup neovim
-echo '--------Setting up NeoVim configuration--------'
-cd $WORKING_DIR/neovim_configuration/convenience
-. ./install.sh
-cd $WORKING_DIR
+# # Setup neovim
+# echo '--------Setting up NeoVim configuration--------'
+# cd $WORKING_DIR/neovim_configuration/convenience
+# . ./install.sh
+# cd $WORKING_DIR
+
+# Setup LazyVim
+rm -rf ~/.config/nvim/*
+cp LazyVim/* ~/.config/nvim
