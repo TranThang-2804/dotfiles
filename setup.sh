@@ -37,4 +37,4 @@ echo Vim configured
 
 # Setup LazyVim
 rm -rf ~/.config/nvim/*
-cp LazyVim/* ~/.config/nvim
+cp -a LazyVim/. ~/.config/nvim
