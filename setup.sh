@@ -36,5 +36,7 @@ echo Vim configured
 # cd $WORKING_DIR
 
 # Setup LazyVim
+echo '--------Setting up NeoVim configuration--------'
 rm -rf ~/.config/nvim/*
 cp -a LazyVim/. ~/.config/nvim
+echo NeoVim configured
