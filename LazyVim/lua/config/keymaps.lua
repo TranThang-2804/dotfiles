@@ -20,5 +20,7 @@ vim.keymap.set("n", "gd", "gdZZ", {})
 vim.keymap.set("x", "<Tab>", ">gv", { remap = true })
 vim.keymap.set("x", "<S-Tab>", "<gv", { remap = true })
 
-vim.keymap.set({ "n", "v" }, "Y", '"*y', { remap = true })
-vim.keymap.set({ "n", "v" }, "P", '"*p', { remap = true })
+-- This is for delete change, replace action to be do under _ registry
+vim.keymap.set({ "n" }, "r", '"_r', { remap = true })
+vim.keymap.set({ "n" }, "x", '"_x', { remap = true })
+vim.keymap.set({ "n" }, "c", '"_c', { remap = true })
