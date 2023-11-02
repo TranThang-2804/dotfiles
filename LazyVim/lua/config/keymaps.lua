@@ -22,6 +22,6 @@ vim.keymap.set("x", "<S-Tab>", "<gv", {})
 
 -- This is for delete change, replace action to be do under _ registry
 vim.keymap.set({ "n" }, "r", '"_r', {})
-vim.keymap.set({ "n", "v", "x", "i" }, "d", '"_d', {})
+vim.keymap.set({ "n", "v", "x" }, "d", '"_d', {})
 vim.keymap.set({ "n" }, "x", '"_x', {})
 vim.keymap.set({ "n" }, "c", '"_c', {})
