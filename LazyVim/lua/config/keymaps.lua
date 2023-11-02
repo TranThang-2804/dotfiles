@@ -13,16 +13,13 @@ vim.keymap.set("n", "<C-e>", "<C-e>zz", { remap = true, desc = "Go up and center
 vim.keymap.set("n", "<BS>", "kdd", { remap = true, desc = "Delete line above" })
 vim.keymap.set("n", "<CR>", "O<Esc>j", { remap = true, desc = "I'm not remember what this's for" })
 
-vim.keymap.set("n", "J", "gT", { noremap = true, silent = true })
-vim.keymap.set("n", "K", "gt", { noremap = true, silent = true })
+vim.keymap.set("n", "g*", "g*zz", { remap = true })
+vim.keymap.set("n", "g#", "g#zz", { remap = true })
+vim.keymap.set("n", "gD", "gDzz", { remap = true })
+vim.keymap.set("n", "gd", "gdZZ", { remap = true })
 
-vim.keymap.set("n", "g*", "g*zz", { noremap = true, silent = true })
-vim.keymap.set("n", "g#", "g#zz", { noremap = true, silent = true })
-vim.keymap.set("n", "gD", "gDzz", { noremap = true, silent = true })
-vim.keymap.set("n", "gd", "gdZZ", { noremap = true, silent = true })
+vim.keymap.set("x", "<Tab>", ">gv", { remap = true })
+vim.keymap.set("x", "<S-Tab>", "<gv", { remap = true })
 
-vim.keymap.set("x", "<Tab>", ">gv", { noremap = true, silent = true })
-vim.keymap.set("x", "<S-Tab>", "<gv", { noremap = true, silent = true })
-
-vim.keymap.set("n", "Y", '"*y', { noremap = true, silent = true })
-vim.keymap.set("n", "P", '"*p', { noremap = true, silent = true })
+vim.keymap.set("n", "Y", '"*y', { remap = true })
+vim.keymap.set("n", "P", '"*p', { remap = true })
