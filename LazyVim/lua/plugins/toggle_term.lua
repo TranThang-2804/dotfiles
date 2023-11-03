@@ -13,7 +13,11 @@ return {
         '<cmd>exe v:count1 . "ToggleTerm direction=horizontal"<CR>',
         desc = "Open a horizontal terminal",
       },
-      { "<leader>tv", '<cmd>exe v:count1 . "ToggleTerm direction=vertical"<CR>', desc = "Open a vertical terminal" },
+      {
+        "<leader>tv",
+        '<cmd>exe v:count1 . "ToggleTerm direction=vertical"<CR>',
+        desc = "Open a vertical terminal",
+      },
     },
   },
 }
