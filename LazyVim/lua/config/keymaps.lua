@@ -26,7 +26,7 @@ vim.keymap.set({ "n", "v", "x" }, "d", '"_d', {})
 vim.keymap.set({ "n" }, "x", '"_x', {})
 vim.keymap.set({ "n" }, "c", '"_c', {})
 
--- This is for resizing window
+-- This is for resizing window MacOS specific
 vim.keymap.set("n", "<˚-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
 vim.keymap.set("n", "<∆-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
 vim.keymap.set("n", "<˙-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
