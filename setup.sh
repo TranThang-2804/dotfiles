@@ -1,42 +1,50 @@
-#!bin/bash -e
+#!/bin/bash -e
 
 WORKING_DIR=$(pwd)
 
+INSTALL_PACKAGE=$1
+
 echo '--------Checking machine OS--------'
 # Check the operating system
-if [[ "$(uname)" == "Linux" ]]; then
-    # Action for Linux
-    echo "Running on Linux"
+if [[ "$(uname)" == "Linux" && $INSTALL_PACKAGE == "all" ]]; then
+	# Action for Linux
+	echo "Running on Linux"
+	cd "$WORKING_DIR/package_management"
+	. ./linux.sh
+	cd "$WORKING_DIR"
 
-elif [[ "$(uname)" == "Darwin" ]]; then
-    # Action for macOS
-    echo "Running on macOS"
-
-    # Setup .zshrc
-    cd $WORKING_DIR
-    echo '--------Setting up ZSH configuration-------'
-    rm -rf ~/.zshrc
-    cd $WORKING_DIR/zsh_configuration
-    . ./mac.sh
-    echo ZSH configured
-    cd $WORKING_DIR
+elif [[ "$(uname)" == "Darwin" && $INSTALL_PACKAGE == "all" ]]; then
+	# Action for macOS
+	echo "Running on macOS"
+	cd "$WORKING_DIR/package_management"
+	. ./macos.sh
+	cd "$WORKING_DIR"
 fi
+
+# Setup .zshrc
+echo '--------Setting up ZSH configuration-------'
+rm -rf ~/.zshrc
+cd "$WORKING_DIR/zsh_configuration"
+. ./setup.sh
+echo ZSH configured
+cd "$WORKING_DIR"
 
 # Setup vim
 echo '--------Setting up Vim configuration--------'
-cd $WORKING_DIR
+cd "$WORKING_DIR"
 rm -rf ~/.vimrc
 cp ./vim_configuration/.vimrc ~/.vimrc
 echo Vim configured
 
-# # Setup neovim
-# echo '--------Setting up NeoVim configuration--------'
-# cd $WORKING_DIR/neovim_configuration/convenience
-# . ./install.sh
-# cd $WORKING_DIR
-
+#
 # Setup LazyVim
 echo '--------Setting up NeoVim configuration--------'
-rm -rf ~/.config/nvim/*
+if [[ -d ~/.config/nvim ]]; then
+	rm -rf ~/.config/nvim/*
+else
+	mkdir ~/.config/nvim
+fi
+
 cp -a LazyVim/. ~/.config/nvim
 echo NeoVim configured
+

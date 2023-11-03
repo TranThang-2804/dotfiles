@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 brew install vim
 brew install neovim
 brew install kubectl
@@ -9,3 +9,4 @@ brew install go
 
 brew tap homebrew/cask-fonts
 brew install font-hack-nerd-font
+
