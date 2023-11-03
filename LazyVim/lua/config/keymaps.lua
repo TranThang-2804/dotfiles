@@ -31,3 +31,6 @@ vim.keymap.set("n", "˚", "<cmd>resize +2<cr>", { desc = "Increase window height
 vim.keymap.set("n", "∆", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
 vim.keymap.set("n", "˙", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 vim.keymap.set("n", "¬", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+
+-- This is for global config for terminal mode
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "esc to navigate in terminal mode" })
