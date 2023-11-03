@@ -14,9 +14,6 @@ return {
         desc = "Open a horizontal terminal",
       },
       { "<leader>tv", '<cmd>exe v:count1 . "ToggleTerm direction=vertical"<CR>', desc = "Open a vertical terminal" },
-
-      { "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", desc = "Open a float terminal" },
-      { "<C-_>", "<cmd>ToggleTerm direction=float<cr>", desc = "Open a float terminal" },
     },
   },
 }
