@@ -45,6 +45,6 @@ else
 	mkdir ~/.config/nvim
 fi
 
-cp -a LazyVim/. ~/.config/nvim
+cp -a neovim_configuration/. ~/.config/nvim
 echo NeoVim configured
 
