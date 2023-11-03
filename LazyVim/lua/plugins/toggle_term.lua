@@ -15,7 +15,7 @@ return {
       },
       {
         "<leader>tv",
-        '<cmd>exe v:count1 . "ToggleTerm direction=vertical"<CR>',
+        '<cmd>exe v:count1 . "ToggleTerm direction=vertical size=40"<CR>',
         desc = "Open a vertical terminal",
       },
     },
