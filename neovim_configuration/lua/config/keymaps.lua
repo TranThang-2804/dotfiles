@@ -12,8 +12,8 @@ vim.keymap.set("n", "<C-y>", "<C-y>zz", { remap = true, desc = "Go down and cent
 vim.keymap.set("n", "<C-e>", "<C-e>zz", { remap = true, desc = "Go up and center" })
 
 -- Navigate buffer page horizontal
-vim.keymap.set("n", "<C-i>", "zl", { remap = true, desc = "Scrol tab/buffer to the right" })
-vim.keymap.set("n", "<C-e>", "zh", { remap = true, desc = "Scrol tab/buffer to the left" })
+vim.keymap.set("n", "<C-i>", "4zl", { remap = true, desc = "Scrol tab/buffer to the right" })
+vim.keymap.set("n", "<C-e>", "4zh", { remap = true, desc = "Scrol tab/buffer to the left" })
 
 -- Delete and Enter file above and below
 vim.keymap.set("n", "<BS>", "kdd", { desc = "Delete line above" })
