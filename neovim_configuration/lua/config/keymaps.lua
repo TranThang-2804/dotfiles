@@ -1,14 +1,21 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
+-- Navigate
 vim.keymap.set("n", "j", "jzz", { desc = "Go down and center" })
 vim.keymap.set("n", "k", "kzz", { desc = "Go up and center" })
 
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Go up and center" })
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Go down and center" })
-vim.keymap.set("n", "<C-y>", "<C-y>zz", { desc = "Go down and center" })
-vim.keymap.set("n", "<C-e>", "<C-e>zz", { desc = "Go up and center" })
+-- Navigate buffer page vertical
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { remap = true, desc = "Go up and center" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { remap = true, desc = "Go down and center" })
+vim.keymap.set("n", "<C-y>", "<C-y>zz", { remap = true, desc = "Go down and center" })
+vim.keymap.set("n", "<C-e>", "<C-e>zz", { remap = true, desc = "Go up and center" })
 
+-- Navigate buffer page horizontal
+vim.keymap.set("n", "<C-i>", "zl", { remap = true, desc = "Scrol tab/buffer to the right" })
+vim.keymap.set("n", "<C-e>", "zh", { remap = true, desc = "Scrol tab/buffer to the left" })
+
+-- Delete and Enter file above and below
 vim.keymap.set("n", "<BS>", "kdd", { desc = "Delete line above" })
 vim.keymap.set("n", "<CR>", "O<Esc>j", { desc = "I'm not remember what this's for" })
 
