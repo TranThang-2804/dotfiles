@@ -46,6 +46,7 @@ return {
       nvimtree = true,
       notify = false,
       treesitter = true,
+      mason = true,
       mini = true,
       -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
