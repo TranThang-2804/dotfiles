@@ -47,3 +47,6 @@ vim.keymap.set("n", "¬", "<cmd>vertical resize +2<cr>", { desc = "Increase wind
 
 -- This is for global config for terminal mode
 vim.keymap.set("t", "<C-s>", "<C-\\><C-n>", { desc = "esc outside of insert mode in terminal to navigate" })
+
+-- This is for global selection
+vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Global selection" })
