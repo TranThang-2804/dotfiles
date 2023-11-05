@@ -28,10 +28,10 @@ vim.keymap.set("x", "<Tab>", ">gv", {})
 vim.keymap.set("x", "<S-Tab>", "<gv", {})
 
 -- This is for delete change, replace action to be do under _ registry
-vim.keymap.set({ "n" }, "r", '"_r', {})
+vim.keymap.set({ "n", "v", "x" }, "r", '"_r', {})
 vim.keymap.set({ "n", "v", "x" }, "d", '"_d', {})
-vim.keymap.set({ "n" }, "x", '"_x', {})
-vim.keymap.set({ "n" }, "c", '"_c', {})
+vim.keymap.set({ "n", "v", "x" }, "x", '"_x', {})
+vim.keymap.set({ "n", "v", "x" }, "c", '"_c', {})
 
 -- This is for resizing window MacOS specific
 vim.keymap.set("n", "˚", "<cmd>resize +2<cr>", { desc = "Increase window height" })
