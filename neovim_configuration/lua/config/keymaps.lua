@@ -46,6 +46,3 @@ vim.keymap.set("n", "¬", "<cmd>vertical resize +2<cr>", { desc = "Increase wind
 
 -- This is for global config for terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "esc to navigate in terminal mode" })
-
--- This is configuration for terminal float config
-vim.keymap.set("n", "<C-->", "<leader>fT", { remap = true, desc = "Open Float Terminal at root dir" })
