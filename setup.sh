@@ -42,9 +42,8 @@ echo '--------Setting up NeoVim configuration--------'
 if [[ -d ~/.config/nvim ]]; then
 	rm -rf ~/.config/nvim/*
 else
-	mkdir ~/.config/nvim
+	mkdir -p ~/.config/nvim
 fi
 
 cp -a neovim_configuration/. ~/.config/nvim
 echo NeoVim configured
-

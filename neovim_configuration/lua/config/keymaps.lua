@@ -37,7 +37,7 @@ vim.keymap.set({ "n", "v", "x" }, "r", '"_r', {})
 vim.keymap.set({ "n", "v", "x" }, "d", '"_d', {})
 vim.keymap.set({ "n", "v", "x" }, "x", '"_x', {})
 vim.keymap.set({ "n", "v", "x" }, "c", '"_c', {})
-vim.keymap.set({ "n", "v", "x" }, "D", "d", { remap = true, desc = "This is used for cutting text to clipboard" })
+vim.keymap.set({ "n", "v", "x" }, "D", '"*d', { desc = "This is used for cutting text to clipboard" })
 
 -- This is for resizing window MacOS specific
 vim.keymap.set("n", "˚", "<cmd>resize +2<cr>", { desc = "Increase window height" })
