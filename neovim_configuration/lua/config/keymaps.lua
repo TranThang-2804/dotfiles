@@ -19,8 +19,9 @@ vim.keymap.set("n", "<C-e>", "4zh", { remap = true, desc = "Scrol tab/buffer to 
 vim.keymap.set("n", "<BS>", "kdd", { desc = "Delete line above" })
 vim.keymap.set("n", "<CR>", "O<Esc>j", { desc = "I'm not remember what this's for" })
 
-vim.keymap.set("n", "g*", "g*zz", { remap = true, desc = "I don't remember what this is" })
-vim.keymap.set("n", "g#", "g#zz", { remap = true, desc = "I don't remember what this is" })
+-- This is keymap for LSP navigate
+vim.keymap.set("n", "g*", "g*zz", { remap = true, desc = "Go to the same name" })
+vim.keymap.set("n", "g#", "g#zz", { remap = true, desc = "Go to the same name" })
 vim.keymap.set("n", "gD", "gDzz", { remap = true, desc = "Go to Declaration" })
 vim.keymap.set("n", "gd", "gdZZ", { remap = true, desc = "Go to definition" })
 
@@ -36,7 +37,7 @@ vim.keymap.set({ "n", "v", "x" }, "r", '"_r', {})
 vim.keymap.set({ "n", "v", "x" }, "d", '"_d', {})
 vim.keymap.set({ "n", "v", "x" }, "x", '"_x', {})
 vim.keymap.set({ "n", "v", "x" }, "c", '"_c', {})
--- vim.keymap.set({ "n", "v", "x" }, "s", '"_s', {remap = true})
+vim.keymap.set({ "n", "v", "x" }, "D", "d", { remap = true, desc = "This is used for cutting text to clipboard" })
 
 -- This is for resizing window MacOS specific
 vim.keymap.set("n", "˚", "<cmd>resize +2<cr>", { desc = "Increase window height" })
