@@ -42,11 +42,11 @@ return {
     end,
     integrations = {
       cmp = true,
-      gitsigns = false,
-      nvimtree = false,
+      gitsigns = true,
+      nvimtree = true,
       treesitter = true,
-      notify = false,
-      mini = false,
+      notify = true,
+      mini = true,
       -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
   },
