@@ -19,10 +19,10 @@ vim.keymap.set("n", "<C-e>", "4zh", { remap = true, desc = "Scrol tab/buffer to 
 vim.keymap.set("n", "<BS>", "kdd", { desc = "Delete line above" })
 vim.keymap.set("n", "<CR>", "O<Esc>j", { desc = "I'm not remember what this's for" })
 
-vim.keymap.set("n", "g*", "g*zz", {})
-vim.keymap.set("n", "g#", "g#zz", {})
-vim.keymap.set("n", "gD", "gDzz", {})
-vim.keymap.set("n", "gd", "gdZZ", {})
+vim.keymap.set("n", "g*", "g*zz", { remap = true, desc = "I don't remember what this is" })
+vim.keymap.set("n", "g#", "g#zz", { remap = true, desc = "I don't remember what this is" })
+vim.keymap.set("n", "gD", "gDzz", { remap = true, desc = "Go to Declaration" })
+vim.keymap.set("n", "gd", "gdZZ", { remap = true, desc = "Go to definition" })
 
 vim.keymap.set("x", "<Tab>", ">gv", {})
 vim.keymap.set("x", "<S-Tab>", "<gv", {})
