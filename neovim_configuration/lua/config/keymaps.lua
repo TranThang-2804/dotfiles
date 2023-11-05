@@ -36,7 +36,7 @@ vim.keymap.set({ "n", "v", "x" }, "r", '"_r', {})
 vim.keymap.set({ "n", "v", "x" }, "d", '"_d', {})
 vim.keymap.set({ "n", "v", "x" }, "x", '"_x', {})
 vim.keymap.set({ "n", "v", "x" }, "c", '"_c', {})
-vim.keymap.set({ "n", "v", "x" }, "s", '"_s', {})
+-- vim.keymap.set({ "n", "v", "x" }, "s", '"_s', {remap = true})
 
 -- This is for resizing window MacOS specific
 vim.keymap.set("n", "˚", "<cmd>resize +2<cr>", { desc = "Increase window height" })
@@ -46,3 +46,6 @@ vim.keymap.set("n", "¬", "<cmd>vertical resize +2<cr>", { desc = "Increase wind
 
 -- This is for global config for terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "esc to navigate in terminal mode" })
+
+-- This is configuration for terminal float config
+vim.keymap.set("n", "<C-->", "<leader>fT", { remap = true, desc = "Open Float Terminal at root dir" })
