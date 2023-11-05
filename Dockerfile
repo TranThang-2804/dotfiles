@@ -1,11 +1,10 @@
 FROM ubuntu:latest
 
+COPY . /initialize/installed-package
+
+WORKDIR /initialize/installed-package
+RUN ./setup.sh docker
+
 WORKDIR /root
 
-COPY . /root/installed-package
-
-RUN cd /root/installed-package && \
-  . ./setup.sh all
-
-ENTRYPOINT ["/bin/bash", "nvim"]
-CMD ["."]
+ENTRYPOINT [ "/bin/bash" ] 
