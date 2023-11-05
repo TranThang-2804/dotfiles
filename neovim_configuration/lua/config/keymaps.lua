@@ -46,4 +46,4 @@ vim.keymap.set("n", "˙", "<cmd>vertical resize -2<cr>", { desc = "Decrease wind
 vim.keymap.set("n", "¬", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- This is for global config for terminal mode
-vim.keymap.set("t", "<C-b>", "<C-\\><C-n>", { desc = "esc outside of insert mode in terminal to navigate" })
+vim.keymap.set("t", "<C-s>", "<C-\\><C-n>", { desc = "esc outside of insert mode in terminal to navigate" })
