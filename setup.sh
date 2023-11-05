@@ -1,23 +1,28 @@
-#!/bin/bash -e
+#!/bin/bash
 
 WORKING_DIR=$(pwd)
 
 INSTALL_PACKAGE=$1
 
-echo '--------Checking machine OS--------'
 # Check the operating system
-if [[ "$(uname)" == "Linux" && $INSTALL_PACKAGE == "all" ]]; then
+echo '--------Checking machine OS--------'
+if [[ "$(uname)" == "Darwin" && $INSTALL_PACKAGE == "all" ]]; then
+	# Action for macOS
+	echo "Running on macOS"
+	cd "$WORKING_DIR/package_management"
+	. ./macos.sh
+	cd "$WORKING_DIR"
+elif [[ "$(uname)" == "Linux" && $INSTALL_PACKAGE == "all" ]]; then
 	# Action for Linux
 	echo "Running on Linux"
 	cd "$WORKING_DIR/package_management"
 	. ./linux.sh
 	cd "$WORKING_DIR"
-
-elif [[ "$(uname)" == "Darwin" && $INSTALL_PACKAGE == "all" ]]; then
-	# Action for macOS
-	echo "Running on macOS"
+elif [[ $INSTALL_PACKAGE == "docker" ]]; then
+	# Action for Linux
+	echo "Running on Linux"
 	cd "$WORKING_DIR/package_management"
-	. ./macos.sh
+	. ./docker.sh
 	cd "$WORKING_DIR"
 fi
 
