@@ -25,8 +25,8 @@ vim.keymap.set("n", "g#", "g#zz", { remap = true, desc = "Go to the same name" }
 vim.keymap.set("n", "gD", "gDzz", { remap = true, desc = "Go to Declaration" })
 vim.keymap.set("n", "gd", "gdZZ", { remap = true, desc = "Go to definition" })
 
-vim.keymap.set("x", "<Tab>", ">gv", { decs = "Tab indent selection to the right" })
-vim.keymap.set("x", "<S-Tab>", "<gv", { decs = "Tab indent selection to the left" })
+vim.keymap.set("x", "<Tab>", ">gv", { desc = "Tab indent selection to the right" })
+vim.keymap.set("x", "<S-Tab>", "<gv", { desc = "Tab indent selection to the left" })
 
 -- This is for delete change, replace action to be do under _ registry
 vim.keymap.set({ "n" }, "p", '"*p', {})
@@ -38,17 +38,14 @@ vim.keymap.set({ "x", "v" }, "P", '"*P', {})
 vim.keymap.set({ "n" }, "y", '"*y', {})
 vim.keymap.set({ "n" }, "Y", '"*Y', {})
 
-vim.keymap.set({ "v" }, "y", '"*ygv', {})
-vim.keymap.set({ "v" }, "Y", '"*Ygv', {})
+vim.keymap.set({ "x", "v" }, "y", '"*ygv', {})
+vim.keymap.set({ "x", "v" }, "Y", '"*Ygv', {})
 
-vim.keymap.set({ "x" }, "y", '"*y', {})
-vim.keymap.set({ "x" }, "Y", '"*Y', {})
-
-vim.keymap.set({ "n", "v", "x" }, "r", '"_r', {})
-vim.keymap.set({ "n", "v", "x" }, "d", '"_d', {})
-vim.keymap.set({ "n", "v", "x" }, "x", '"_x', {})
-vim.keymap.set({ "n", "v", "x" }, "c", '"_c', {})
-vim.keymap.set({ "n", "v", "x" }, "D", '"*d', { desc = "This is used for cutting text to clipboard" })
+vim.keymap.set({ "n", "v", "x", "s" }, "r", '"_r', {})
+vim.keymap.set({ "n", "v", "x", "s" }, "d", '"_d', {})
+vim.keymap.set({ "n", "v", "x", "s" }, "x", '"_x', {})
+vim.keymap.set({ "n", "v", "x", "s" }, "c", '"_c', {})
+vim.keymap.set({ "n", "v", "x", "s" }, "D", '"*d', { desc = "This is used for cutting text to clipboard" })
 
 -- This is for resizing window MacOS specific
 vim.keymap.set("n", "˚", "<cmd>resize +2<cr>", { desc = "Increase window height" })
