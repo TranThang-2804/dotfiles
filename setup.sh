@@ -41,7 +41,6 @@ rm -rf ~/.vimrc
 cp ./vim/.vimrc ~/.vimrc
 echo Vim configured
 
-#
 # Setup LazyVim
 echo '--------Setting up NeoVim configuration--------'
 if [[ -d ~/.config/nvim ]]; then
@@ -51,5 +50,12 @@ else
 fi
 
 cp -a neovim/. ~/.config/nvim
+echo NeoVim configured
+
+# Setup tmux
+echo '--------Setting up Tmux configuration--------'
+rm -rf ~/.tmux.conf
+
+cp tmux/.tmux.conf ~/.tmux.conf
 echo NeoVim configured
 
