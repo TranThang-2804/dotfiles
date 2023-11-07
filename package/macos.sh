@@ -1,4 +1,5 @@
 #!/bin/bash
+brew install git
 brew install vim
 brew install neovim
 brew install kubectl
