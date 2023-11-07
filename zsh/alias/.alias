@@ -19,3 +19,9 @@ alias krpf='kubectl replace --force -f'
 alias kds='kubectl describe'
 alias kg='kubectl get'
 alias ksetns='kubectl config set-context --current --namespace'
+
+# Tmux alias
+alias ta='tmux attach-session -t'
+alias tn='tmux new-session -t'
+alias tk='tmux kill-session -t'
+alias tka='tmux kill-session -a'
