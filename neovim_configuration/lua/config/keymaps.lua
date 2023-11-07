@@ -1,6 +1,9 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
+-- Go to normal mode
+vim.keymap.set({ "i", "x", "s", "n", "o" }, "q", "<C-c>", { desc = "Go back to normal mode" })
+
 -- Navigate
 vim.keymap.set("n", "j", "jzz", { desc = "Go down and center" })
 vim.keymap.set("n", "k", "kzz", { desc = "Go up and center" })
