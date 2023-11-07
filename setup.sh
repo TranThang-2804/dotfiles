@@ -9,19 +9,19 @@ echo '--------Checking machine OS--------'
 if [[ "$(uname)" == "Darwin" && $INSTALL_PACKAGE == "all" ]]; then
 	# Action for macOS
 	echo "Running on macOS"
-	cd "$WORKING_DIR/package_management"
+	cd "$WORKING_DIR/package"
 	. ./macos.sh
 	cd "$WORKING_DIR"
 elif [[ "$(uname)" == "Linux" && $INSTALL_PACKAGE == "all" ]]; then
 	# Action for Linux
 	echo "Running on Linux"
-	cd "$WORKING_DIR/package_management"
+	cd "$WORKING_DIR/package"
 	. ./linux.sh
 	cd "$WORKING_DIR"
 elif [[ $INSTALL_PACKAGE == "docker" ]]; then
 	# Action for Linux
 	echo "Running on Linux"
-	cd "$WORKING_DIR/package_management"
+	cd "$WORKING_DIR/package"
 	. ./docker.sh
 	cd "$WORKING_DIR"
 fi
@@ -29,7 +29,7 @@ fi
 # Setup .zshrc
 echo '--------Setting up ZSH configuration-------'
 rm -rf ~/.zshrc
-cd "$WORKING_DIR/zsh_configuration"
+cd "$WORKING_DIR/zsh"
 . ./setup.sh
 echo ZSH configured
 cd "$WORKING_DIR"
@@ -38,7 +38,7 @@ cd "$WORKING_DIR"
 echo '--------Setting up Vim configuration--------'
 cd "$WORKING_DIR"
 rm -rf ~/.vimrc
-cp ./vim_configuration/.vimrc ~/.vimrc
+cp ./vim/.vimrc ~/.vimrc
 echo Vim configured
 
 #
@@ -50,5 +50,6 @@ else
 	mkdir -p ~/.config/nvim
 fi
 
-cp -a neovim_configuration/. ~/.config/nvim
+cp -a neovim/. ~/.config/nvim
 echo NeoVim configured
+
