@@ -1,9 +1,6 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
--- Go to normal mode
-vim.keymap.set({ "i", "x", "s", "n", "o" }, "q", "<C-c>", { desc = "Go back to normal mode" })
-
 -- Navigate
 vim.keymap.set("n", "j", "jzz", { desc = "Go down and center" })
 vim.keymap.set("n", "k", "kzz", { desc = "Go up and center" })
@@ -44,11 +41,11 @@ vim.keymap.set({ "n" }, "Y", '"*Y', {})
 vim.keymap.set({ "x", "v" }, "y", '"*ygv', {})
 vim.keymap.set({ "x", "v" }, "Y", '"*Ygv', {})
 
-vim.keymap.set({ "n", "v", "x", "s" }, "r", '"_r', {})
-vim.keymap.set({ "n", "v", "x", "s" }, "d", '"_d', {})
-vim.keymap.set({ "n", "v", "x", "s" }, "x", '"_x', {})
-vim.keymap.set({ "n", "v", "x", "s" }, "c", '"_c', {})
-vim.keymap.set({ "n", "v", "x", "s" }, "D", '"*d', { desc = "This is used for cutting text to clipboard" })
+vim.keymap.set({ "n", "v", "x" }, "r", '"_r', {})
+vim.keymap.set({ "n", "v", "x" }, "d", '"_d', {})
+vim.keymap.set({ "n", "v", "x" }, "x", '"_x', {})
+vim.keymap.set({ "n", "v", "x" }, "c", '"_c', {})
+vim.keymap.set({ "n", "v", "x" }, "D", '"*d', { desc = "This is used for cutting text to clipboard" })
 
 -- This is for resizing window MacOS specific
 vim.keymap.set("n", "˚", "<cmd>resize +2<cr>", { desc = "Increase window height" })
