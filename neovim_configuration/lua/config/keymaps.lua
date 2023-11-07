@@ -25,14 +25,25 @@ vim.keymap.set("n", "g#", "g#zz", { remap = true, desc = "Go to the same name" }
 vim.keymap.set("n", "gD", "gDzz", { remap = true, desc = "Go to Declaration" })
 vim.keymap.set("n", "gd", "gdZZ", { remap = true, desc = "Go to definition" })
 
-vim.keymap.set("x", "<Tab>", ">gv", {})
-vim.keymap.set("x", "<S-Tab>", "<gv", {})
+vim.keymap.set("x", "<Tab>", ">gv", { decs = "Tab indent selection to the right" })
+vim.keymap.set("x", "<S-Tab>", "<gv", { decs = "Tab indent selection to the left" })
 
 -- This is for delete change, replace action to be do under _ registry
-vim.keymap.set({ "n", "v", "x" }, "p", '"*p', {})
-vim.keymap.set({ "n", "v", "x" }, "P", '"*P', {})
-vim.keymap.set({ "n", "v", "x" }, "y", '"*y', {})
-vim.keymap.set({ "n", "v", "x" }, "Y", '"*Y', {})
+vim.keymap.set({ "n" }, "p", '"*p', {})
+vim.keymap.set({ "n" }, "P", '"*P', {})
+
+vim.keymap.set({ "x", "v" }, "p", '"*p', {})
+vim.keymap.set({ "x", "v" }, "P", '"*P', {})
+
+vim.keymap.set({ "n" }, "y", '"*y', {})
+vim.keymap.set({ "n" }, "Y", '"*Y', {})
+
+vim.keymap.set({ "v" }, "y", '"*ygv', {})
+vim.keymap.set({ "v" }, "Y", '"*Ygv', {})
+
+vim.keymap.set({ "x" }, "y", '"*y', {})
+vim.keymap.set({ "x" }, "Y", '"*Y', {})
+
 vim.keymap.set({ "n", "v", "x" }, "r", '"_r', {})
 vim.keymap.set({ "n", "v", "x" }, "d", '"_d', {})
 vim.keymap.set({ "n", "v", "x" }, "x", '"_x', {})
