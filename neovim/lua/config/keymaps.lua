@@ -35,11 +35,11 @@ vim.keymap.set({ "n" }, "P", '"*P', {})
 vim.keymap.set({ "x", "v" }, "p", '"*p', {})
 vim.keymap.set({ "x", "v" }, "P", '"*P', {})
 
-vim.keymap.set({ "n" }, "y", '"*y', {})
-vim.keymap.set({ "n" }, "Y", '"*Y', {})
+vim.keymap.set({ "n", "x", "v" }, "y", '"*y', {})
+vim.keymap.set({ "n", "x", "v" }, "Y", '"*Y', {})
 
-vim.keymap.set({ "x", "v" }, "y", '"*ygv', {})
-vim.keymap.set({ "x", "v" }, "Y", '"*Ygv', {})
+-- vim.keymap.set({ "x", "v" }, "y", '"*ygv', {})
+-- vim.keymap.set({ "x", "v" }, "Y", '"*Ygv', {})
 
 vim.keymap.set({ "n", "v", "x" }, "r", '"_r', {})
 vim.keymap.set({ "n", "v", "x" }, "d", '"_d', {})
