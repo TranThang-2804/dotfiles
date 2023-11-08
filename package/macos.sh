@@ -12,3 +12,6 @@ brew install tmux
 
 brew tap homebrew/cask-fonts
 brew install font-hack-nerd-font
+
+brew install powerlevel10k
+brew install zsh-autosuggestions
