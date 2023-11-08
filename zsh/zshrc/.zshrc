@@ -122,7 +122,7 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 source ~/.alias
 
 # Set auto suggestion syntax highlight
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
 
 # Enable auto suggestion
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
