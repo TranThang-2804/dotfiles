@@ -74,9 +74,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Enable auto suggestion
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 # User configuration
 
 # Enable vi mode
@@ -123,3 +120,10 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # Alias
 source ~/.alias
+
+# Set auto suggestion syntax highlight
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,underline"
+
+# Enable auto suggestion
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
