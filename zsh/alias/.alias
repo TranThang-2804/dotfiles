@@ -25,3 +25,9 @@ alias ta='tmux attach-session -t'
 alias tn='tmux new-session -t'
 alias tk='tmux kill-session -t'
 alias tka='tmux kill-session -a'
+
+# Git alias
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push'
