@@ -58,3 +58,5 @@ vim.keymap.set("t", "<C-s>", "<C-\\><C-n>", { desc = "esc outside of insert mode
 
 -- This is for global selection
 vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Global selection" })
+
+vim.keymap.set({ "n", "i", "v", "o", "s", "x" }, "<C-c>", "<Esc>", { desc = "Esc" })
