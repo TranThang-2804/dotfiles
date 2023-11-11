@@ -53,12 +53,3 @@ opt.fillchars = {
   eob = " ",
 }
 
-if vim.fn.has("nvim-0.10") == 1 then
-  opt.smoothscroll = true
-end
-
--- Folding
-vim.opt.foldlevel = 99
-
--- Fix markdown indentation settings
-vim.g.markdown_recommended_style = 0
