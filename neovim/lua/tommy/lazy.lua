@@ -15,7 +15,9 @@ require("lazy").setup({
   { import = "tommy.plugins" },
   { import = "tommy.plugins.themes" },
   { import = "tommy.plugins.mini" },
-  { import = "tommy.plugins.lsp" }
+  { import = "tommy.plugins.lsp" },
+  { import = "tommy.plugins.treesitter" },
+  { import = "tommy.plugins.ui" },
 },
 {
   checker = {
