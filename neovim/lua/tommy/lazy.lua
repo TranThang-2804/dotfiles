@@ -18,6 +18,7 @@ require("lazy").setup({
   { import = "tommy.plugins.lsp" },
   { import = "tommy.plugins.treesitter" },
   { import = "tommy.plugins.ui" },
+  { import = "tommy.plugins.cmp" },
 },
 {
   checker = {
