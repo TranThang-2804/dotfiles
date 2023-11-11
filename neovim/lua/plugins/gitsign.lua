@@ -15,9 +15,9 @@ return {
     current_line_blame_opts = {
       virt_text = true,
       virt_text_pos = "right_align", -- 'eol' | 'overlay' | 'right_align'
-      delay = 0,
-      ignore_whitespace = false,
-      virt_text_priority = 100,
+      delay = 2,
+      ignore_whitespace = true,
+      virt_text_priority = 10,
     },
     current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
     sign_priority = 6,
