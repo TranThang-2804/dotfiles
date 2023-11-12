@@ -1,6 +1,6 @@
 return {
-  "catppuccin",
-  lazy = false,
+  "catppuccin/nvim",
+  name = "catppuccin",
   priority = 1000,
   opts = {
     flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -8,7 +8,7 @@ return {
       light = "latte",
       dark = "mocha",
     },
-    transparent_background = false, -- disables setting the background color.
+    transparent_background = true, -- disables setting the background color.
     show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
     term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
     dim_inactive = {
@@ -22,33 +22,29 @@ return {
     styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
       comments = { "italic" }, -- Change the style of comments
       conditionals = { "italic" },
-      loops = { "italic" },
-      functions = { "italic" },
-      keywords = { "bold" },
+      loops = {},
+      functions = {},
+      keywords = {},
       strings = {},
       variables = {},
-      numbers = { "italic" },
-      booleans = { "italic" },
+      numbers = {},
+      booleans = {},
       properties = {},
       types = {},
       operators = {},
     },
     color_overrides = {},
-    custom_highlights = function(colors)
-      return {
-        Comment = { fg = "#89AEB1" },
-        LineNr = { fg = colors.overlay0 },
-      }
-    end,
+    custom_highlights = {},
     integrations = {
       cmp = true,
       gitsigns = true,
       nvimtree = true,
-      notify = false,
       treesitter = true,
-      mason = true,
-      mini = true,
-      -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+      notify = false,
+      mini = {
+        enabled = true,
+        indentscope_color = "",
+      },
     },
   },
 }
