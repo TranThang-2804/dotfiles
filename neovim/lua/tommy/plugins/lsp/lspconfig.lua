@@ -1,146 +1,161 @@
 return {
   "neovim/nvim-lspconfig",
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    { "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
-    { "folke/neodev.nvim", opts = {} },
-    "mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
+    "hrsh7th/cmp-nvim-lsp",
+    { "antosha417/nvim-lsp-file-operations", config = true },
   },
-  ---@class PluginLspOpts
-  opts = {
-    -- options for vim.diagnostic.config()
-    diagnostics = {
-      underline = true,
-      update_in_insert = false,
-      virtual_text = {
-        spacing = 4,
-        source = "if_many",
-        prefix = "●",
-        -- this will set set the prefix to a function that returns the diagnostics icon based on the severity
-        -- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
-        -- prefix = "icons",
-      },
-      severity_sort = true,
-    },
-    -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
-    -- Be aware that you also will need to properly configure your LSP server to
-    -- provide the inlay hints.
-    inlay_hints = {
-      enabled = false,
-    },
-    -- add any global capabilities here
-    capabilities = {},
-    -- options for vim.lsp.buf.format
-    -- `bufnr` and `filter` is handled by the LazyVim formatter,
-    -- but can be also overridden when specified
-    format = {
-      formatting_options = nil,
-      timeout_ms = nil,
-    },
-    -- LSP Server Settings
-    ---@type lspconfig.options
-    servers = {
-      lua_ls = {
-        -- mason = false, -- set to false if you don't want this server to be installed with mason
-        -- Use this to add any additional keymaps
-        -- for specific lsp servers
-        ---@type LazyKeysSpec[]
-        -- keys = {},
-        settings = {
-          Lua = {
-            workspace = {
-              checkThirdParty = false,
-            },
-            completion = {
-              callSnippet = "Replace",
+  config = function()
+    -- import lspconfig plugin
+    local lspconfig = require("lspconfig")
+
+    -- import cmp-nvim-lsp plugin
+    local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+    local keymap = vim.keymap -- for conciseness
+
+    local opts = { noremap = true, silent = true }
+    local on_attach = function(client, bufnr)
+      opts.buffer = bufnr
+
+      -- set keybinds
+      opts.desc = "Show LSP references"
+      keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+
+      opts.desc = "Go to declaration"
+      keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+
+      opts.desc = "Show LSP definitions"
+      keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+
+      opts.desc = "Show LSP implementations"
+      keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+
+      opts.desc = "Show LSP type definitions"
+      keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
+
+      opts.desc = "See available code actions"
+      keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+
+      opts.desc = "Smart rename"
+      keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
+
+      opts.desc = "Show buffer diagnostics"
+      keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+
+      opts.desc = "Show line diagnostics"
+      keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
+
+      opts.desc = "Go to previous diagnostic"
+      keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
+
+      opts.desc = "Go to next diagnostic"
+      keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+
+      opts.desc = "Show documentation for what is under cursor"
+      keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+
+      opts.desc = "Restart LSP"
+      keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+    end
+
+    -- used to enable autocompletion (assign to every lsp server config)
+    local capabilities = cmp_nvim_lsp.default_capabilities()
+
+    -- Change the Diagnostic symbols in the sign column (gutter)
+    -- (not in youtube nvim video)
+    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+    for type, icon in pairs(signs) do
+      local hl = "DiagnosticSign" .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+    end
+
+    -- configure html server
+    lspconfig["html"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- configure typescript server with plugin
+    lspconfig["tsserver"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- configure css server
+    lspconfig["cssls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- configure tailwindcss server
+    lspconfig["tailwindcss"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- configure svelte server
+    lspconfig["svelte"].setup({
+      capabilities = capabilities,
+      on_attach = function(client, bufnr)
+        on_attach(client, bufnr)
+
+        vim.api.nvim_create_autocmd("BufWritePost", {
+          pattern = { "*.js", "*.ts" },
+          callback = function(ctx)
+            if client.name == "svelte" then
+              client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+            end
+          end,
+        })
+      end,
+    })
+
+    -- configure prisma orm server
+    lspconfig["prismals"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- configure graphql language server
+    lspconfig["graphql"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+    })
+
+    -- configure emmet language server
+    lspconfig["emmet_ls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+    })
+
+    -- configure python server
+    lspconfig["pyright"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- configure lua server (with special settings)
+    lspconfig["lua_ls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = { -- custom settings for lua
+        Lua = {
+          -- make the language server recognize "vim" global
+          diagnostics = {
+            globals = { "vim" },
+          },
+          workspace = {
+            -- make language server aware of runtime files
+            library = {
+              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+              [vim.fn.stdpath("config") .. "/lua"] = true,
             },
           },
         },
       },
-    },
-    -- you can do any additional lsp server setup here
-    -- return true if you don't want this server to be setup with lspconfig
-    ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
-    setup = {
-      -- example to setup with typescript.nvim
-      -- tsserver = function(_, opts)
-      --   require("typescript").setup({ server = opts })
-      --   return true
-      -- end,
-      -- Specify * to use this function as a fallback for any server
-      -- ["*"] = function(server, opts) end,
-    },
-  },
-  ---@param opts PluginLspOpts
-  config = function(_, opts)
-
-    local register_capability = vim.lsp.handlers["client/registerCapability"]
-
-    vim.lsp.handlers["client/registerCapability"] = function(err, res, ctx)
-      local ret = register_capability(err, res, ctx)
-      local client_id = ctx.client_id
-      ---@type lsp.Client
-      local client = vim.lsp.get_client_by_id(client_id)
-      local buffer = vim.api.nvim_get_current_buf()
-      require("lazyvim.plugins.lsp.keymaps").on_attach(client, buffer)
-      return ret
-    end
-
-    -- diagnostics
-    local inlay_hint = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
-
-    vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
-
-    local servers = opts.servers
-    local has_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-    local capabilities = vim.tbl_deep_extend(
-      "force",
-      {},
-      vim.lsp.protocol.make_client_capabilities(),
-      has_cmp and cmp_nvim_lsp.default_capabilities() or {},
-      opts.capabilities or {}
-    )
-
-    local function setup(server)
-      local server_opts = vim.tbl_deep_extend("force", {
-        capabilities = vim.deepcopy(capabilities),
-      }, servers[server] or {})
-
-      if opts.setup[server] then
-        if opts.setup[server](server, server_opts) then
-          return
-        end
-      elseif opts.setup["*"] then
-        if opts.setup["*"](server, server_opts) then
-          return
-        end
-      end
-      require("lspconfig")[server].setup(server_opts)
-    end
-
-    -- get all the servers that are available through mason-lspconfig
-    local have_mason, mlsp = pcall(require, "mason-lspconfig")
-    local all_mslp_servers = {}
-    if have_mason then
-      all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
-    end
-
-    local ensure_installed = {} ---@type string[]
-    for server, server_opts in pairs(servers) do
-      if server_opts then
-        server_opts = server_opts == true and {} or server_opts
-        -- run manual setup if mason=false or if this is a server that cannot be installed with mason-lspconfig
-        if server_opts.mason == false or not vim.tbl_contains(all_mslp_servers, server) then
-          setup(server)
-        else
-          ensure_installed[#ensure_installed + 1] = server
-        end
-      end
-    end
-
-    if have_mason then
-      mlsp.setup({ ensure_installed = ensure_installed, handlers = { setup } })
-    end
-
+    })
   end,
 }
