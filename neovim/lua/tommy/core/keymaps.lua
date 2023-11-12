@@ -105,7 +105,9 @@ if vim.lsp.inlay_hint then
   vim.keymap.set("n", "<leader>uh", function() vim.lsp.inlay_hint(0, nil) end, { desc = "Toggle Inlay Hints" })
 end
 
-vim.keymap.set("n", "<leader>uT", function() if vim.b.ts_highlight then vim.treesitter.stop() else vim.treesitter.start() end end, { desc = "Toggle Treesitter Highlight" })
+vim.keymap.set("n", "<leader>uT",
+  function() if vim.b.ts_highlight then vim.treesitter.stop() else vim.treesitter.start() end end,
+  { desc = "Toggle Treesitter Highlight" })
 
 -- quit
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
@@ -192,4 +194,4 @@ vim.keymap.set("t", "<C-s>", "<C-\\><C-n>", { desc = "esc outside of insert mode
 -- This is for global selection
 vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Global selection" })
 
-vim.keymap.set({ "n", "i", "v", "o", "s", "x" }, "<C-c>", "<Esc>", { remap=true, desc = "Esc" })
+vim.keymap.set({ "n", "i", "v", "o", "s", "x" }, "<C-c>", "<Esc>", { remap = true, desc = "Esc" })
