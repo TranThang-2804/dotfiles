@@ -15,8 +15,9 @@ return {
     },
     {
       "<C-t>",
-      "<cmd>ToggleTerm direction=float<CR>",
+      "<cmd>68ToggleTerm direction=float<CR>",
       desc = "Open a float terminal",
+      mode = { "n", "x", "o", "i", "t", "s" },
     },
   },
 }
