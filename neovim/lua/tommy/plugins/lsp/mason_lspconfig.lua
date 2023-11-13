@@ -4,6 +4,7 @@ return {
     ensure_installed = {
       "gopls",
       "terraformls",
+      "tflint",
       "lua_ls"
     }
   }

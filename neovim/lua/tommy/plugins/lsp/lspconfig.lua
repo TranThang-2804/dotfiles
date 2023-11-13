@@ -86,5 +86,17 @@ return {
         },
       },
     })
+
+    -- configure lua server (with special settings)
+    lspconfig["terraformls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+    --
+    -- configure lua server (with special settings)
+    lspconfig["tflint"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
   end,
 }
