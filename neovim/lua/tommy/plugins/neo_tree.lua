@@ -13,7 +13,7 @@ return {
     {
       "<leader>fe",
       function()
-        require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd(), position = "float" })
+        require("neo-tree.command").execute({ reveal = true, toggle = true, dir = vim.loop.cwd(), position = "float" })
       end,
       desc = "Explorer NeoTree (cwd)",
     },
@@ -21,14 +21,14 @@ return {
     {
       "<leader>ge",
       function()
-        require("neo-tree.command").execute({ source = "git_status", toggle = true, position = "float" })
+        require("neo-tree.command").execute({ source = "git_status", reveal = true, toggle = true, position = "float" })
       end,
       desc = "Git explorer",
     },
     {
       "<leader>be",
       function()
-        require("neo-tree.command").execute({ source = "buffers", toggle = true, position = "float" })
+        require("neo-tree.command").execute({ source = "buffers", reveal = true, toggle = true, position = "float" })
       end,
       desc = "Buffer explorer",
     },
