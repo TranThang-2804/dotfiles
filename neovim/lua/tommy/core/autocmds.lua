@@ -93,20 +93,16 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   end,
 })
 
--- Init neovim scripts
-vim.api.nvim_create_autocmd("VimEnter", {
-  desc = "Open Neotree automatically",
-  group = augroup("neotree"),
-  callback = function()
-    -- open neotree
-    if vim.fn.argc(-1) == 1 then
-      local stat = vim.loop.fs_stat(vim.fn.argv(0))
-      if stat and stat.type == "directory" then
-        require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd(), action = "focus", position = "float" })
-      end
-    end
-
-    -- Choose colerscheme
-    vim.cmd([[colorscheme catppuccin]])
-  end,
-})
+-- vim.api.nvim_create_autocmd("UiEnter", {
+--   desc = "Open Neotree automatically",
+--   group = augroup("neotree"),
+--   callback = function()
+--     -- open neotree
+--     if vim.fn.argc(-1) == 1 then
+--       local stat = vim.loop.fs_stat(vim.fn.argv(0))
+--       if stat and stat.type == "directory" then
+--         require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd(), action = "focus", position = "float" })
+--       end
+--     end
+--   end,
+-- })

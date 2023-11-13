@@ -33,14 +33,14 @@ return {
       desc = "Buffer explorer",
     },
   },
-  -- init = function()
-  --   if vim.fn.argc(-1) == 1 then
-  --     local stat = vim.loop.fs_stat(vim.fn.argv(0))
-  --     if stat and stat.type == "directory" then
-  --       require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd(), action = "focus", position = "float" })
-  --     end
-  --   end
-  -- end,
+  init = function()
+    if vim.fn.argc(-1) == 1 then
+      local stat = vim.loop.fs_stat(vim.fn.argv(0))
+      if stat and stat.type == "directory" then
+        require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd(), position = "left" })
+      end
+    end
+  end,
   opts = {
     sources = { "filesystem", "buffers", "git_status", "document_symbols" },
     open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
