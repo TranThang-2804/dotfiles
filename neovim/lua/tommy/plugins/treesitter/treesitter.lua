@@ -72,6 +72,11 @@ return {
       "vim",
       "vimdoc",
       "yaml",
+      "terraform",
+      "go",
+      "rust",
+      "dockerfile",
+      "java",
     },
     incremental_selection = {
       enable = true,
