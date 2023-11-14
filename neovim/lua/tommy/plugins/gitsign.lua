@@ -19,7 +19,7 @@ return {
       virt_text_priority = 1000,
     },
     current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
-    sign_priority = 6,
+    sign_priority = 100,
     update_debounce = 100,
     status_formatter = nil,  -- Use default
     max_file_length = 40000, -- Disable if file is longer than this (in lines)
@@ -42,8 +42,8 @@ return {
       end
 
       -- stylua: ignore start
-      map("n", "]h", gs.next_hunk, "Next Hunk")
-      map("n", "[h", gs.prev_hunk, "Prev Hunk")
+      map("n", "<leader>jh", gs.next_hunk, "Next Hunk")
+      map("n", "<leader>kh", gs.prev_hunk, "Prev Hunk")
       map({ "n", "v" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
       map({ "n", "v" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
       map("n", "<leader>ghS", gs.stage_buffer, "Stage Buffer")
