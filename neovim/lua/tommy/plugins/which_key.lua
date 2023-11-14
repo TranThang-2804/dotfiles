@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   init = function()
     vim.o.timeout = true
-    vim.o.timeoutlen = 500
+    vim.o.timeoutlen = 1000
   end,
   opts = {
     plugins = { spelling = true },
@@ -22,6 +22,8 @@ return {
       ["<leader>q"] = { name = "+quit/session" },
       ["<leader>s"] = { name = "+search" },
       ["<leader>u"] = { name = "+ui" },
+      ["<leader>j"] = { name = "+next action" },
+      ["<leader>k"] = { name = "+prev action" },
       ["<leader>w"] = { name = "+windows" },
       ["<leader>x"] = { name = "+diagnostics/quickfix" },
     },

@@ -29,6 +29,14 @@ return {
         },
       },
     },
+    highlights = {
+      buffer_selected = {
+        fg = '#ffffff',
+        bg = '#5e0000',
+        bold = true,
+        italic = true,
+      }
+    }
   },
   config = function(_, opts)
     require("bufferline").setup(opts)
