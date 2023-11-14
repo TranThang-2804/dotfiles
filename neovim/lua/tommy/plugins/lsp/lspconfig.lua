@@ -92,11 +92,20 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
-    --
+
+
     -- configure lua server (with special settings)
     lspconfig["tflint"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+    })
+
+    -- configure dartls server (with special settings)
+    require("flutter-tools").setup({
+      lsp = {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      }
     })
   end,
 }
