@@ -183,10 +183,10 @@ vim.keymap.set({ "n", "v", "x" }, "c", '"_c', {})
 vim.keymap.set({ "n", "v", "x" }, "D", '"*d', { desc = "This is used for cutting text to clipboard" })
 
 -- This is for resizing window MacOS specific
-vim.keymap.set("n", "˚", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-vim.keymap.set("n", "∆", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-vim.keymap.set("n", "˙", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-vim.keymap.set("n", "¬", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+vim.keymap.set({ "n", "t" }, "˚", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+vim.keymap.set({ "n", "t" }, "∆", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+vim.keymap.set({ "n", "t" }, "˙", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+vim.keymap.set({ "n", "t" }, "¬", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- This is for global config for terminal mode
 vim.keymap.set("t", "<C-s>", "<C-\\><C-n>", { desc = "esc outside of insert mode in terminal to navigate" })
