@@ -5,7 +5,9 @@ return {
       "gopls",
       "terraformls",
       "tflint",
-      "lua_ls"
+      "lua_ls",
+      "tsserver",
+      "eslint",
     }
   }
 }

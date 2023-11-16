@@ -19,10 +19,10 @@ return {
       keymap.set("n", "<leader>cR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
       opts.desc = "Go to declaration"
-      keymap.set("n", "<leader>cD", vim.lsp.buf.declaration, opts) -- go to declaration
+      keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
 
       opts.desc = "Show LSP definitions"
-      keymap.set("n", "<leader>cd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+      keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
 
       opts.desc = "Show LSP implementations"
       keymap.set("n", "<leader>ci", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
@@ -37,7 +37,7 @@ return {
       keymap.set("n", "<leader>crn", vim.lsp.buf.rename, opts) -- smart rename
 
       opts.desc = "Show buffer diagnostics"
-      keymap.set("n", "<leader>cD", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+      keymap.set("n", "<leader>cD", "<cmd>Telescope diagnostics bufnr=1<CR>", opts) -- show  diagnostics for file
 
       opts.desc = "Show line diagnostics"
       keymap.set("n", "<leader>cd", vim.diagnostic.open_float, opts) -- show diagnostics for line
@@ -96,6 +96,17 @@ return {
       on_attach = on_attach,
     })
 
+    -- configure ts server (with special settings)
+    lspconfig["tsserver"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- configure eslint server (with special settings)
+    lspconfig["eslint"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
 
     -- configure lua server (with special settings)
     lspconfig["tflint"].setup({
