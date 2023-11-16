@@ -121,5 +121,13 @@ return {
         on_attach = on_attach,
       }
     })
+
+    -- configure java server (with special settings)
+    lspconfig["java_language_server"].setup({
+      lsp = {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      }
+    })
   end,
 }

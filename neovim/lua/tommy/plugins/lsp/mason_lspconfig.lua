@@ -8,6 +8,7 @@ return {
       "lua_ls",
       "tsserver",
       "eslint",
+      "java_language_server",
     }
   }
 }
