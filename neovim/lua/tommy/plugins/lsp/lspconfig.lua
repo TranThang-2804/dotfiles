@@ -43,7 +43,7 @@ return {
       keymap.set("n", "<leader>cd", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
       opts.desc = "Go to previous diagnostic"
-      keymap.set("n", "<leader>kd", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
+      keymap.set("n", "<leader>kd", vim.diagnostic.goto_prev, opts)    -- jump to previous diagnostic in buffer
 
       opts.desc = "Go to next diagnostic"
       keymap.set("n", "<leader>jd", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
@@ -68,6 +68,14 @@ return {
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
+
+    -- configure java server (with special settings)
+    lspconfig["java_language_server"].setup({
+      lsp = {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      }
+    })
 
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup({
@@ -116,14 +124,6 @@ return {
 
     -- configure dartls server (with special settings)
     require("flutter-tools").setup({
-      lsp = {
-        capabilities = capabilities,
-        on_attach = on_attach,
-      }
-    })
-
-    -- configure java server (with special settings)
-    lspconfig["java_language_server"].setup({
       lsp = {
         capabilities = capabilities,
         on_attach = on_attach,
