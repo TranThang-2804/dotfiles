@@ -43,7 +43,7 @@ return {
       keymap.set("n", "<leader>cd", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
       opts.desc = "Go to previous diagnostic"
-      keymap.set("n", "<leader>kd", vim.diagnostic.goto_prev, opts)    -- jump to previous diagnostic in buffer
+      keymap.set("n", "<leader>kd", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
 
       opts.desc = "Go to next diagnostic"
       keymap.set("n", "<leader>jd", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
@@ -118,6 +118,13 @@ return {
 
     -- configure lua server (with special settings)
     lspconfig["tflint"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+
+    -- configure go server (with special settings)
+    lspconfig["gopls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
