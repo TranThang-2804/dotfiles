@@ -1,6 +1,5 @@
 return {
   "neovim/nvim-lspconfig",
-  event = { "BufReadPre", "BufNewFile" },
   config = function()
     -- import lspconfig plugin
     local lspconfig = require("lspconfig")
@@ -69,13 +68,31 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    -- configure java server (with special settings)
-    lspconfig["java_language_server"].setup({
-      lsp = {
+    local language_servers = {
+      "gopls",
+      "terraformls",
+      "tflint",
+      "eslint",
+      "tsserver",
+      "yamlls",
+      "lua_ls",
+      "java_language_server",
+    }
+
+    local servers = lspconfig.util.available_servers()
+
+    for _, lsp in ipairs(language_servers) do
+      lspconfig[lsp].setup({
         capabilities = capabilities,
         on_attach = on_attach,
-      }
-    })
+      })
+    end
+
+    -- -- configure java server (with special settings)
+    -- lspconfig["java_language_server"].setup({
+    --     capabilities = capabilities,
+    --     on_attach = on_attach,
+    -- })
 
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup({
@@ -96,37 +113,6 @@ return {
           },
         },
       },
-    })
-
-    -- configure lua server (with special settings)
-    lspconfig["terraformls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    -- configure ts server (with special settings)
-    lspconfig["tsserver"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    -- configure eslint server (with special settings)
-    lspconfig["eslint"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    -- configure lua server (with special settings)
-    lspconfig["tflint"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-
-    -- configure go server (with special settings)
-    lspconfig["gopls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
     })
 
     -- configure dartls server (with special settings)
