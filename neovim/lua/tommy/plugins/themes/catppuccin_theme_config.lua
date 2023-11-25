@@ -33,7 +33,13 @@ return {
       types = {},
       operators = {},
     },
-    color_overrides = {},
+    color_overrides = {
+      mocha = {
+        base = "#010c14",
+        mantle = "#02111c",
+        crust = "#000000",
+      }
+    },
     custom_highlights = {},
     integrations = {
       cmp = true,
