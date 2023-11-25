@@ -182,6 +182,8 @@ vim.keymap.set({ "n", "v", "x" }, "c", '"_c', { desc = "Change option and send d
 
 vim.keymap.set({ "n", "v", "x" }, "D", '"*d', { desc = "Cut the selection" })
 
+vim.keymap.set({ "n", "v", "x" }, "<leader>d", "0\"_d$", { desc = "Delete content of the line" })
+
 -- This is for resizing window MacOS specific
 vim.keymap.set({ "n", "t" }, "˚", "<cmd>resize +2<cr>", { desc = "Increase window height" })
 vim.keymap.set({ "n", "t" }, "∆", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
@@ -193,5 +195,3 @@ vim.keymap.set("t", "<C-s>", "<C-\\><C-n>", { desc = "esc outside of insert mode
 
 -- This is for global selection
 vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Global selection" })
-
-vim.keymap.set({ "n", "i", "v", "o", "s", "x" }, "<C-c>", "<Esc>", { remap = true, desc = "Esc" })
