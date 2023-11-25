@@ -167,20 +167,20 @@ vim.keymap.set("x", "<Tab>", ">gv", { desc = "Tab indent selection to the right"
 vim.keymap.set("x", "<S-Tab>", "<gv", { desc = "Tab indent selection to the left" })
 
 -- This is for delete change, replace action to be do under _ registry
-vim.keymap.set({ "n" }, "p", '"*p', {})
-vim.keymap.set({ "n" }, "P", '"*P', {})
+vim.keymap.set({ "n" }, "p", '"*p', { desc = "Paste from clipboard to the right of cursor" })
+vim.keymap.set({ "n" }, "P", '"*P', { desc = "Paste from clipboard to the left of cursor" })
 
-vim.keymap.set({ "x", "v" }, "p", '"*p', {})
-vim.keymap.set({ "x", "v" }, "P", '"*P', {})
+-- Greatest keymap ever for VsCode like copy and paste
+vim.keymap.set({ "x", "v" }, "p", "\"_dP", { desc = "Paste from clipboard overwrite the selection" })
 
-vim.keymap.set({ "n", "x", "v" }, "y", '"*y', {})
-vim.keymap.set({ "n", "x", "v" }, "Y", '"*Y', {})
+vim.keymap.set({ "n", "x", "v" }, "y", '"*y', { desc = "Yank to clipboard" })
 
-vim.keymap.set({ "n", "v", "x" }, "r", '"_r', {})
-vim.keymap.set({ "n", "v", "x" }, "d", '"_d', {})
-vim.keymap.set({ "n", "v", "x" }, "x", '"_x', {})
-vim.keymap.set({ "n", "v", "x" }, "c", '"_c', {})
-vim.keymap.set({ "n", "v", "x" }, "D", '"*d', { desc = "This is used for cutting text to clipboard" })
+vim.keymap.set({ "n", "v", "x" }, "r", '"_r', { desc = "Replace and send deleted char to blackhole register" })
+vim.keymap.set({ "n", "v", "x" }, "d", '"_d', { desc = "Delete to blackhole register" })
+vim.keymap.set({ "n", "v", "x" }, "x", '"_x', { desc = "Delete current character under cursor to blackhole register" })
+vim.keymap.set({ "n", "v", "x" }, "c", '"_c', { desc = "Change option and send deleted strings to blackhole register" })
+
+vim.keymap.set({ "n", "v", "x" }, "D", '"*d', { desc = "Cut the selection" })
 
 -- This is for resizing window MacOS specific
 vim.keymap.set({ "n", "t" }, "˚", "<cmd>resize +2<cr>", { desc = "Increase window height" })
