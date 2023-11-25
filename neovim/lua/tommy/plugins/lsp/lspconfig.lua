@@ -79,8 +79,6 @@ return {
       "java_language_server",
     }
 
-    local servers = lspconfig.util.available_servers()
-
     for _, lsp in ipairs(language_servers) do
       lspconfig[lsp].setup({
         capabilities = capabilities,
