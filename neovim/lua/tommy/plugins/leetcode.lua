@@ -15,7 +15,7 @@ return {
     arg = "leetcode",
 
     ---@type lc.lang
-    lang = "golang",
+    lang = "c",
 
     cn = { -- leetcode.cn
       enabled = false, ---@type boolean
