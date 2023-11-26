@@ -1,6 +1,9 @@
+local leet_arg = "leetcode"
+
 return {
   "kawre/leetcode.nvim",
   build = ":TSUpdate html",
+  lazy = leet_arg ~= vim.fn.argv()[1],
   dependencies = {
     "nvim-telescope/telescope.nvim",
     "nvim-lua/plenary.nvim", -- required by telescope
@@ -12,7 +15,7 @@ return {
   },
   opts = {
     ---@type string
-    arg = "leetcode",
+    arg = leet_arg,
 
     ---@type lc.lang
     lang = "c",
@@ -73,14 +76,14 @@ return {
     ---@type boolean
     image_support = false, -- setting this to `true` will disable question description wrap
   },
-  keys = {
-    { "<leader>lt", "<cmd>Leet tabs<cr>",    desc = "Open question lists" },
-    { "<leader>lc", "<cmd>Leet console<cr>", desc = "Open console" },
-    { "<leader>li", "<cmd>Leet info<cr>",    desc = "Open question info" },
-    { "<leader>ls", "<cmd>Leet submit<cr>",  desc = "Submit the answer" },
-    { "<leader>lr", "<cmd>Leet random<cr>",  desc = "Select a random question" },
-    { "<leader>ld", "<cmd>Leet desc<cr>",    desc = "Toggle question description" },
-    { "<leader>ll", "<cmd>Leet lang<cr>",    desc = "Select language question" },
-    { "<leader>lm", "<cmd>Leet menu<cr>",    desc = "Go to menu page" },
-  }
+  -- keys = {
+  --   { "<leader>lt", "<cmd>Leet tabs<cr>",    desc = "Open question lists" },
+  --   { "<leader>lc", "<cmd>Leet console<cr>", desc = "Open console" },
+  --   { "<leader>li", "<cmd>Leet info<cr>",    desc = "Open question info" },
+  --   { "<leader>ls", "<cmd>Leet submit<cr>",  desc = "Submit the answer" },
+  --   { "<leader>lr", "<cmd>Leet random<cr>",  desc = "Select a random question" },
+  --   { "<leader>ld", "<cmd>Leet desc<cr>",    desc = "Toggle question description" },
+  --   { "<leader>ll", "<cmd>Leet lang<cr>",    desc = "Select language question" },
+  --   { "<leader>lm", "<cmd>Leet menu<cr>",    desc = "Go to menu page" },
+  -- }
 }

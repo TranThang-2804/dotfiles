@@ -196,3 +196,13 @@ vim.keymap.set("t", "<C-s>", "<C-\\><C-n>", { desc = "esc outside of insert mode
 
 -- This is for global selection
 vim.keymap.set({ "n", "i", "v", "c", "x" }, "<C-a>", "ggVG", { desc = "Global selection" })
+
+
+vim.keymap.set({ "n", "i", "v", "c", "x" }, "<leader>lt", "<cmd>Leet tabs<cr>", { desc = "Open question lists" })
+vim.keymap.set({ "n", "i", "v", "c", "x" }, "<leader>lc", "<cmd>Leet console<cr>", { desc = "Open console" })
+vim.keymap.set({ "n", "i", "v", "c", "x" }, "<leader>li", "<cmd>Leet info<cr>", { desc = "Open question info" })
+vim.keymap.set({ "n", "i", "v", "c", "x" }, "<leader>ls", "<cmd>Leet submit<cr>", { desc = "Submit the answer" })
+vim.keymap.set({ "n", "i", "v", "c", "x" }, "<leader>lr", "<cmd>Leet random<cr>", { desc = "Select a random question" })
+vim.keymap.set({ "n", "i", "v", "c", "x" }, "<leader>ld", "<cmd>Leet desc<cr>", { desc = "Toggle question description" })
+vim.keymap.set({ "n", "i", "v", "c", "x" }, "<leader>ll", "<cmd>Leet lang<cr>", { desc = "Select language question" })
+vim.keymap.set({ "n", "i", "v", "c", "x" }, "<leader>lm", "<cmd>Leet menu<cr>", { desc = "Go to menu page" })
