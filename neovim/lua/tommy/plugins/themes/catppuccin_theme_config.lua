@@ -36,17 +36,17 @@ return {
     color_overrides = {
       mocha = {
         base = "#010c14",
-        mantle = "#02111c",
-        crust = "#000000",
+        mantle = "#010c14",
+        crust = "#9d9fa3",
       }
     },
     custom_highlights = {},
     integrations = {
       cmp = true,
       gitsigns = true,
-      nvimtree = true,
+      neotree = true,
       treesitter = true,
-      notify = false,
+      which_key = true,
       mini = {
         enabled = true,
         indentscope_color = "",
