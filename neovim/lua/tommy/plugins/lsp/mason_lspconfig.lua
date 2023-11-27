@@ -9,6 +9,7 @@ return {
       "tsserver",
       "eslint",
       "java_language_server",
+      "clangd"
     }
   }
 }
