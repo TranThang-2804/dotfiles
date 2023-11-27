@@ -77,6 +77,7 @@ return {
       "yamlls",
       "lua_ls",
       "java_language_server",
+      "clangd"
     }
 
     for _, lsp in ipairs(language_servers) do
