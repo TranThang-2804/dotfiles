@@ -187,8 +187,7 @@ vim.keymap.set({ "n", "t" }, "¬", "<cmd>vertical resize +2<cr>", { desc = "Incr
 vim.keymap.set("t", "<C-s>", "<C-\\><C-n>", { desc = "esc outside of insert mode in terminal to navigate" })
 
 -- This is for global selection
-vim.keymap.set({ "n" }, "<C-a>", "ggVG", { desc = "Global selection" })
-
+vim.keymap.set({ "n", "i" }, "<C-a>", function() vim.cmd("normal! ggVG") end, { desc = "Global selection" })
 
 vim.keymap.set({ "n", "v", "x" }, "<leader>lt", "<cmd>Leet tabs<cr>", { desc = "Open question lists" })
 vim.keymap.set({ "n", "v", "x" }, "<leader>lc", "<cmd>Leet console<cr>", { desc = "Open console" })
