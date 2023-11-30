@@ -1,15 +1,5 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
--- Enable LazyVim auto format
-vim.g.autoformat = true
-
--- LazyVim root dir detection
--- Each entry can be:
--- * the name of a detector function like `lsp` or `cwd`
--- * a pattern or array of patterns like `.git` or `lua`.
--- * a function with signature `function(buf) -> string|string[]`
-vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
+-- Update Esc key to another key that is easier to reach
+vim.keymap.set({ "n", "v", "x", "i", "c", "t" }, "<C-;>", "<Esc>", { desc = "Esc" })
 
 -- Move to window using the <ctrl> hjkl keys
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
