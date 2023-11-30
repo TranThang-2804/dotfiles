@@ -92,18 +92,3 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
 })
-
-vim.api.nvim_create_autocmd("VimEnter", {
-  desc = "Open dashboard automatically",
-  group = augroup("dashboard"),
-  callback = function()
-    require("dashboard")
-    -- open neotree
-    if vim.fn.argc(-1) == 1 then
-      local stat = vim.loop.fs_stat(vim.fn.argv(0))
-      if stat and stat.type == "directory" then
-        vim.cmd("Dashboard")
-      end
-    end
-  end,
-})
