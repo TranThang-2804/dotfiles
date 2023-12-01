@@ -13,7 +13,7 @@ return {
       desc = "Switch Buffer",
     },
     { "<leader>:",       "<cmd>Telescope command_history<cr>",                          desc = "Command History" },
-    { "<leader><space>", "<cmd>Telescope find_files<cr>",                               desc = "Find Files (cwd dir)" },
+    { "<leader><space>", "<cmd>Telescope fd<cr>",                                       desc = "Find Files (cwd dir)" },
     -- find
     { "<leader>fb",      "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
     { "<leader>fc",      "<cmd>Telescope grep_string<cr>",                              desc = "Find Config File" },
@@ -54,6 +54,15 @@ return {
           },
         },
       },
+      extensions = {
+        fzf = {
+          fuzzy = true,                   -- false will only do exact matching
+          override_generic_sorter = true, -- override the generic sorter
+          override_file_sorter = true,    -- override the file sorter
+          case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
+          -- the default case_mode is "smart_case"
+        }
+      }
     })
 
     telescope.load_extension("fzf")
