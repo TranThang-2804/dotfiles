@@ -1,3 +1,6 @@
+-- Update Esc key to another key that is easier to reach
+vim.keymap.set({ "n", "v", "x", "i", "c", "t" }, "<C-;>", "<Esc>", { desc = "Esc", remap = true })
+
 -- Move to window using the <ctrl> hjkl keys
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
