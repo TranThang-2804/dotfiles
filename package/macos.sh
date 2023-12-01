@@ -19,3 +19,4 @@ brew install zsh-syntax-highlighting
 
 brew install fd
 brew install fzf
+brew install ripgrep
