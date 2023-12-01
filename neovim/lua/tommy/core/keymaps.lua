@@ -1,6 +1,3 @@
--- Update Esc key to another key that is easier to reach
-vim.keymap.set({ "n", "v", "x", "i", "c", "t" }, "<C-;>", "<Esc>", { desc = "Esc", remap = true })
-
 -- Move to window using the <ctrl> hjkl keys
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
@@ -107,7 +104,7 @@ vim.keymap.set("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
 
 -- windows
 vim.keymap.set("n", "<leader>ww", "<C-W>p", { desc = "Other window", remap = true })
-vim.keymap.set("n", "<leader>wd", "<C-W>c", { desc = "Delete window", remap = true })
+vim.keymap.set("n", "<leader>wq", "<C-W>c", { desc = "Delete window", remap = true })
 vim.keymap.set("n", "<leader>w-", "<C-W>s", { desc = "Split window below", remap = true })
 vim.keymap.set("n", "<leader>w|", "<C-W>v", { desc = "Split window right", remap = true })
 vim.keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split window below", remap = true })
@@ -124,12 +121,6 @@ vim.keymap.set("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous
 -- Navigate
 vim.keymap.set("n", "j", "jzz", { desc = "Go down and center" })
 vim.keymap.set("n", "k", "kzz", { desc = "Go up and center" })
-
--- Navigate buffer page vertical
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { remap = true, desc = "Go up and center" })
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { remap = true, desc = "Go down and center" })
-vim.keymap.set("n", "<C-y>", "<C-y>zz", { remap = true, desc = "Go down and center" })
-vim.keymap.set("n", "<C-e>", "<C-e>zz", { remap = true, desc = "Go up and center" })
 
 -- Navigate buffer page horizontal
 vim.keymap.set("n", "<C-i>", "4zl", { remap = true, desc = "Scrol tab/buffer to the right" })
