@@ -57,6 +57,10 @@ opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5                -- Minimum window width
 opt.wrap = false                   -- Disable line wrap
 -- opt.virtualedit = "all"            -- Allow cursor to move where there is no text in all modes
+
+opt.swapfile = false -- No swap file
+opt.backup = false   -- No backup file
+
 opt.fillchars = {
   foldopen = "",
   foldclose = "",

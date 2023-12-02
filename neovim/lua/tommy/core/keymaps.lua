@@ -1,8 +1,8 @@
 -- Change Esc to another keymap
-vim.keymap.set({ "n", "i", "v", "x", "o", "s", "!" }, "<C-;>", "<esc>",
-  { silent = true, remap = false, desc = "Esc" })
-vim.keymap.set({ "t" }, "<C-;><C-;>", "<c-\\><c-n>", { silent = true, remap = false, desc = "Esc" })
-vim.keymap.set({ "c" }, "<C-;>", "<C-c>", { silent = true, remap = false, desc = "Esc" })
+vim.keymap.set({ "v", "x", "o", "s", "!" }, "<C-;>", "<Esc>", { silent = true, remap = false, desc = "Esc" })
+vim.keymap.set({ "i", "n" }, "<C-;>", "<cmd>noh<cr><esc>", { silent = true, remap = false, desc = "Esc" })
+vim.keymap.set("t", "<C-;><C-;>", "<c-\\><c-n>", { silent = true, remap = false, desc = "Esc" })
+vim.keymap.set("c", "<C-;>", "<C-c>", { silent = true, remap = false, desc = "Esc" })
 
 -- Move to window using the <ctrl> hjkl keys
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
