@@ -1,4 +1,4 @@
--- Change Esc to <C-;> keymap
+-- Change Esc to <C-o> keymap
 vim.keymap.set({ "v", "x", "o", "s", "!" }, "<C-o>", "<Esc>", { silent = true, remap = true, desc = "Esc" })
 vim.keymap.set({ "i", "n" }, "<C-o>", "<cmd>noh<cr><esc>", { silent = true, remap = true, desc = "Esc" })
 vim.keymap.set("t", "<C-o><C-o>", "<c-\\><c-n>", { silent = true, remap = false, desc = "Esc" })
