@@ -1,4 +1,4 @@
--- Change Esc to another keymap
+-- Change Esc to <C-;> keymap
 vim.keymap.set({ "v", "x", "o", "s", "!" }, "<C-;>", "<Esc>", { silent = true, remap = false, desc = "Esc" })
 vim.keymap.set({ "i", "n" }, "<C-;>", "<cmd>noh<cr><esc>", { silent = true, remap = false, desc = "Esc" })
 vim.keymap.set("t", "<C-;><C-;>", "<c-\\><c-n>", { silent = true, remap = false, desc = "Esc" })
@@ -21,8 +21,8 @@ vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
 vim.keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
 vim.keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
 vim.keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
-vim.keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
-vim.keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- Clear search with <esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
