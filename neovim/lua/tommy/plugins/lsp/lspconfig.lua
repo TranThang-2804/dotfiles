@@ -111,10 +111,10 @@ return {
 
     -- configure java server (with special settings)
     lspconfig["jdtls"].setup({
-      cmd = { 'jdtls' },
-      root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
       capabilities = capabilities,
       on_attach = on_attach,
+      cmd = { 'jdtls' },
+      -- root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
     })
 
     -- configure dartls server (with special settings)
