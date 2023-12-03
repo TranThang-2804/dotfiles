@@ -76,8 +76,9 @@ return {
       "tsserver",
       "yamlls",
       "lua_ls",
-      "java_language_server",
-      "clangd"
+      "docker_compose_language_service",
+      "dockerls",
+      "clangd",
     }
 
     for _, lsp in ipairs(language_servers) do
@@ -106,6 +107,14 @@ return {
           },
         },
       },
+    })
+
+    -- configure java server (with special settings)
+    lspconfig["jdtls"].setup({
+      cmd = { 'jdtls' },
+      root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
+      capabilities = capabilities,
+      on_attach = on_attach,
     })
 
     -- configure dartls server (with special settings)

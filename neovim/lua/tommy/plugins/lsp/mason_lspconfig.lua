@@ -8,8 +8,10 @@ return {
       "lua_ls",
       "tsserver",
       "eslint",
-      "java_language_server",
-      "clangd"
+      "clangd",
+      "jdtls",
+      "docker_compose_language_service",
+      "dockerls",
     }
   }
 }
