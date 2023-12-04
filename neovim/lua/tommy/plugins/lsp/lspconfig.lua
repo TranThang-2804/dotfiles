@@ -79,6 +79,7 @@ return {
       "docker_compose_language_service",
       "dockerls",
       "clangd",
+      "yamlls",
     }
 
     for _, lsp in ipairs(language_servers) do
