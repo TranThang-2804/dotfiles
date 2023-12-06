@@ -33,14 +33,17 @@ return {
       desc = "Buffer explorer",
     },
   },
-  -- init = function()
-  --   if vim.fn.argc(-1) == 1 then
-  --     local stat = vim.loop.fs_stat(vim.fn.argv(0))
-  --     if stat and stat.type == "directory" then
-  --       require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd(), position = "float" })
-  --     end
-  --   end
-  -- end,
+  deactivate = function()
+    vim.cmd([[Neotree close]])
+  end,
+  init = function()
+    if vim.fn.argc(-1) == 1 then
+      local stat = vim.loop.fs_stat(vim.fn.argv(0))
+      if stat and stat.type == "directory" then
+        require("neo-tree")
+      end
+    end
+  end,
   opts = {
     close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
     popup_border_style = "rounded",
@@ -52,6 +55,8 @@ return {
       },
     },
     filesystem = {
+      follow_current_file = { enabled = true },
+      use_libuv_file_watcher = true,
       filtered_items = {
         visible = true,
         show_hidden_count = true,
@@ -74,4 +79,15 @@ return {
       },
     },
   },
+  config = function(_, opts)
+    require("neo-tree").setup(opts)
+    vim.api.nvim_create_autocmd("TermClose", {
+      pattern = "*lazygit",
+      callback = function()
+        if package.loaded["neo-tree.sources.git_status"] then
+          require("neo-tree.sources.git_status").refresh()
+        end
+      end,
+    })
+  end,
 }
