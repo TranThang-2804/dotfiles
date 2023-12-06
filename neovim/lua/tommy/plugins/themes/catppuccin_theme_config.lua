@@ -3,7 +3,7 @@ return {
   name = "catppuccin",
   priority = 1000,
   opts = {
-    flavour = "frappe", -- latte, frappe, macchiato, mocha
+    flavour = "macchiato", -- latte, frappe, macchiato, mocha
     background = {     -- :h background
       light = "latte",
       dark = "frappe",
@@ -39,10 +39,10 @@ return {
         -- mantle = "#422b11",
         crust = "#5756a8",
       },
-      mocha = {
-        -- base = "#010c14",
+      macchiato = {
+        base = "#010c14",
         -- mantle = "#422b11",
-        -- crust = "#5756a8",
+        crust = "#5756a8",
       }
     },
     custom_highlights = {},
