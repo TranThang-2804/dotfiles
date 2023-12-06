@@ -3,10 +3,10 @@ return {
   name = "catppuccin",
   priority = 1000,
   opts = {
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    flavour = "frappe", -- latte, frappe, macchiato, mocha
     background = {     -- :h background
       light = "latte",
-      dark = "mocha",
+      dark = "frappe",
     },
     transparent_background = false, -- disables setting the background color.
     show_end_of_buffer = true,      -- shows the '~' characters after the end of buffers
@@ -34,10 +34,15 @@ return {
       operators = {},
     },
     color_overrides = {
-      mocha = {
+      frappe = {
         base = "#010c14",
-        mantle = "#422b11",
+        -- mantle = "#422b11",
         crust = "#5756a8",
+      },
+      mocha = {
+        -- base = "#010c14",
+        -- mantle = "#422b11",
+        -- crust = "#5756a8",
       }
     },
     custom_highlights = {},
