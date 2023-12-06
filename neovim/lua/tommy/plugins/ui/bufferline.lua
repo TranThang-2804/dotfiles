@@ -23,13 +23,13 @@ return {
       -- diagnostics = "nvim_lsp",
       always_show_bufferline = false,
     },
-    -- highlights = {
-    --   buffer_selected = {
-    --     fg = '#ffffff',
-    --     bg = '#5e0000',
-    --     bold = true,
-    --     italic = true,
-    --   }
-    -- }
+    highlights = {
+      buffer_selected = {
+        fg = '#ffffff',
+        bg = '#5e0000',
+        bold = true,
+        italic = true,
+      }
+    }
   },
 }
