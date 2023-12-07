@@ -116,7 +116,6 @@ if [ -f '/Users/tranthang/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then
 
 # Adding binary path
 export PATH="$PATH:/Users/tranthang/Documents/development/flutter/bin"
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # Alias
 source ~/.alias
@@ -124,6 +123,14 @@ source ~/.alias
 # Set auto suggestion syntax highlight
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
 
-# Enable auto suggestion
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Mac specific
+
+
+if [[ "$(uname)" == "Darwin" && $INSTALL_PACKAGE == "all" ]]; then
+	# Action for macOS
+  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+  # Enable auto suggestion
+  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
