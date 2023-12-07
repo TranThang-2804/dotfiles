@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 # Install apt packages
-apt update
-apt install curl git gcc -y
+sudo apt update
+sudo apt install curl git gcc -y
 
 # Install Lazygit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
