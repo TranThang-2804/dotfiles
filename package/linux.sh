@@ -3,6 +3,7 @@
 # Install apt packages
 sudo apt update
 sudo apt install curl git gcc -y
+sudo apt install tmux -y
 
 # Install Lazygit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
@@ -12,7 +13,7 @@ sudo install lazygit /usr/local/bin
 
 # Install nerd-fonts
 sudo mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
+cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts
 ./install.sh
 
 # Install Neovim
