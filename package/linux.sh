@@ -4,6 +4,9 @@
 sudo apt update
 sudo apt install curl git gcc -y
 sudo apt install tmux -y
+sudo apt install zsh -y
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install Lazygit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
