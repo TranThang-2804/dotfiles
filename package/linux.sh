@@ -13,7 +13,8 @@ sudo install lazygit /usr/local/bin
 
 # Install nerd-fonts
 sudo mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts
+cd ~/.local/share/fonts && git clone --depth=1 https://github.com/ryanoasis/nerd-fonts
+cd ~/.local/share/fonts/nerd-fonts
 ./install.sh
 
 # Install Neovim
