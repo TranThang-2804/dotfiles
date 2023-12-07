@@ -16,9 +16,4 @@ cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw
 ./install.sh
 
 # Install Neovim
-mkdir -p /initialize/installed-package
-cd /initialize/installed-package
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-./nvim.appimage --appimage-extract
-cp -s /initialize/installed-package/squashfs-root/usr/bin/nvim /bin/nvim
+sudo snap install nvim --classic
