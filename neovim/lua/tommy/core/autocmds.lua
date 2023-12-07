@@ -92,3 +92,15 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
 })
+
+-- -- This function triggered when detected a git conflict
+-- vim.api.nvim_create_autocommand('User', {
+--   pattern = 'GitConflictDetected',
+--   callback = function()
+--     vim.notify('Conflict detected in '..vim.fn.expand('<afile>'))
+--     vim.keymap.set('n', 'cww', function()
+--       engage.conflict_buster()
+--       create_buffer_local_mappings()
+--     end)
+--   end
+-- })
