@@ -40,7 +40,7 @@ return {
         crust = "#5756a8",
       },
       macchiato = {
-        base = "#010c14",
+        base = "#000000",
         -- mantle = "#422b11",
         crust = "#5756a8",
       }
