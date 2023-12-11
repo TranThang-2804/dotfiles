@@ -13,7 +13,7 @@ return {
     {
       "<leader>fe",
       function()
-        require("neo-tree.command").execute({ reveal = true, toggle = true, dir = vim.loop.cwd(), position = "float" })
+        require("neo-tree.command").execute({ reveal = true, toggle = true, dir = vim.loop.cwd(), position = "left" })
       end,
       desc = "Explorer NeoTree (cwd)",
     },
@@ -21,14 +21,14 @@ return {
     {
       "<leader>ge",
       function()
-        require("neo-tree.command").execute({ source = "git_status", reveal = true, toggle = true, position = "float" })
+        require("neo-tree.command").execute({ source = "git_status", reveal = true, toggle = true, position = "left" })
       end,
       desc = "Git explorer",
     },
     {
       "<leader>be",
       function()
-        require("neo-tree.command").execute({ source = "buffers", reveal = true, toggle = true, position = "float" })
+        require("neo-tree.command").execute({ source = "buffers", reveal = true, toggle = true, position = "left" })
       end,
       desc = "Buffer explorer",
     },
@@ -41,9 +41,7 @@ return {
       local stat = vim.loop.fs_stat(vim.fn.argv(0))
       if stat and stat.type == "directory" then
         -- Activate 3 times so the cursor can be focus to the neo tree popup
-        require("neo-tree.command").execute({ reveal = false, toggle = true, dir = vim.loop.cwd(), position = "float" })
-        require("neo-tree.command").execute({ reveal = false, toggle = true, dir = vim.loop.cwd(), position = "float" })
-        require("neo-tree.command").execute({ reveal = true, toggle = true, dir = vim.loop.cwd(), position = "float" })
+        require("neo-tree.command").execute({ reveal = false, toggle = true, dir = vim.loop.cwd(), position = "left" })
       end
     end
   end,
