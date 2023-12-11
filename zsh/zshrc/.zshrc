@@ -134,7 +134,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
 # Mac specific
 
 
-if [[ "$(uname)" == "Darwin" && $INSTALL_PACKAGE == "all" ]]; then
+if [[ "$(uname)" == "Darwin" ]]; then
 	# Action for macOS
   export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
   # Enable auto suggestion
