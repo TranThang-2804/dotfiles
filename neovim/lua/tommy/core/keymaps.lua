@@ -162,8 +162,10 @@ vim.keymap.set({ "n", "v", "x" }, "c", '"_c', { desc = "Change option and send d
 
 vim.keymap.set({ "n", "v", "x" }, "D", '"*d', { desc = "Cut the selection" })
 
-vim.keymap.set({ "n" }, "dl", "0\"_d$", { desc = "Delete content of the line but keep the line exists" })
-vim.keymap.set({ "n" }, "Dl", "0\"*d$", { desc = "Cut content of the line but keep the line exists" })
+vim.keymap.set({ "n" }, "<leader>id", "0\"_d$", { desc = "Delete content of the line but keep the line exists" })
+vim.keymap.set({ "n" }, "<leader>iD", "0\"*d$", { desc = "Cut content of the line but keep the line exists" })
+ 
+vim.keymap.set({ "n" }, "<leader>iy", "0y$", { desc = "Copy the content of a line" })
 
 -- This is for resizing window MacOS specific
 vim.keymap.set({ "n", "t" }, "˚", "<cmd>resize +2<cr>", { desc = "Increase window height" })
