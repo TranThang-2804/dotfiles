@@ -40,7 +40,6 @@ return {
     if vim.fn.argc(-1) == 1 then
       local stat = vim.loop.fs_stat(vim.fn.argv(0))
       if stat and stat.type == "directory" then
-        -- Activate 3 times so the cursor can be focus to the neo tree popup
         require("neo-tree.command").execute({ reveal = false, toggle = true, dir = vim.loop.cwd(), position = "left" })
       end
     end
