@@ -40,10 +40,10 @@ return {
     if vim.fn.argc(-1) == 1 then
       local stat = vim.loop.fs_stat(vim.fn.argv(0))
       if stat and stat.type == "directory" then
-        require("neo-tree.command").execute({ reveal = false, toggle = true, dir = vim.loop.cwd(), position = "float" })
+        require("neo-tree.command").execute({ reveal = false, toggle = true, dir = vim.loop.cwd(), position = "left" })
       end
     end
-  end,
+  end, 
   opts = {
     close_if_last_window = true, -- Close Neo-tree if it is the last window float in the tab
     popup_border_style = "rounded",
