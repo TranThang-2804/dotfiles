@@ -13,7 +13,7 @@ return {
     {
       "<leader>fe",
       function()
-        require("neo-tree.command").execute({ reveal = true, toggle = true, dir = vim.loop.cwd(), position = "left" })
+        require("neo-tree.command").execute({ reveal = true, toggle = true, dir = vim.loop.cwd(), position = "float" })
       end,
       desc = "Explorer NeoTree (cwd)",
     },
@@ -21,14 +21,14 @@ return {
     {
       "<leader>ge",
       function()
-        require("neo-tree.command").execute({ source = "git_status", reveal = true, toggle = true, position = "left" })
+        require("neo-tree.command").execute({ source = "git_status", reveal = true, toggle = true, position = "float" })
       end,
       desc = "Git explorer",
     },
     {
       "<leader>be",
       function()
-        require("neo-tree.command").execute({ source = "buffers", reveal = true, toggle = true, position = "left" })
+        require("neo-tree.command").execute({ source = "buffers", reveal = true, toggle = true, position = "float" })
       end,
       desc = "Buffer explorer",
     },
@@ -40,12 +40,12 @@ return {
     if vim.fn.argc(-1) == 1 then
       local stat = vim.loop.fs_stat(vim.fn.argv(0))
       if stat and stat.type == "directory" then
-        require("neo-tree.command").execute({ reveal = false, toggle = true, dir = vim.loop.cwd(), position = "left" })
+        require("neo-tree.command").execute({ reveal = false, toggle = true, dir = vim.loop.cwd(), position = "float" })
       end
     end
   end,
   opts = {
-    close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
+    close_if_last_window = true, -- Close Neo-tree if it is the last window float in the tab
     popup_border_style = "rounded",
     sources = { "filesystem", "buffers", "git_status", "document_symbols" },
     open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
