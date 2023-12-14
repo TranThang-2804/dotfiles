@@ -72,6 +72,9 @@ return {
       },
     },
     default_component_configs = {
+      symlink_target = {
+        enabled = true,
+      },
       indent = {
         with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
         expander_collapsed = "",
