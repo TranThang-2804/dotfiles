@@ -27,7 +27,7 @@ return {
         header = vim.split(logo, "\n"),
         -- stylua: ignore
         center = {
-          { action = "Neotree toggle=true position=float", desc = " Open Neotree", icon = " ", key = "o" },
+          { action = "Neotree toggle=true position=float", desc = " Open Neotree", icon = " ", key = "e" },
           { action = "Telescope find_files", desc = " Find file", icon = " ", key = "f" },
           { action = "Telescope oldfiles", desc = " Recent files", icon = " ", key = "r" },
           { action = "Telescope live_grep", desc = " Find text", icon = " ", key = "g" },
@@ -63,8 +63,8 @@ return {
     -- if vim.fn.argc(-1) == 1 then
     --   local stat = vim.loop.fs_stat(vim.fn.argv(0))
     --   if stat and stat.type ~= "directory" then
-        require("dashboard")
-        vim.cmd("Dashboard")
+    require("dashboard")
+    vim.cmd("Dashboard")
     --   end
     -- end
   end,
