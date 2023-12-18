@@ -37,12 +37,12 @@ vim.keymap.set(
 )
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
-vim.keymap.set("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next search result" })
-vim.keymap.set("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-vim.keymap.set("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-vim.keymap.set("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev search result" })
-vim.keymap.set("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
-vim.keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+vim.keymap.set("n", "n", "'Nn'[v:searchforward].'zvzz'", { expr = true, desc = "Next search result" })
+vim.keymap.set("x", "n", "'Nn'[v:searchforward].'zvzz'", { expr = true, desc = "Next search result" })
+vim.keymap.set("o", "n", "'Nn'[v:searchforward].'zvzz'", { expr = true, desc = "Next search result" })
+vim.keymap.set("n", "N", "'nN'[v:searchforward].'zvzz'", { expr = true, desc = "Prev search result" })
+vim.keymap.set("x", "N", "'nN'[v:searchforward].'zvzz'", { expr = true, desc = "Prev search result" })
+vim.keymap.set("o", "N", "'nN'[v:searchforward].'zvzz'", { expr = true, desc = "Prev search result" })
 
 -- Add undo break-points
 vim.keymap.set("i", ",", ",<c-g>u")
@@ -128,6 +128,8 @@ vim.keymap.set("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous
 -- Navigate
 vim.keymap.set("n", "j", "jzz", { desc = "Go down and center" })
 vim.keymap.set("n", "k", "kzz", { desc = "Go up and center" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Go down and center" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Go up and center" })
 
 -- Navigate buffer page horizontal
 vim.keymap.set("n", "<C-i>", "4zl", { remap = true, desc = "Scrol tab/buffer to the right" })
@@ -164,7 +166,7 @@ vim.keymap.set({ "n", "v", "x" }, "D", '"*d', { desc = "Cut the selection" })
 
 vim.keymap.set({ "n" }, "<leader>id", "0\"_d$", { desc = "Delete content of the line but keep the line exists" })
 vim.keymap.set({ "n" }, "<leader>iD", "0\"*d$", { desc = "Cut content of the line but keep the line exists" })
- 
+
 vim.keymap.set({ "n" }, "<leader>iy", "0y$", { desc = "Copy the content of a line" })
 
 -- This is for resizing window MacOS specific
