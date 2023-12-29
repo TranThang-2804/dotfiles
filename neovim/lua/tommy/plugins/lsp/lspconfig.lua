@@ -89,6 +89,14 @@ return {
       })
     end
 
+    -- Set default filetype of ft to terraform
+    vim.cmd([[
+      augroup terraform_filetype
+        autocmd!
+        autocmd BufNewFile,BufRead *tf set filetype=terraform
+      augroup END
+    ]])
+
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup({
       capabilities = capabilities,
