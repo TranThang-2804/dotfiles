@@ -1,5 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
+  event = { 'BufEnter', 'BufNewFile' },
   config = function()
     -- import lspconfig plugin
     local lspconfig = require("lspconfig")
