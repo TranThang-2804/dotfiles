@@ -69,25 +69,14 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    local language_servers = {
-      "gopls",
-      "terraformls",
-      "tflint",
-      "eslint",
-      "tsserver",
-      "yamlls",
-      "lua_ls",
-      "docker_compose_language_service",
-      "dockerls",
-      "clangd",
-    }
-
-    for _, lsp in ipairs(language_servers) do
-      lspconfig[lsp].setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-      })
-    end
+    require('mason-lspconfig').setup_handlers({
+      function(server)
+        lspconfig[server].setup({
+          capabilities = capabilities,
+          on_attach = on_attach,
+        })
+      end,
+    })
 
     -- Set default filetype of ft to terraform
     vim.cmd([[
