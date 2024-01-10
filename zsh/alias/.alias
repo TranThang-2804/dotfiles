@@ -3,7 +3,7 @@ alias tera='terraform'
 
 alias WS="/Users/tranthang/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/"
 alias PWS="/Users/tranthang/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/Work/Devops/Projects"
-
+alias note="/Users/tranthang/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/tommy-note-vault"
 # K8s aliases
 
 export dry="--dry-run=client -o yaml"

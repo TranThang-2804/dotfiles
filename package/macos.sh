@@ -21,3 +21,5 @@ brew install fd
 brew install fzf
 brew install ripgrep
 brew install gnu-sed
+
+brew install pngpaste
