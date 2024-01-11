@@ -34,55 +34,55 @@ return {
       template = nil
     },
     mappings = {
-      ["<leader>nf"] = {
+      ["<leader>mf"] = {
         action = function()
           return require("obsidian").util.gf_passthrough()
         end,
         opts = { noremap = false, expr = true, buffer = true, desc = "passthrough" },
       },
-      ["<leader>nc"] = {
+      ["<leader>mc"] = {
         action = function()
           return "<cmd>ObsidianQuickSwitch<CR>"
         end,
         opts = { noremap = false, expr = true, buffer = true, desc = "quick switch" },
       },
-      ["<leader>ncb"] = {
+      ["<leader>mcb"] = {
         action = function()
           return require("obsidian").util.toggle_checkbox()
         end,
         opts = { buffer = true, desc = "toggle checkbox" },
       },
-      ["<leader>ntd"] = {
+      ["<leader>mtd"] = {
         action = function()
           return "<cmd>ObsidianToday<CR>"
         end,
         opts = { buffer = true, desc = "today note" },
       },
-      ["<leader>ntm"] = {
+      ["<leader>mtm"] = {
         action = function()
           return "<cmd>ObsidianTomorrow<CR>"
         end,
         opts = { buffer = true, desc = "tomorrow note" },
       },
-      ["<leader>ny"] = {
+      ["<leader>my"] = {
         action = function()
           return "<cmd>ObsidianYesterday<CR>"
         end,
         opts = { buffer = true, desc = "yesterday note" },
       },
-      ["<leader>nn"] = {
+      ["<leader>mn"] = {
         action = function()
           return "<cmd>ObsidianNew<CR>"
         end,
         opts = { buffer = true, desc = "new note" },
       },
-      ["<leader>ns"] = {
+      ["<leader>ms"] = {
         action = function()
           return "<cmd>ObsidianSearch<CR>"
         end,
         opts = { buffer = true, desc = "search" },
       },
-      ["<leader>np"] = {
+      ["<leader>mp"] = {
         action = function()
           return "<cmd>ObsidianPasteImage<CR>"
         end,

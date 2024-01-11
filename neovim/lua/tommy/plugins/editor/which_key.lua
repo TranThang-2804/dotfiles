@@ -21,6 +21,7 @@ return {
       ["<leader>gh"] = { name = "+hunks" },
       ["<leader>i"] = { name = "+in line action" },
       ["<leader>l"] = { name = "+leetcode" },
+      ["<leader>m"] = { name = "+markdown note" },
       ["<leader>q"] = { name = "+quit/session" },
       ["<leader>s"] = { name = "+search" },
       ["<leader>u"] = { name = "+ui" },
