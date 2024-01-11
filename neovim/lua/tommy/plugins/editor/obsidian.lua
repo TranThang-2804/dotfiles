@@ -16,6 +16,30 @@ return {
 
     -- see below for full list of optional dependencies 👇
   },
+  keys = {
+    {
+      "<leader>mf",
+      function()
+        return require("obsidian").util.gf_passthrough()
+      end,
+      desc = "passthrough"
+    },
+    {
+      "<leader>mcb",
+      function()
+        return require("obsidian").util.toggle_checkbox()
+      end
+      ,
+      desc = "toggle checkbox"
+    },
+    { "<leader>mc",  "<cmd>ObsidianQuickSwitch<CR>", desc = "quick switch" },
+    { "<leader>mtd", "<cmd>ObsidianToday<cr>",       desc = "today note" },
+    { "<leader>mtm", "<cmd>ObsidianToday<cr>",       desc = "tomorrow note" },
+    { "<leader>my",  "<cmd>ObsidianToday<cr>",       desc = "yesterday note" },
+    { "<leader>mn",  "<cmd>ObsidianNew<cr>",         desc = "new note" },
+    { "<leader>ms",  "<cmd>ObsidianSearch<cr>",      desc = "search" },
+    { "<leader>mp",  "<cmd>ObsidianPasteImage<cr>",  desc = "paste image" },
+  },
   opts = {
     workspaces = {
       {
@@ -32,62 +56,6 @@ return {
       alias_format = "%B %-d, %Y",
       -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
       template = nil
-    },
-    mappings = {
-      ["<leader>mf"] = {
-        action = function()
-          return require("obsidian").util.gf_passthrough()
-        end,
-        opts = { noremap = false, expr = true, buffer = true, desc = "passthrough" },
-      },
-      ["<leader>mc"] = {
-        action = function()
-          return "<cmd>ObsidianQuickSwitch<CR>"
-        end,
-        opts = { noremap = false, expr = true, buffer = true, desc = "quick switch" },
-      },
-      ["<leader>mcb"] = {
-        action = function()
-          return require("obsidian").util.toggle_checkbox()
-        end,
-        opts = { buffer = true, desc = "toggle checkbox" },
-      },
-      ["<leader>mtd"] = {
-        action = function()
-          return "<cmd>ObsidianToday<CR>"
-        end,
-        opts = { buffer = true, desc = "today note" },
-      },
-      ["<leader>mtm"] = {
-        action = function()
-          return "<cmd>ObsidianTomorrow<CR>"
-        end,
-        opts = { buffer = true, desc = "tomorrow note" },
-      },
-      ["<leader>my"] = {
-        action = function()
-          return "<cmd>ObsidianYesterday<CR>"
-        end,
-        opts = { buffer = true, desc = "yesterday note" },
-      },
-      ["<leader>mn"] = {
-        action = function()
-          return "<cmd>ObsidianNew<CR>"
-        end,
-        opts = { buffer = true, desc = "new note" },
-      },
-      ["<leader>ms"] = {
-        action = function()
-          return "<cmd>ObsidianSearch<CR>"
-        end,
-        opts = { buffer = true, desc = "search" },
-      },
-      ["<leader>mp"] = {
-        action = function()
-          return "<cmd>ObsidianPasteImage<CR>"
-        end,
-        opts = { buffer = true, desc = "paste image" },
-      },
     },
   },
 }
