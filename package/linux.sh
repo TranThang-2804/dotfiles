@@ -24,3 +24,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 # Install Neovim
 sudo snap install nvim --classic
+
+# TODO: Install go
+
+# Install ripgrep
+sudo apt-get install ripgrep
