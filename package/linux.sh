@@ -29,3 +29,5 @@ sudo snap install nvim --classic
 
 # Install ripgrep
 sudo apt-get install ripgrep
+
+sudo apt install xclip

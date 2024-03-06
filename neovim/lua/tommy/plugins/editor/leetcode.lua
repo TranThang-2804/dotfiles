@@ -18,7 +18,7 @@ return {
     arg = leet_arg,
 
     ---@type lc.lang
-    lang = "c",
+    lang = "golang",
 
     cn = { -- leetcode.cn
       enabled = false, ---@type boolean
