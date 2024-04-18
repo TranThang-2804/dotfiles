@@ -30,6 +30,7 @@ sudo apt install python3 pip -y
 
 sudo apt install awscli -y
 
+touch ~/.zshrc
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 mkdir ~/Documents/Note
