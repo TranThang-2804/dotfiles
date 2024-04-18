@@ -17,9 +17,10 @@ rm -rf lazygit
 rm -rf lazygit.tar.gz
 
 # Install nerd-fonts
-git clone --depth=1 https://github.com/ryanoasis/nerd-fonts
-sudo ./nerd-fonts/install.sh
-rm -rf nerd-fonts
+curl -Lo JetBrainsMono.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip"
+unzip JetBrainsMono.zip -d ~/.fonts
+fc-cache -fv
+rm -rf JetBrainsMono.zip
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
