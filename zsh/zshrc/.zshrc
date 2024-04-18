@@ -148,6 +148,8 @@ if [[ "$(uname)" == "Linux" ]]; then
   # Enable auto suggestion
   source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
   source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+  export PATH=$PATH:/usr/local/go/bin
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

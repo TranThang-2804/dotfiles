@@ -58,6 +58,9 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 sudo snap install nvim --classic
 
 # TODO: Install go
+curl -Lo go1.22.2.linux-amd64.tar.gz "https://go.dev/dl/go1.22.2.linux-amd64.tar.gz"
+rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.2.linux-amd64.tar.gz
+rm -rf go1.22.2.linux-amd64.tar.gz
 
 # Install ripgrep
 sudo apt-get install ripgrep
