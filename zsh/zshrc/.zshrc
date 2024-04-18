@@ -133,13 +133,21 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
 
 # Mac specific
 
-
 if [[ "$(uname)" == "Darwin" ]]; then
 	# Action for macOS
   export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
   # Enable auto suggestion
   source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+
+# Linux specific
+
+if [[ "$(uname)" == "Linux" ]]; then
+  # Enable auto suggestion
+  source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
