@@ -44,7 +44,7 @@ return {
     workspaces = {
       {
         name = "tommy-note-vault",
-        path = "~/Documents/Note",
+        path = "/Users/tranthang/Library/Mobile Documents/iCloud~md~obsidian/Documents/tommy-note-vault",
       },
     },
     daily_notes = {

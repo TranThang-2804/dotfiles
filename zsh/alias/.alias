@@ -36,10 +36,10 @@ alias gp='git push'
 
 alias jh='./mvnw spring-boot:run'
 
-alias tommy='docker run -it --privileged --rm \
+alias work='docker run -it --privileged --rm \
                 -v /var/run/docker.sock:/var/run/docker.sock \
                 -v ~/Documents:/root/Documents \
                 -v ~/Documents/VWenv/.local:/root/.local \
                 -v ~/Documents/VWenv/.cache:/root/.cache \
                 -e "TERM=xterm-256color" \
-                test'
+                tommytran2804/environment:latest'
