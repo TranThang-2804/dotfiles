@@ -12,7 +12,6 @@ RUN usermod -aG docker root && newgrp docker
 
 # Setup ZSH
 RUN touch /root/.zshrc && \
-  chown ubuntu:ubuntu /root/.zshrc && \
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
   git clone https://github.com/zsh-users/zsh-autosuggestions /root/.zsh/zsh-autosuggestions && \
   git clone https://github.com/zsh-users/zsh-syntax-highlighting /root/.zsh/zsh-syntax-highlighting && \
