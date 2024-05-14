@@ -1,8 +1,10 @@
 FROM ubuntu:latest
 
-RUN apt update && apt install curl git gcc -y
-
 COPY . /initialize/installed-package
+
+# Install apt library
+RUN apt update && \
+  apt install curl git gcc -y
 
 RUN curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz && \
   rm -rf /opt/nvim && \
@@ -17,8 +19,8 @@ RUN LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygi
 
 
 WORKDIR /initialize/installed-package
-# RUN ./setup.sh docker
+RUN ./setup.sh
 
-WORKDIR /root
+WORKDIR /home/ubuntu
 
 ENTRYPOINT [ "/bin/bash" ] 
