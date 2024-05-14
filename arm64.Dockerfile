@@ -37,7 +37,7 @@ RUN curl -Lo go1.22.2.linux-amd64.tar.gz "https://go.dev/dl/go1.22.2.linux-amd64
 ENV PATH="$PATH:/opt/nvim-linux64/bin"
 
 # Install custom apt library
-RUN apt install gcc python3 pip -y
+RUN apt install gcc python3 pip fzf npm make -y
 
 # Install apt-get library
 RUN apt-get install ripgrep -y
