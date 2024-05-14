@@ -39,7 +39,4 @@ alias jh='./mvnw spring-boot:run'
 alias tommy='docker run -it --privileged --rm \
                 -v /var/run/docker.sock:/var/run/docker.sock \
                 -v ~/Documents:/home/ubuntu/Documents \
-                -v ~/.local/share/nvim:/home/ubuntu/.local/share/nvim \
-                -v ~/.local/state/nvim:/home/ubuntu/.local/state/nvim \
-                -v ~/.cache/nvim:/home/ubuntu/.cache/nvim \
                 test'
