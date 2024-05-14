@@ -38,6 +38,5 @@ alias jh='./mvnw spring-boot:run'
 
 alias work='docker run -it --privileged --rm \
                 -v /var/run/docker.sock:/var/run/docker.sock \
-                -v ~/Documents:/root \
-                -e "TERM=xterm-256color" \
+                -v ~/Documents/Venv:/root \
                 tommytran2804/environment:latest'
