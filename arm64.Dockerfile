@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
 ENV TERM=xterm-256color
 
@@ -6,6 +6,7 @@ RUN apt update && apt-get update
 
 # Install required apt library
 RUN apt install curl git tmux xclip zsh docker.io -y
+RUN apt-get install ninja-build gettext cmake unzip build-essential -y
 
 # Install Docker
 RUN usermod -aG docker root && newgrp docker
@@ -25,9 +26,8 @@ RUN LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygi
   install lazygit /usr/local/bin
 
 # Install nvim
-RUN curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz && \
-  rm -rf /opt/nvim && \
-  tar -C /opt -xzf nvim-linux64.tar.gz
+RUN git clone https://github.com/neovim/neovim --branch v0.9.5 --depth=1 && \
+  cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && make install && cd .. && rm -rf neovim
 
 # Install go 
 RUN curl -Lo go1.22.2.linux-amd64.tar.gz "https://go.dev/dl/go1.22.2.linux-amd64.tar.gz" && \
