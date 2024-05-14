@@ -42,6 +42,6 @@ COPY . /initialize/installed-package
 WORKDIR /initialize/installed-package
 RUN ./setup.sh
 
-WORKDIR /home/ubuntu
+WORKDIR /root
 
 ENTRYPOINT [ "/bin/zsh" ] 
