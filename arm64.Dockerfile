@@ -40,7 +40,12 @@ ENV PATH="$PATH:/opt/nvim-linux64/bin"
 RUN apt install gcc python3 pip fzf npm make -y
 
 # Install apt-get library
-RUN apt-get install ripgrep -y
+RUN apt-get install ripgrep locales -y
+
+# Set locales
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US:en
+ENV LC_ALL=en_US.UTF-8
 
 COPY . /initialize/installed-package
 WORKDIR /initialize/installed-package
