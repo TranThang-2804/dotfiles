@@ -52,3 +52,5 @@ WORKDIR /initialize/installed-package
 RUN ./setup.sh
 
 WORKDIR /root
+
+ENTRYPOINT [ "/bin/zsh" ]
