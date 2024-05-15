@@ -41,5 +41,6 @@ alias work='docker run -it --privileged --rm \
                 -v ~/Documents:/root/Documents \
                 -v ~/Documents/VWenv/.local:/root/.local \
                 -v ~/Documents/VWenv/.cache:/root/.cache \
+                -v ~/.ssh:/root/.ssh \
                 -e "TERM=xterm-256color" \
                 tommytran2804/environment:latest'
