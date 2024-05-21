@@ -8,7 +8,7 @@ sudo apt install awscli curl git gcc tmux zsh nodejs python3 pip docker docker.i
 
 sudo apt autoremove
 
-sudo apt-get install ripgrep
+sudo apt-get install ripgrep ninja-build gettext cmake unzip build-essential -y
 
 # apt-transport-https may be a dummy package; if so, you can skip that package
 sudo apt-get install -y apt-transport-https ca-certificates curl
@@ -49,13 +49,13 @@ rm -rf JetBrainsMono.zip
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-# Install Neovim
-sudo snap install nvim --classic
-
 # TODO: Install go
 curl -Lo go1.22.2.linux-amd64.tar.gz "https://go.dev/dl/go1.22.2.linux-amd64.tar.gz"
 rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.2.linux-amd64.tar.gz
 rm -rf go1.22.2.linux-amd64.tar.gz
+
+RUN git clone https://github.com/neovim/neovim --branch v0.9.5 --depth=1 && \
+  cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && make install && cd .. && rm -rf neovim
 
 # Set zsh default
 chsh -s $(which zsh)
