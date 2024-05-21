@@ -43,9 +43,8 @@ RUN apt install gcc python3 pip fzf npm make -y
 RUN apt-get install ripgrep locales -y
 
 # Set locales
-ENV LANG=en_US.UTF-8
-ENV LANGUAGE=en_US:en
-ENV LC_ALL=en_US.UTF-8
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
 
 COPY . /initialize/installed-package
 WORKDIR /initialize/installed-package
