@@ -34,13 +34,6 @@ cd "$WORKING_DIR/zsh"
 echo ZSH configured
 cd "$WORKING_DIR"
 
-# Setup vim
-echo '--------Setting up Vim configuration--------'
-cd "$WORKING_DIR"
-rm -rf ~/.vimrc
-cp ./vim/.vimrc ~/.vimrc
-echo Vim configured
-
 # Setup LazyVim
 echo '--------Setting up NeoVim configuration--------'
 if [[ -d ~/.config/nvim ]]; then
