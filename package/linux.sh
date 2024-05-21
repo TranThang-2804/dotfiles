@@ -3,8 +3,10 @@
 # Install apt packages
 sudo apt update
 sudo apt install awscli curl git gcc tmux zsh nodejs python3 pip docker docker.io xclip wl-clipboard -y
-sudo usermod -aG docker $USER
-newgrp docker
+# sudo usermod -aG docker $USER
+# newgrp docker
+
+sudo apt autoremove
 
 sudo apt-get install ripgrep
 
