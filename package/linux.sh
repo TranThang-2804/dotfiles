@@ -2,9 +2,11 @@
 
 # Install apt packages
 sudo apt update
-sudo apt install curl git gcc -y
-sudo apt install tmux -y
-sudo apt install zsh -y
+sudo apt install awscli curl git gcc tmux zsh nodejs python3 pip docker docker.io xclip wl-clipboard -y
+sudo usermod -aG docker $USER
+newgrp docker
+
+sudo apt-get install ripgrep
 
 # apt-transport-https may be a dummy package; if so, you can skip that package
 sudo apt-get install -y apt-transport-https ca-certificates curl
@@ -15,20 +17,10 @@ sudo chmod 644 /etc/apt/sources.list.d/kubernetes.list   # helps tools such as c
 sudo apt-get update -y
 sudo apt-get install kubectl -y
 
-sudo apt install docker docker.io -y
-# sudo usermod -aG docker $USER
-# newgrp docker
-
 curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
 sudo apt-get install apt-transport-https --yes
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
 sudo apt-get install helm -y
-
-sudo apt install nodejs -y
-
-sudo apt install python3 pip -y
-
-sudo apt install awscli -y
 
 touch ~/.zshrc
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -63,11 +55,5 @@ curl -Lo go1.22.2.linux-amd64.tar.gz "https://go.dev/dl/go1.22.2.linux-amd64.tar
 rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.2.linux-amd64.tar.gz
 rm -rf go1.22.2.linux-amd64.tar.gz
 
-# Install ripgrep
-sudo apt-get install ripgrep
-
-sudo apt install xclip wl-clipboard
-
 # Set zsh default
 chsh -s $(which zsh)
-
