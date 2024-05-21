@@ -2,7 +2,7 @@
 
 # Install apt packages
 sudo apt update
-sudo apt install awscli curl git gcc tmux zsh nodejs python3 pip docker docker.io xclip wl-clipboard -y
+sudo apt install awscli curl git gcc tmux zsh nodejs python3 pip docker docker.io xclip wl-clipboard fzf -y
 # sudo usermod -aG docker $USER
 # newgrp docker
 
