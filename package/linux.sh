@@ -27,7 +27,7 @@ sudo apt-get install helm -y
 touch ~/.zshrc
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-mkdir ~/Documents/Note
+mkdir -p ~/Documents/Note
 
 # Install zsh tools
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
@@ -49,13 +49,13 @@ rm -rf JetBrainsMono.zip
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-# TODO: Install go
+# Install go
 curl -Lo go1.22.2.linux-amd64.tar.gz "https://go.dev/dl/go1.22.2.linux-amd64.tar.gz"
-rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.2.linux-amd64.tar.gz
-rm -rf go1.22.2.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.2.linux-amd64.tar.gz
+sudo rm -rf go1.22.2.linux-amd64.tar.gz
 
-RUN git clone https://github.com/neovim/neovim --branch v0.9.5 --depth=1 && \
-  cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && make install && cd .. && rm -rf neovim
+git clone https://github.com/neovim/neovim --branch v0.10.0 --depth=1 && \
+  cd neovim && sudo make CMAKE_BUILD_TYPE=RelWithDebInfo && sudo make install && cd .. && sudo rm -rf neovim
 
 # Set zsh default
 chsh -s $(which zsh)
