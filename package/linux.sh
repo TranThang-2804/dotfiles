@@ -66,8 +66,8 @@ rm -rf go1.22.2.linux-amd64.tar.gz
 # Install ripgrep
 sudo apt-get install ripgrep
 
-sudo apt install xclip
+sudo apt install xclip wl-clipboard
 
 # Set zsh default
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
 
