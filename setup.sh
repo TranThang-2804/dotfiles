@@ -26,29 +26,6 @@ elif [[ $INSTALL_PACKAGE == "docker" ]]; then
 	cd "$WORKING_DIR"
 fi
 
-# Setup .zshrc
-echo '--------Setting up ZSH configuration-------'
-rm -rf ~/.zshrc
-cd "$WORKING_DIR/zsh"
-. ./setup.sh
-echo ZSH configured
-cd "$WORKING_DIR"
-
-# Setup LazyVim
-echo '--------Setting up NeoVim configuration--------'
-if [[ -d ~/.config/nvim ]]; then
-	rm -rf ~/.config/nvim/*
-else
-	mkdir -p ~/.config/nvim
-fi
-
-cp -a neovim/. ~/.config/nvim
-echo NeoVim configured
-
-# Setup tmux
-echo '--------Setting up Tmux configuration--------'
-rm -rf ~/.tmux.conf
-
-cp tmux/.tmux.conf ~/.tmux.conf
-echo NeoVim configured
-
+# Setup dotfiles
+echo '--------Setting up dotfiles configuration-------'
+yes | sudo cp -irf ./src/. ~
