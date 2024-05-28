@@ -1,11 +1,12 @@
 return {
   "craftzdog/solarized-osaka.nvim",
+  name = "solarized-osaka",
   lazy = false,
   priority = 1000,
   opts = {
     -- your configuration comes here
     -- or leave it empty to use the default settings
-    transparent = false,    -- Enable this to disable setting the background color
+    transparent = true,    -- Enable this to disable setting the background color
     terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
     styles = {
       -- Style to be applied to different syntax groups
