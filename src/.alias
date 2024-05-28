@@ -47,3 +47,6 @@ alias worksetup='docker run -dit --privileged \
                 tommytran2804/environment:latest'
 
 alias work='docker exec --privileged -w /root/Documents -it workenvironment zsh'
+
+# Command alias
+alias ls='ls -la --color'
