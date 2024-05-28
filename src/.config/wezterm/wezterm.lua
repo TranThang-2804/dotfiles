@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 local config = {
-  font = wezterm.font('JetBrainsMono'),
+  font = wezterm.font('JetBrains Mono', {weight="Regular", stretch="Normal", style="Normal"}),
   audible_bell = "Disabled",
   check_for_updates = false,
   color_scheme = "Builtin Solarized Dark",
@@ -10,7 +10,7 @@ local config = {
     saturation = 1.0,
     brightness = 1.0,
   },
-  font_size = 13.0,
+  font_size = 14.0,
   launch_menu = {},
   leader = { key = "a", mods = "CTRL" },
   disable_default_key_bindings = true,
@@ -66,7 +66,8 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
     })
   end
 else
-  config.default_prog = { '/bin/zsh', '-l' }
+  config.default_prog = { '/bin/zsh' }
+  config.default_cwd = "~/Documents"
 end
 
 return config
