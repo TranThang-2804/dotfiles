@@ -4,6 +4,7 @@ local config = {
   audible_bell = "Disabled",
   check_for_updates = false,
   color_scheme = "Builtin Solarized Dark",
+  window_background_opacity = 0.9,
   inactive_pane_hsb = {
     hue = 1.0,
     saturation = 1.0,
