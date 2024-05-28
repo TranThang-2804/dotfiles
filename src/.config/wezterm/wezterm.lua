@@ -9,7 +9,7 @@ local config = {
         saturation = 1.0,
         brightness = 1.0,
     },
-    font_size = 16.0,
+    font_size = 14.0,
     launch_menu = {},
     leader = { key="a", mods="CTRL" },
     disable_default_key_bindings = true,
@@ -66,8 +66,6 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
     end
 else
     config.default_prog = { '/bin/zsh', '-l' }
-    table.insert(config.launch_menu, { label = "bash", args = {"bash", "-l"} })
-    table.insert(config.launch_menu, { label = "fish", args = {"fish", "-l"} })
 end
 
 return config
