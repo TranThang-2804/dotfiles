@@ -4,7 +4,7 @@ local config = {
   audible_bell = "Disabled",
   check_for_updates = false,
   color_scheme = "Builtin Solarized Dark",
-  window_background_opacity = 0.9,
+  window_background_opacity = 0.95,
   inactive_pane_hsb = {
     hue = 1.0,
     saturation = 1.0,
@@ -12,10 +12,10 @@ local config = {
   },
   font_size = 14.0,
   launch_menu = {},
-  leader = { key = "a", mods = "CTRL", timeout_miliseconds = 2000 },
+  leader = { key = "m", mods = "CTRL", timeout_miliseconds = 2000 },
   disable_default_key_bindings = true,
   keys = {
-    -- Send "CTRL-A" to the terminal when pressing CTRL-A, CTRL-A
+    -- Send "CTRL-ALT" to the terminal when pressing CTRL-ALT, CTRL-ALT
     { key = "a", mods = "LEADER|CTRL",  action = wezterm.action { SendString = "\x01" } },
     { key = "v", mods = "LEADER",       action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
     { key = "|", mods = "LEADER",       action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } } },
