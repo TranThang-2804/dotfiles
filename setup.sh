@@ -27,5 +27,5 @@ elif [[ $INSTALL_PACKAGE == "docker" ]]; then
 fi
 
 # Setup dotfiles
-echo '--------Setting up dotfiles configuration-------'
-yes | sudo cp -irf ./src/. ~
+sudo cp -arf ./src/. ~
+echo '--------Set up dotfiles configuration finished-------'
