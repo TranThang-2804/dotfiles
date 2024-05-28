@@ -18,7 +18,7 @@ local config = {
     -- Send "CTRL-A" to the terminal when pressing CTRL-A, CTRL-A
     { key = "a", mods = "LEADER|CTRL",  action = wezterm.action { SendString = "\x01" } },
     { key = "v", mods = "LEADER",       action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
-    { key = "h", mods = "LEADER",       action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } } },
+    { key = "|", mods = "LEADER",       action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } } },
     { key = "z", mods = "LEADER",       action = "TogglePaneZoomState" },
     { key = "c", mods = "LEADER",       action = wezterm.action { SpawnTab = "CurrentPaneDomain" } },
     { key = "h", mods = "LEADER",       action = wezterm.action { ActivatePaneDirection = "Left" } },
