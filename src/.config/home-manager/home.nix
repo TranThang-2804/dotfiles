@@ -7,7 +7,18 @@
   home.homeDirectory = "/home/tommy";
 
   home.packages = [
+    pkgs.git
+    pkgs.awscli
+    pkgs.curl
+    pkgs.tmux
+    pkgs.zsh
+    pkgs.wl-clipboard
+    pkgs.xclip
+    pkgs.python3
+    pkgs.docker
     pkgs.neofetch
+    pkgs.lazygit
+
     pkgs.go
     pkgs.ripgrep
     pkgs.fzf
