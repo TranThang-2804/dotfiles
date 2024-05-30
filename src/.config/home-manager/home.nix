@@ -31,16 +31,6 @@
     pkgs.kitty
   ];
 
-  programs.neovim.package = pkgs.neovim.overrideAttrs (_: rec {
-    version = "0.10.0";
-    src = pkgs.fetchFromGitHub {
-      owner = "neovim";
-      repo = "neovim";
-      rev = version;
-      sha256 = "nixpkgs/1a9df4f74273f90d04e621e8516777efcec2802a#neovim";
-    };
-  });
-
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
