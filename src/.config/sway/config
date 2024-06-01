@@ -18,6 +18,10 @@ set $term kitty
 set $menu dmenu_path | wofi --show drun | xargs swaymsg exec --
 set $background ~/Documents/wallpapers/background.jpg
 
+input type:keyboard {
+    xkb_layout us
+    xkb_options ctrl:nocaps
+}
 
 ### Output configuration
 output * bg $background fill
