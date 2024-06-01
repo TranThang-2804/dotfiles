@@ -27,7 +27,6 @@
 },
 
 "modules-left": [
-	"custom/separator#dot-line",
 	"cpu",
 	"custom/separator#dot-line", 
 	"temperature",
