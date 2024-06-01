@@ -40,14 +40,14 @@ exec swayidle -w \
 ### Input configuration
 #
 # Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
+
+input "2:14:SynPS/2_Synaptics_TouchPad" {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}
+
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
@@ -166,6 +166,19 @@ exec swayidle -w \
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
+
+# Brightness and audio control:
+# Light control
+bindsym --locked XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym --locked XF86MonBrightnessDown exec brightnessctl s 10%-
+
+# Sound control
+# Btw, I hope I didn't accidentally summoned u/DEFAULT_SINK here...
+bindsym XF86AudioMute exec pactl set-sink-mute u/DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume u/DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume u/DEFAULT_SINK@ -5%
+
+
 #
 # Resizing containers:
 #

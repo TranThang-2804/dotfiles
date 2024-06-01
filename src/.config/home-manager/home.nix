@@ -3,8 +3,8 @@
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "tommy";
-  home.homeDirectory = "/home/tommy";
+  home.username = "thangtd18ngt";
+  home.homeDirectory = "/home/thangtd18ngt";
 
   home.packages = [
     pkgs.git
@@ -18,6 +18,7 @@
     pkgs.docker
     pkgs.neofetch
     pkgs.lazygit
+    pkgs.hyprland
 
     pkgs.go
     pkgs.ripgrep
@@ -28,6 +29,7 @@
     pkgs.sway
     pkgs.swaylock
     pkgs.waybar
+    pkgs.brightnessctl
     pkgs.kitty
   ];
 
