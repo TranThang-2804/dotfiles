@@ -233,6 +233,7 @@ bar {
 
 # Runnng app in background
 exec_always dunst &
+exec libinput-gestures-setup start
 
 #Styling
 default_border pixel 2

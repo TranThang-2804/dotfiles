@@ -30,6 +30,7 @@
     pkgs.swaylock
     pkgs.waybar
     pkgs.brightnessctl
+    pkgs.libinput-gestures
     pkgs.ibus-engines.bamboo
     pkgs.ibus
     pkgs.networkmanager_dmenu
