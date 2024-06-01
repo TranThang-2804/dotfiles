@@ -171,6 +171,7 @@
 
   fonts.packages = with pkgs; [
     font-awesome
+    (nerdfonts.override { fonts = [ "JetBrainsMono"]; })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
