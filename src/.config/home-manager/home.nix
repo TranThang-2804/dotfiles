@@ -30,6 +30,8 @@
     pkgs.swaylock
     pkgs.waybar
     pkgs.brightnessctl
+    pkgs.ibus-engines.bamboo
+    pkgs.ibus
     pkgs.kitty
   ];
 
