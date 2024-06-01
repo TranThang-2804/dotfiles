@@ -27,7 +27,6 @@
 },
 
 "modules-left": [
-	"hyprland/workspaces#pacman",
 	"custom/separator#dot-line",
 	"cpu",
 	"custom/separator#dot-line", 
@@ -45,7 +44,7 @@
 	"custom/separator#dot-line",
 	"clock",
 	"custom/separator#dot-line",
-        "sway/workspaces",
+  "sway/workspaces",
 	], 
 
 "modules-right": [
