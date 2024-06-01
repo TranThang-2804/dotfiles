@@ -32,6 +32,7 @@
     pkgs.brightnessctl
     pkgs.ibus-engines.bamboo
     pkgs.ibus
+    pkgs.networkmanager_dmenu
     pkgs.kitty
   ];
 
