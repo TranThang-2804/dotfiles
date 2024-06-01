@@ -99,6 +99,7 @@
   users.users.tommy = {
     isNormalUser = true;
     description = "tommy";
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
@@ -107,6 +108,7 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  programs.zsh.enable = true;
   
   # Install Hyprland
   programs.hyprland.enable = true;
