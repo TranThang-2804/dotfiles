@@ -28,6 +28,7 @@
 
 # Setup dotfiles
 sudo cp -arf ./src/. ~
+sudo cp -arf ./configuration.nix /etc/nixos/configuration.nix
 echo '--------Set up dotfiles configuration finished-------'
 
 # Run flake

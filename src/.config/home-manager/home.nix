@@ -18,7 +18,6 @@
     pkgs.docker
     pkgs.neofetch
     pkgs.lazygit
-    pkgs.hyprland
 
     pkgs.go
     pkgs.ripgrep
@@ -29,6 +28,7 @@
     pkgs.sway
     pkgs.swaylock
     pkgs.waybar
+    pkgs.gtk3
     pkgs.brightnessctl
     pkgs.libinput-gestures
     pkgs.ibus-engines.bamboo
