@@ -28,6 +28,9 @@
     pkgs.sway
     pkgs.swaylock
     pkgs.waybar
+    pkgs.wlogout
+    pkgs.pamixer
+    pkgs.blueman
     pkgs.gtk3
     pkgs.brightnessctl
     pkgs.libinput-gestures
