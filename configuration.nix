@@ -31,6 +31,10 @@
     enabled = "fcitx5";
     fcitx5.addons = with pkgs; [
       fcitx5-unikey
+      fcitx5-with-addons
+      fcitx5-rime
+      fcitx5-gtk
+      libsForQt5.fcitx5-qt
     ];
   };
 
@@ -118,10 +122,18 @@
   programs.firefox.enable = true;
   programs.zsh.enable = true;
   
-  # Install Hyprland
-  programs.hyprland.enable = true;
+  security.polkit.enable = true;
+
+  programs.i3.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.WLR_RENDERER = "vulkan";
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
+  environment.sessionVariables.XWAYLAND_NO_GLAMOR = "1";
+  
+  ## Install Hyprland
+  #programs.hyprland.enable = true;
+  #environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  #environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -135,6 +147,12 @@
     git
     docker
     gtk3
+    gtk4
+
+    fcitx5-with-addons
+    fcitx5-rime
+    fcitx5-gtk
+    libsForQt5.fcitx5-qt
     
     pyprland
     hyprpicker

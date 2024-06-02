@@ -61,7 +61,7 @@
 	"custom/separator#dot-line",
 	"clock",
 	"custom/separator#dot-line",
-  "hyprland/workspaces",
+  "sway/workspaces",
 	], 
 
 "modules-right": [
