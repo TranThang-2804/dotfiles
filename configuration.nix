@@ -27,6 +27,13 @@
   # Set your time zone.
   time.timeZone = "Asia/Ho_Chi_Minh";
 
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-unikey
+    ];
+  };
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -41,6 +48,7 @@
     LC_TELEPHONE = "vi_VN";
     LC_TIME = "vi_VN";
   };
+  
   # Enable Nvidia driver
   hardware.opengl = {
     enable = true;
@@ -122,14 +130,10 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    neovim
     wget
     zsh
     git
-    lazygit
-    fzf
     docker
-    gtk4
     gtk3
     
     pyprland

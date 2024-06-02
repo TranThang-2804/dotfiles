@@ -124,12 +124,6 @@ if [ -f '/Users/tranthang/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then
 # Adding binary path
 export PATH="$PATH:/Users/tranthang/Documents/development/flutter/bin"
 
-# Config ibus
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-ibus-daemon -drx
-
 # Alias
 source ~/.alias
 

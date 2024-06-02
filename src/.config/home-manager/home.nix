@@ -6,6 +6,12 @@
   home.username = "tommy";
   home.homeDirectory = "/home/tommy";
 
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
+
   home.packages = [
     pkgs.git
     pkgs.awscli
@@ -35,10 +41,11 @@
     pkgs.gtk3
     pkgs.brightnessctl
     pkgs.libinput-gestures
-    pkgs.ibus-engines.bamboo
-    pkgs.ibus
     pkgs.networkmanager_dmenu
     pkgs.kitty
+
+    pkgs.teams-for-linux
+    pkgs.slack
   ];
 
   # This value determines the Home Manager release that your
