@@ -24,6 +24,7 @@
     pkgs.fzf
     pkgs.nodejs_20
     pkgs.neovim
+    pkgs.jq
 
     pkgs.sway
     pkgs.swaylock

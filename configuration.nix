@@ -135,6 +135,8 @@
     pyprland
     hyprpicker
     hyprpaper
+    hyprlock
+    hypridle
     eww
     fuzzel
     rofi
