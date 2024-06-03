@@ -112,6 +112,8 @@ bindkey -v
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+export LC_ALL="en_US.UTF-8"
+
 # Shorten dir length
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
@@ -120,9 +122,6 @@ if [ -f '/Users/tranthang/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/U
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/tranthang/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tranthang/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-# Adding binary path
-export PATH="$PATH:/Users/tranthang/Documents/development/flutter/bin"
 
 # Alias
 source ~/.alias
