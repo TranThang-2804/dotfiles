@@ -15,7 +15,7 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | wofi --show drun | xargs swaymsg exec --
+set $menu wofi --show drun | xargs swaymsg exec --
 set $background ~/Documents/wallpapers/background.jpg
 
 input type:keyboard {

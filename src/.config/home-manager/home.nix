@@ -3,8 +3,8 @@
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "tommy";
-  home.homeDirectory = "/home/tommy";
+  home.username = "thangtd18ngt";
+  home.homeDirectory = "/home/thangtd18ngt";
 
   nixpkgs = {
     config = {
@@ -31,6 +31,7 @@
     pkgs.nodejs_20
     pkgs.neovim
     pkgs.jq
+    pkgs.yarn
 
     pkgs.sway
     pkgs.swaylock
