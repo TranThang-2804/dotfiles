@@ -3,8 +3,8 @@
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "thangtd18ngt";
-  home.homeDirectory = "/home/thangtd18ngt";
+  home.username = "tranthang";
+  home.homeDirectory = "/Users/tranthang";
 
   nixpkgs = {
     config = {
@@ -18,8 +18,6 @@
     pkgs.curl
     pkgs.tmux
     pkgs.zsh
-    pkgs.wl-clipboard
-    pkgs.xclip
     pkgs.python3
     pkgs.docker
     pkgs.neofetch
@@ -33,20 +31,7 @@
     pkgs.jq
     pkgs.yarn
 
-    pkgs.sway
-    pkgs.swaylock
-    pkgs.waybar
-    pkgs.wlogout
-    pkgs.pamixer
-    pkgs.blueman
-    pkgs.gtk3
-    pkgs.brightnessctl
-    pkgs.libinput-gestures
-    pkgs.networkmanager_dmenu
     pkgs.kitty
-
-    pkgs.teams-for-linux
-    pkgs.slack
   ];
 
 
@@ -56,7 +41,12 @@
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
+    ".config".source = src/.config;
+    ".zshrc".source = src/.zshrc;
+    ".vimrc".source = src/.vimrc;
+    ".tmux.conf".source = src/.tmux.conf;
+    ".p10k.zsh".source = src/.p10k.zsh;
+    ".alias".source = src/.alias;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
