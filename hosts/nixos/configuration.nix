@@ -130,10 +130,11 @@
   #environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
   #environment.sessionVariables.XWAYLAND_NO_GLAMOR = "1";
   
-  ## Install Hyprland
-  #programs.hyprland.enable = true;
-  #environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  #environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
+  # Install Hyprland
+  programs.hyprland.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
+  environment.sessionVariables.WLR_RENDERER = "vulkan";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
