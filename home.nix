@@ -34,14 +34,67 @@
     pkgs.kitty
   ];
 
-
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
-    ".config".source = src/.config;
+
+    ".config/home-manager" = {
+        source = src/.config/home-manager;
+        recursive = true;
+    };
+
+    ".config/hypr" = {
+        source = src/.config/hypr;
+        recursive = true;
+    };
+
+    ".config/kitty" = {
+        source = src/.config/kitty;
+        recursive = true;
+    };
+
+    ".config/libinput-gestures" = {
+        source = src/.config/libinput-gestures;
+        recursive = true;
+    };
+
+    ".config/nix" = {
+        source = src/.config/nix;
+        recursive = true;
+    };
+
+    ".config/nixpkgs" = {
+        source = src/.config/nixpkgs;
+        recursive = true;
+    };
+
+    ".config/nvim" = {
+        source = src/.config/nvim;
+        recursive = true;
+    };
+
+    ".config/sway" = {
+        source = src/.config/sway;
+        recursive = true;
+    };
+
+    ".config/swaylock" = {
+        source = src/.config/swaylock;
+        recursive = true;
+    };
+
+    ".config/waybar" = {
+        source = src/.config/waybar;
+        recursive = true;
+    };
+
+    ".config/wezterm" = {
+        source = src/.config/wezterm;
+        recursive = true;
+    };
+
     ".zshrc".source = src/.zshrc;
     ".vimrc".source = src/.vimrc;
     ".tmux.conf".source = src/.tmux.conf;
