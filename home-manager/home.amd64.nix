@@ -1,8 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "tranthang";
-  home.homeDirectory = "/Users/tranthang";
+  # Home Manager needs a bit of information about you and the
+  # paths it should manage.
+  home.username = "tommy";
+  home.homeDirectory = "/home/tommy";
 
   nixpkgs = {
     config = {
@@ -16,6 +18,8 @@
     pkgs.curl
     pkgs.tmux
     pkgs.zsh
+    pkgs.wl-clipboard
+    pkgs.xclip
     pkgs.python3
     pkgs.docker
     pkgs.neofetch
@@ -29,70 +33,79 @@
     pkgs.jq
     pkgs.yarn
 
+    pkgs.sway
+    pkgs.swaylock
+    pkgs.waybar
+    pkgs.wlogout
+    pkgs.pamixer
+    pkgs.blueman
+    pkgs.gtk3
+    pkgs.brightnessctl
+    pkgs.libinput-gestures
+    pkgs.networkmanager_dmenu
     pkgs.kitty
+
+    pkgs.teams-for-linux
+    pkgs.slack
   ];
 
-  home.file = {
-    ".config/home-manager" = {
-        source = src/.config/home-manager;
-        recursive = true;
-    };
 
+  home.file = {
     ".config/hypr" = {
-        source = src/.config/hypr;
+        source = dotfiles/.config/hypr;
         recursive = true;
     };
 
     ".config/kitty" = {
-        source = src/.config/kitty;
+        source = dotfiles/.config/kitty;
         recursive = true;
     };
 
     ".config/libinput-gestures" = {
-        source = src/.config/libinput-gestures;
+        source = dotfiles/.config/libinput-gestures;
         recursive = true;
     };
 
     ".config/nix" = {
-        source = src/.config/nix;
+        source = dotfiles/.config/nix;
         recursive = true;
     };
 
     ".config/nixpkgs" = {
-        source = src/.config/nixpkgs;
+        source = dotfiles/.config/nixpkgs;
         recursive = true;
     };
 
     ".config/nvim" = {
-        source = src/.config/nvim;
+        source = dotfiles/.config/nvim;
         recursive = true;
     };
 
     ".config/sway" = {
-        source = src/.config/sway;
+        source = dotfiles/.config/sway;
         recursive = true;
     };
 
     ".config/swaylock" = {
-        source = src/.config/swaylock;
+        source = dotfiles/.config/swaylock;
         recursive = true;
     };
 
     ".config/waybar" = {
-        source = src/.config/waybar;
+        source = dotfiles/.config/waybar;
         recursive = true;
     };
 
     ".config/wezterm" = {
-        source = src/.config/wezterm;
+        source = dotfiles/.config/wezterm;
         recursive = true;
     };
 
-    ".zshrc".source = src/.zshrc;
-    ".vimrc".source = src/.vimrc;
-    ".tmux.conf".source = src/.tmux.conf;
-    ".p10k.zsh".source = src/.p10k.zsh;
-    ".alias".source = src/.alias;
+    ".zshrc".source = dotfiles/.zshrc;
+    ".vimrc".source = dotfiles/.vimrc;
+    ".tmux.conf".source = dotfiles/.tmux.conf;
+    ".p10k.zsh".source = dotfiles/.p10k.zsh;
+    ".alias".source = dotfiles/.alias;
   };
 
   home.sessionVariables = {
