@@ -13,8 +13,8 @@
   };
 
   home.packages = [
+    # Environment tools
     pkgs.git
-    pkgs.awscli
     pkgs.curl
     pkgs.tmux
     pkgs.zsh
@@ -22,17 +22,24 @@
     pkgs.docker
     pkgs.neofetch
     pkgs.lazygit
-
-    pkgs.go
     pkgs.ripgrep
     pkgs.fzf
-    pkgs.nodejs_20
     pkgs.neovim
     pkgs.jq
-    pkgs.yarn
     pkgs.tree
-
     pkgs.kitty
+
+    # Devops toolchains
+    pkgs.awscli
+    pkgs.terraform
+    pkgs.terragrunt
+    pkgs.kubectl
+    pkgs.helm
+
+    # Dev Tools
+    pkgs.go
+    pkgs.nodejs_20
+    pkgs.yarn
   ];
 
   home.file = {
