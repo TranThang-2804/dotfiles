@@ -3,8 +3,8 @@
 {  
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "thangtd18ngt";
-  home.homeDirectory = "/home/thangtd18ngt";
+  home.username = builtins.getEnv "USER";
+  home.homeDirectory = builtins.getEnv "HOME";
 
   nixpkgs = {
     config = {
@@ -30,6 +30,7 @@
     pkgs.neovim
     pkgs.jq
     pkgs.yarn
+    pkgs.tree
 
     pkgs.kitty
   ];
