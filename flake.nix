@@ -19,8 +19,8 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [ 
-          ./home-manager/home.arm64.nix
-          ./home-manager/common.nix
+          ./home.arm64.nix
+          ./common.nix
         ];
 
         # Optionally use extraSpecialArgs
@@ -34,8 +34,8 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./home-manager/home.amd64.nix
-          ./home-manager/common.nix
+          ./home.amd64.nix
+          ./common.nix
         ];
 
         # Optionally use extraSpecialArgs
