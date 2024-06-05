@@ -5,6 +5,11 @@
     pkgs.wl-clipboard
     pkgs.xclip
     pkgs.fcitx5
+    pkgs.fcitx5-unikey
+    pkgs.fcitx5-with-addons
+    pkgs.fcitx5-rime
+    pkgs.fcitx5-gtk
+    pkgs.libsForQt5.fcitx5-qt
 
     pkgs.sway
     pkgs.swaylock
