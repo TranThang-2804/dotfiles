@@ -4,7 +4,7 @@
   home.packages = [
     pkgs.wl-clipboard
     pkgs.xclip
-    pkgs.python3
+    pkgs.fcitx5
 
     pkgs.sway
     pkgs.swaylock
