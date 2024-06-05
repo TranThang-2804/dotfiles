@@ -28,6 +28,7 @@
     pkgs.jq
     pkgs.tree
     pkgs.kitty
+    pkgs.fcitx5
 
     # Devops toolchains
     pkgs.awscli
