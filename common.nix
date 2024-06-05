@@ -28,6 +28,7 @@
     pkgs.jq
     pkgs.tree
     pkgs.kitty
+    pkgs.thefuck
 
     # Devops toolchains
     pkgs.awscli
