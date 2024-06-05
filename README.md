@@ -1,4 +1,8 @@
 # Project Setup
+As an enthusiast on NeoVim, developer environment configuration, I created a framework that can easilly be used to setup a new machine with all the necessary tools and configurations. This project is based on NixOS and Home-Manager, which are the best tools for declarative system configuration and package management.
+
+This framework will make sure you will have the expected environment, tools, dotfiles configurations on any machines, OS, or architecture. (Except Windows, I'm sorry for that. :D - Be a man and use Arch Linux instead!)
+
 This project requires executing a setup script to configure the local machine environment. Please follow the instructions below based on your operating system.
 
 ## Project structure
