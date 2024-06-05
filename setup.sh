@@ -27,9 +27,9 @@
 #fi
 
 # Setup dotfiles
-sudo cp -arf ./src/. ~
-sudo cp -arf ./configuration.nix /etc/nixos/configuration.nix
+sudo cp -aRf ./src/ ~
+sudo cp -aRf ./host/nixos/configuration.nix /etc/nixos/configuration.nix
 echo '--------Set up dotfiles configuration finished-------'
 
 # Run flake
-home-manager switch --flake src/.config/home-manager#tommy                   
+ home-manager switch --flake .#tommy                   
