@@ -2,6 +2,7 @@
 This project requires executing a setup script to configure the local machine environment. Please follow the instructions below based on your operating system.
 
 ## Project structure
+```
 .
 ├── dotfiles                    - Contains all the dotfiles for the local machine
 │   ├── .config                 - Nvim configuration is maintained in this dir
@@ -21,6 +22,7 @@ This project requires executing a setup script to configure the local machine en
 ├── Dockerfile                  - Dev container that has all the tools installed
 ├── LICENSE
 └── README.md
+```
 
 ## Prerequisites
 - nixpkg
