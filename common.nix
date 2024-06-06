@@ -19,7 +19,7 @@
     pkgs.tmux
     pkgs.unzip
     pkgs.zsh
-    pkgs.oh-my-zsh
+    pkgs.zsh-powerlevel10k
     pkgs.zsh-autocomplete
     pkgs.zsh-autosuggestions
     pkgs.python3
@@ -47,6 +47,80 @@
     pkgs.yarn
     pkgs.gcc
   ];
+
+  programs = {
+    zsh = {
+      enable = true;
+
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+      enableCompletion = true;
+
+      initExtra = ''
+        [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+        bindkey -v
+        export LC_ALL="en_US.UTF-8"
+        export dry="--dry-run=client -o yaml";
+        eval $(thefuck --alias)
+        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
+      '';
+      
+      shellAliases = {
+        #Alias
+        tera="terraform";
+
+        WS="/Users/tranthang/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/";
+        PWS="/Users/tranthang/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/Work/Devops/Projects";
+        note="/Users/tranthang/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/tommy-note-vault";
+
+        # K8s aliases
+        k="kubectl";
+        ka="kubectl apply -f";
+        kd="kubectl delete";
+        ke="kubectl edit";
+        kc="kubectl create";
+        kr="kubectl run";
+        krp="kubectl replace";
+        krpf="kubectl replace --force -f";
+        kds="kubectl describe";
+        kg="kubectl get";
+        ksetns="kubectl config set-context --current --namespace";
+
+        # Tmux alias
+        ta="tmux attach-session -t";
+        tn="tmux new-session -t";
+        tk="tmux kill-session -t";
+        tka="tmux kill-session -a";
+        tl="tmux ls";
+
+        # Git alias
+        gs="git status";
+        ga="git add";
+        gc="git commit -m";
+        gp="git push";
+
+        jh="./mvnw spring-boot:run";
+
+
+        # Command alias
+        ls="ls -la --color";
+      };
+
+      plugins = [
+        {
+          src = pkgs.zsh-powerlevel10k;
+          name = "powerlevel10k";
+          file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+        }
+      ];
+
+      oh-my-zsh = {
+        enable = true;
+        theme = "powerlevel10k";
+        plugins = [];
+      };
+    };
+  };
 
   home.file = {
     ".config/hypr" = {
@@ -99,11 +173,11 @@
         recursive = true;
     };
 
-    ".zshrc".source = dotfiles/.zshrc;
+    #".zshrc".source = dotfiles/.zshrc;
     ".vimrc".source = dotfiles/.vimrc;
     ".tmux.conf".source = dotfiles/.tmux.conf;
     ".p10k.zsh".source = dotfiles/.p10k.zsh;
-    ".alias".source = dotfiles/.alias;
+    #".alias".source = dotfiles/.alias;
   };
 
   # Let Home Manager install and manage itself.
