@@ -57,7 +57,7 @@
       enableCompletion = true;
 
       initExtra = ''
-        [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+        [[ ! -f ${./dotfiles/.p10k.zsh} ]] || source ${./dotfiles/.p10k.zsh}
         bindkey -v
         export LC_ALL="en_US.UTF-8"
         export dry="--dry-run=client -o yaml";
