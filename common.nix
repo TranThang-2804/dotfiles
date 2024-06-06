@@ -17,7 +17,11 @@
     pkgs.git
     pkgs.curl
     pkgs.tmux
+    pkgs.unzip
     pkgs.zsh
+    pkgs.oh-my-zsh
+    pkgs.zsh-autocomplete
+    pkgs.zsh-autosuggestions
     pkgs.python3
     pkgs.docker
     pkgs.neofetch
@@ -41,6 +45,7 @@
     pkgs.go
     pkgs.nodejs_20
     pkgs.yarn
+    pkgs.gcc
   ];
 
   home.file = {

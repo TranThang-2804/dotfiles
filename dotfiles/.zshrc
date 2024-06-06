@@ -117,41 +117,10 @@ export LC_ALL="en_US.UTF-8"
 # Shorten dir length
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/tranthang/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tranthang/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/tranthang/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tranthang/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
 # Alias
 source ~/.alias
 
 # Set auto suggestion syntax highlight
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
-
-
-# Mac specific
-
-if [[ "$(uname)" == "Darwin" ]]; then
-	# Action for macOS
-  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-  # Enable auto suggestion
-  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
-
-# Linux specific
-
-if [[ "$(uname)" == "Linux" ]]; then
-  # Enable auto suggestion
-  source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-  source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-  export PATH=$PATH:/usr/local/go/bin
-fi
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval $(thefuck --alias)
