@@ -17,6 +17,8 @@
     pkgs.libinput-gestures
     pkgs.networkmanager_dmenu
 
+    pkgs.helm
+
     pkgs.teams-for-linux
     pkgs.slack
   ];

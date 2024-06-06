@@ -39,7 +39,6 @@
     pkgs.terraform
     pkgs.terragrunt
     pkgs.kubectl
-    pkgs.helm
 
     # Dev Tools
     pkgs.go
