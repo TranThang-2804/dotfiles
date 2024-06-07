@@ -41,6 +41,7 @@
     pkgs.kubectl
 
     # Dev Tools
+    pkgs.go-task
     pkgs.go
     pkgs.nodejs_20
     pkgs.yarn
