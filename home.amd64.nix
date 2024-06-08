@@ -2,8 +2,6 @@
 
 {
   home.packages = [
-    pkgs.wl-clipboard
-    pkgs.xclip
     pkgs.fcitx5-unikey
 
     pkgs.sway
