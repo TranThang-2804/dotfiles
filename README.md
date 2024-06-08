@@ -31,6 +31,14 @@ This project requires executing a setup script to configure the local machine en
 ## Prerequisites
 - nixpkg
 - home-manager
+- flake
+
+1. For wsl
+For neovim to work properly with the wsl clipboard you should install:
+win32yank using powershell:
+```
+choco install win32yank
+```
 
 ## Installation
 1. For amd64 architecture, run the following command:
