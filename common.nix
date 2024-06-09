@@ -33,6 +33,7 @@
     pkgs.tree
     pkgs.kitty
     pkgs.thefuck
+    pkgs.gnumake42
 
     # Devops toolchains
     pkgs.awscli
@@ -137,11 +138,6 @@
         recursive = true;
     };
 
-    ".config/nix" = {
-        source = dotfiles/.config/nix;
-        recursive = true;
-    };
-
     ".config/nixpkgs" = {
         source = dotfiles/.config/nixpkgs;
         recursive = true;
@@ -172,11 +168,9 @@
         recursive = true;
     };
 
-    #".zshrc".source = dotfiles/.zshrc;
     ".vimrc".source = dotfiles/.vimrc;
     ".tmux.conf".source = dotfiles/.tmux.conf;
     ".p10k.zsh".source = dotfiles/.p10k.zsh;
-    #".alias".source = dotfiles/.alias;
   };
 
   # Let Home Manager install and manage itself.
