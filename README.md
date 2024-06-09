@@ -33,7 +33,14 @@ This project requires executing a setup script to configure the local machine en
 - home-manager
 - flake
 
-1. For wsl
+NOTE: You will need to enable flake with this command:
+```
+mkdir ~/.config/nix/
+touch ~/.config/nix/nix.conf
+echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
+```
+
+### For wsl
 For neovim to work properly with the wsl clipboard you should install:
 win32yank using powershell:
 ```
@@ -49,4 +56,14 @@ home-manager switch --impure --flake .#amd64
 2. For arm64 architecture, run the following command:
 ```
 home-manager switch --impure --flake .#arm64
+```
+
+3. For wsl architecture, run the following command:
+```
+home-manager switch --impure --flake .#wsl
+```
+
+4. For darwin architecture, run the following command:
+```
+home-manager switch --impure --flake .#darwin
 ```
