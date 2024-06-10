@@ -44,7 +44,7 @@
 
       homeConfigurations."darwin" = home-manager.lib.homeManagerConfiguration {
 
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
