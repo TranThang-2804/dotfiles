@@ -63,6 +63,7 @@
         export LC_ALL="en_US.UTF-8"
         export dry="--dry-run=client -o yaml";
         export PATH=$PATH:$HOME/go/bin;
+        export GOBIN=$HOME/go/bin;
         eval $(thefuck --alias)
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
       '';
