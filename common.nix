@@ -36,7 +36,7 @@
     pkgs.gnumake42
 
     # Devops toolchains
-    pkgs.awscli
+    pkgs.awscli2
     pkgs.terraform
     pkgs.terragrunt
     pkgs.kubectl
