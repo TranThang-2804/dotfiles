@@ -40,7 +40,7 @@
     pkgs.terraform
     pkgs.terragrunt
     pkgs.kubectl
-    pkgs.google-cloud-sdk
+    (pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin])
 
     # Dev Tools
     pkgs.go-task
