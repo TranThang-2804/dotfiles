@@ -40,6 +40,7 @@
     pkgs.terraform
     pkgs.terragrunt
     pkgs.kubectl
+    pkgs.google-cloud-sdk
 
     # Dev Tools
     pkgs.go-task
