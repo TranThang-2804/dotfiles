@@ -45,7 +45,8 @@
     # Dev Tools
     pkgs.go-task
     pkgs.go
-    pkgs.nodejs_20
+    pkgs.nodejs_18
+    pkgs.nodePackages.aws-cdk
     pkgs.yarn
     pkgs.gcc
   ];
