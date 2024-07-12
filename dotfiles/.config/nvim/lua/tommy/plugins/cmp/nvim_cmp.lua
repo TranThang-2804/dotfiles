@@ -8,6 +8,15 @@ return {
     "hrsh7th/cmp-path",
     "saadparwaiz1/cmp_luasnip",
     {
+      "zbirenbaum/copilot-cmp",
+      dependencies = "copilot.lua",
+      opts = {},
+      config = function(_, opts)
+        local copilot_cmp = require("copilot_cmp")
+        copilot_cmp.setup(opts)
+      end,
+    },
+    {
       "onsails/lspkind.nvim",
       config = function()
         local opts = {
@@ -50,7 +59,6 @@ return {
   opts = function()
     vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
     local cmp = require("cmp")
-    local defaults = require("cmp.config.default")()
     local has_words_before = function()
       if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then return false end
       local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -94,12 +102,11 @@ return {
       }),
 
       sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-        { name = "path" },
-        { name = "copilot" }
-      }, {
-        { name = "buffer" },
+        { name = "nvim_lsp", group_index = 2 },
+        { name = "luasnip",  group_index = 2 },
+        { name = "path",     group_index = 2 },
+        { name = "copilot",  group_index = 2 },
+        { name = "buffer",   group_index = 2 },
       }),
 
       experimental = {
@@ -108,7 +115,24 @@ return {
         },
       },
 
-      sorting = defaults.sorting,
+      sorting = {
+        priority_weight = 2,
+        comparators = {
+          require("copilot_cmp.comparators").prioritize,
+
+          -- Below is the default comparitor list and order for nvim-cmp
+          cmp.config.compare.offset,
+          -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
+          cmp.config.compare.exact,
+          cmp.config.compare.score,
+          cmp.config.compare.recently_used,
+          cmp.config.compare.locality,
+          cmp.config.compare.kind,
+          cmp.config.compare.sort_text,
+          cmp.config.compare.length,
+          cmp.config.compare.order,
+        }
+      },
     }
   end,
   ----@param opts cmp.ConfigSchema
