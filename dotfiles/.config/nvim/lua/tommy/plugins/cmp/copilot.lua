@@ -16,7 +16,7 @@ return {
           open = "<leader>ap"
         },
         layout = {
-          position = "right",     -- | top | left | right
+          position = "right", -- | top | left | right
           ratio = 0.4
         },
       },
@@ -35,9 +35,12 @@ return {
         },
       },
       filetypes = {
+        yaml = true,
+        markdown = true,
+        help = true,
         ["*"] = true,
       },
-      copilot_node_command = 'node',     -- Node.js version must be > 18.x
+      copilot_node_command = 'node', -- Node.js version must be > 18.x
       server_opts_overrides = {},
     }
   },
