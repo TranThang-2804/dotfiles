@@ -8,7 +8,7 @@ return {
     { "<leader>xL", "<cmd>TroubleToggle loclist<cr>",               desc = "Location List (Trouble)" },
     { "<leader>xQ", "<cmd>TroubleToggle quickfix<cr>",              desc = "Quickfix List (Trouble)" },
     {
-      "[q",
+      "<leader>kq",
       function()
         if require("trouble").is_open() then
           require("trouble").previous({ skip_groups = true, jump = true })
@@ -19,7 +19,7 @@ return {
       desc = "Previous trouble/quickfix item",
     },
     {
-      "]q",
+      "<leader>jq",
       function()
         if require("trouble").is_open() then
           require("trouble").next({ skip_groups = true, jump = true })
