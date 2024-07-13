@@ -17,19 +17,19 @@ return {
     end
 
     map("<leader>jr", "next")
-    map("<leader>jk", "prev")
+    map("<leader>kr", "prev")
 
     -- also set it after loading ftplugins, since a lot overwrite [[ and ]]
     vim.api.nvim_create_autocmd("FileType", {
       callback = function()
         local buffer = vim.api.nvim_get_current_buf()
         map("<leader>jr", "next", buffer)
-        map("<leader>jk", "prev", buffer)
+        map("<leader>kr", "prev", buffer)
       end,
     })
   end,
   keys = {
     { "<leader>jr", desc = "Next Reference" },
-    { "<leader>jk", desc = "Prev Reference" },
+    { "<leader>kr", desc = "Prev Reference" },
   },
 }
