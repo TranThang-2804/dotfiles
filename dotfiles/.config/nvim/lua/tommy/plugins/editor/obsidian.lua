@@ -32,13 +32,13 @@ return {
       ,
       desc = "toggle checkbox"
     },
-    { "<leader>mc",  "<cmd>ObsidianQuickSwitch<CR>", desc = "quick switch" },
-    { "<leader>mtd", "<cmd>ObsidianToday<cr>",       desc = "today note" },
-    { "<leader>mtm", "<cmd>ObsidianTomorrow<cr>",       desc = "tomorrow note" },
-    { "<leader>my",  "<cmd>ObsidianYesterday<cr>",       desc = "yesterday note" },
-    { "<leader>mn",  "<cmd>ObsidianNew<cr>",         desc = "new note" },
-    { "<leader>ms",  "<cmd>ObsidianSearch<cr>",      desc = "search" },
-    { "<leader>mp",  "<cmd>ObsidianPasteImage<cr>",  desc = "paste image" },
+    { "<leader>mq", "<cmd>ObsidianQuickSwitch<CR>", desc = "quick switch" },
+    { "<leader>md", "<cmd>ObsidianToday<cr>",       desc = "today note" },
+    { "<leader>mm", "<cmd>ObsidianTomorrow<cr>",    desc = "tomorrow note" },
+    { "<leader>my", "<cmd>ObsidianYesterday<cr>",   desc = "yesterday note" },
+    { "<leader>mn", "<cmd>ObsidianNew<cr>",         desc = "new note" },
+    { "<leader>ms", "<cmd>ObsidianSearch<cr>",      desc = "search" },
+    { "<leader>mp", "<cmd>ObsidianPasteImage<cr>",  desc = "paste image" },
   },
   opts = {
     workspaces = {
