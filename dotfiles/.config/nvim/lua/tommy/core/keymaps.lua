@@ -1,7 +1,6 @@
 -- Change Esc to <C-o> keymap
 vim.keymap.set({ "v", "x", "o", "s", "!", "t" }, "<C-o>", "<Esc>", { silent = true, remap = true, desc = "Esc" })
 vim.keymap.set({ "i", "n" }, "<C-o>", "<cmd>noh<cr><esc>", { silent = true, remap = true, desc = "Esc" })
-vim.keymap.set("t", "<Esc><Esc>", "<c-\\><c-n>", { silent = true, remap = true, desc = "Esc" })
 vim.keymap.set("c", "<C-o>", "<C-c>", { silent = true, remap = true, desc = "Esc" })
 
 -- Move to window using the <ctrl> hjkl keys
@@ -101,7 +100,7 @@ vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 vim.keymap.set("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 
 -- Terminal Mappings
-vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+vim.keymap.set("t", "<C-o><C-o>", "<c-\\><c-n>", { silent = true, remap = true, desc = "Esc" })
 vim.keymap.set("t", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to left window" })
 vim.keymap.set("t", "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
 vim.keymap.set("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
@@ -118,12 +117,12 @@ vim.keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split window below", remap 
 vim.keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split window right", remap = true })
 
 -- tabs
-vim.keymap.set("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
-vim.keymap.set("n", "<leader><tab>f", "<cmd>tabfirst<cr>", { desc = "First Tab" })
-vim.keymap.set("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
-vim.keymap.set("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
-vim.keymap.set("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
-vim.keymap.set("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+-- vim.keymap.set("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
+-- vim.keymap.set("n", "<leader><tab>f", "<cmd>tabfirst<cr>", { desc = "First Tab" })
+-- vim.keymap.set("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
+-- vim.keymap.set("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+-- vim.keymap.set("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
+-- vim.keymap.set("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 -- Navigate
 vim.keymap.set("n", "j", "jzz", { desc = "Go down and center" })
@@ -137,7 +136,7 @@ vim.keymap.set("n", "<C-e>", "4zh", { remap = true, desc = "Scrol tab/buffer to 
 
 -- Delete and Enter file above and below
 vim.keymap.set("n", "<BS>", "kdd", { desc = "Delete line above" })
-vim.keymap.set("n", "<CR>", "O<Esc>j", { desc = "I'm not remember what this's for" })
+vim.keymap.set("n", "<CR>", "O<Esc>j", { desc = "Bring this line down to a newline" })
 
 -- This is keymap for LSP navigate
 vim.keymap.set("n", "g*", "g*zz", { remap = true, desc = "Go to the same name" })
