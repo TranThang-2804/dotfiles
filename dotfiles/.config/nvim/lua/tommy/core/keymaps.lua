@@ -1,3 +1,7 @@
+-- Jump to older/newer cursor positions
+vim.keymap.set("n", "<leader>jp", "<C-o>", { remap = false, desc = "Jump to next cursor position" })
+vim.keymap.set("n", "<leader>kp", "<C-i>", { remap = false, desc = "Jump to previous cursor position" })
+
 -- Change Esc to <C-o> keymap
 vim.keymap.set({ "v", "x", "o", "s", "!", "t", "l" }, "<C-o>", "<Esc>", { silent = true, remap = true, desc = "Esc" })
 vim.keymap.set({ "i", "n" }, "<C-o>", "<cmd>noh<cr><esc>", { silent = true, remap = true, desc = "Esc" })
