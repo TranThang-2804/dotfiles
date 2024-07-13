@@ -1,7 +1,7 @@
 -- Change Esc to <C-o> keymap
 vim.keymap.set({ "v", "x", "o", "s", "!", "t" }, "<C-o>", "<Esc>", { silent = true, remap = true, desc = "Esc" })
 vim.keymap.set({ "i", "n" }, "<C-o>", "<cmd>noh<cr><esc>", { silent = true, remap = true, desc = "Esc" })
-vim.keymap.set("t", "<C-o><C-o>", "<c-\\><c-n>", { silent = true, remap = true, desc = "Esc" })
+vim.keymap.set("t", "<Esc><Esc>", "<c-\\><c-n>", { silent = true, remap = true, desc = "Esc" })
 vim.keymap.set("c", "<C-o>", "<C-c>", { silent = true, remap = true, desc = "Esc" })
 
 -- Move to window using the <ctrl> hjkl keys
