@@ -2,7 +2,7 @@
 
 {
   home.packages = [
-    pkgs.fcitx5-unikey
+    # pkgs.fcitx5-unikey
 
     pkgs.sway
     pkgs.swaylock
