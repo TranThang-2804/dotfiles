@@ -14,10 +14,10 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = tr
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 
 -- Resize window using <ctrl> arrow keys
-vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+vim.keymap.set("n", "<C-r>k", "<cmd>resize +10<cr>", { desc = "Increase window height" })
+vim.keymap.set("n", "<C-r>j", "<cmd>resize -10<cr>", { desc = "Decrease window height" })
+vim.keymap.set("n", "<C-r>h", "<cmd>vertical resize -10<cr>", { desc = "Decrease window width" })
+vim.keymap.set("n", "<C-r>l", "<cmd>vertical resize +10<cr>", { desc = "Increase window width" })
 
 -- Move Lines
 vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
@@ -120,14 +120,6 @@ vim.keymap.set("n", "<leader>w|", "<C-W>v", { desc = "Split window right", remap
 vim.keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split window below", remap = true })
 vim.keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split window right", remap = true })
 
--- tabs
--- vim.keymap.set("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
--- vim.keymap.set("n", "<leader><tab>f", "<cmd>tabfirst<cr>", { desc = "First Tab" })
--- vim.keymap.set("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
--- vim.keymap.set("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
--- vim.keymap.set("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
--- vim.keymap.set("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
-
 -- Navigate
 vim.keymap.set("n", "j", "jzz", { desc = "Go down and center" })
 vim.keymap.set("n", "k", "kzz", { desc = "Go up and center" })
@@ -158,25 +150,25 @@ vim.keymap.set({ "n" }, "P", '"*P', { desc = "Paste from clipboard to the left o
 -- Greatest keymap ever for VsCode like copy and paste
 vim.keymap.set({ "x", "v" }, "p", "\"_dP", { desc = "Paste from clipboard overwrite the selection" })
 
-vim.keymap.set({ "n", "x", "v" }, "y", '"*y', { desc = "Yank to clipboard" })
+vim.keymap.set({ "n", "x", "v" }, "y", '"+y', { desc = "Yank to clipboard" })
 
 vim.keymap.set({ "n", "v", "x" }, "r", '"_r', { desc = "Replace and send deleted char to blackhole register" })
 vim.keymap.set({ "n", "v", "x" }, "d", '"_d', { desc = "Delete to blackhole register" })
 vim.keymap.set({ "n", "v", "x" }, "x", '"_x', { desc = "Delete current character under cursor to blackhole register" })
 vim.keymap.set({ "n", "v", "x" }, "c", '"_c', { desc = "Change option and send deleted strings to blackhole register" })
 
-vim.keymap.set({ "n", "v", "x" }, "D", '"*d', { desc = "Cut the selection" })
+vim.keymap.set({ "n", "v", "x" }, "D", '"+d', { desc = "Cut the selection" })
 
 vim.keymap.set({ "n" }, "<leader>id", "0\"_d$", { desc = "Delete content of the line but keep the line exists" })
-vim.keymap.set({ "n" }, "<leader>iD", "0\"*d$", { desc = "Cut content of the line but keep the line exists" })
+vim.keymap.set({ "n" }, "<leader>iD", "0\"+d$", { desc = "Cut content of the line but keep the line exists" })
 
 vim.keymap.set({ "n" }, "<leader>iy", "0y$", { desc = "Copy the content of a line" })
 
--- This is for resizing window MacOS specific
-vim.keymap.set({ "n", "t" }, "˚", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-vim.keymap.set({ "n", "t" }, "∆", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-vim.keymap.set({ "n", "t" }, "˙", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-vim.keymap.set({ "n", "t" }, "¬", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+-- -- This is for resizing window MacOS specific
+-- vim.keymap.set({ "n", "t" }, "˚", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+-- vim.keymap.set({ "n", "t" }, "∆", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+-- vim.keymap.set({ "n", "t" }, "˙", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+-- vim.keymap.set({ "n", "t" }, "¬", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- This is for global config for terminal mode
 vim.keymap.set("t", "<C-s>", "<C-\\><C-n>", { desc = "esc outside of insert mode in terminal to navigate" })
