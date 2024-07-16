@@ -18,6 +18,7 @@
     pkgs.helm
 
     pkgs.teams-for-linux
+    pkgs.keepass
     pkgs.slack
   ];
 
