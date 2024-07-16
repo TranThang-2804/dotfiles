@@ -148,7 +148,7 @@ vim.keymap.set({ "n" }, "p", '"+p', { desc = "Paste from clipboard to the right 
 vim.keymap.set({ "n" }, "P", '"+P', { desc = "Paste from clipboard to the left of cursor" })
 
 -- Greatest keymap ever for VsCode like copy and paste
-vim.keymap.set({ "x", "v" }, "p", "\"_dP", { desc = "Paste from clipboard overwrite the selection" })
+vim.keymap.set({ "x", "v" }, "p", "\"_dP", { remap = true, desc = "Paste from clipboard overwrite the selection" })
 
 vim.keymap.set({ "n", "x", "v" }, "y", '"+y', { desc = "Yank to clipboard" })
 
