@@ -144,8 +144,8 @@ vim.keymap.set("x", "<Tab>", ">gv", { desc = "Tab indent selection to the right"
 vim.keymap.set("x", "<S-Tab>", "<gv", { desc = "Tab indent selection to the left" })
 
 -- This is for delete change, replace action to be do under _ registry
-vim.keymap.set({ "n" }, "p", '"*p', { desc = "Paste from clipboard to the right of cursor" })
-vim.keymap.set({ "n" }, "P", '"*P', { desc = "Paste from clipboard to the left of cursor" })
+vim.keymap.set({ "n" }, "p", '"+p', { desc = "Paste from clipboard to the right of cursor" })
+vim.keymap.set({ "n" }, "P", '"+P', { desc = "Paste from clipboard to the left of cursor" })
 
 -- Greatest keymap ever for VsCode like copy and paste
 vim.keymap.set({ "x", "v" }, "p", "\"_dP", { desc = "Paste from clipboard overwrite the selection" })
