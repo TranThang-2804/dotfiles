@@ -4,7 +4,7 @@ return {
   version = "v2.1.0",
   init = function()
     vim.o.timeout = true
-    vim.o.timeoutlen = 2000
+    vim.o.timeoutlen = 1000
   end,
   opts = {
     plugins = { spelling = true },
