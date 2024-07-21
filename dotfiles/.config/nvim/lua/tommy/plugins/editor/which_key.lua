@@ -1,7 +1,6 @@
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
-  version = "v2.1.0",
   init = function()
     vim.o.timeout = true
     vim.o.timeoutlen = 1000
@@ -10,32 +9,32 @@ return {
     plugins = { spelling = true },
     keys = {
       mode = { "n", "v" },
-      { "<leader><tab>", desc = "tabs" },
-      { "<leader>a",     desc = "ai suggest" },
-      { "<leader>b",     desc = "buffer" },
-      { "<leader>c",     desc = "code" },
-      { "<leader>f",     desc = "file/find" },
-      { "<leader>g",     desc = "git" },
-      { "<leader>gh",    desc = "hunks" },
-      { "<leader>i",     desc = "in line action" },
-      { "<leader>j",     desc = "next action" },
-      { "<leader>k",     desc = "prev action" },
-      { "<leader>l",     desc = "leetcode" },
-      { "<leader>m",     desc = "markdown note" },
-      { "<leader>q",     desc = "quit/session" },
-      { "<leader>s",     desc = "search" },
-      { "<leader>u",     desc = "ui" },
-      { "<leader>w",     desc = "windows" },
-      { "<leader>x",     desc = "diagnostics/quickfix" },
-      { "[",             desc = "prev" },
-      { "]",             desc = "next" },
-      { "g",             desc = "goto" },
-      { "gs",            desc = "surround" },
+      { "<leader><tab>", group = "tabs" },
+      { "<leader>a",     group = "ai suggest" },
+      { "<leader>b",     group = "buffer" },
+      { "<leader>c",     group = "code" },
+      { "<leader>f",     group = "file/find" },
+      { "<leader>g",     group = "git" },
+      { "<leader>gh",    group = "hunks" },
+      { "<leader>i",     group = "in line action" },
+      { "<leader>j",     group = "next action" },
+      { "<leader>k",     group = "prev action" },
+      { "<leader>l",     group = "leetcode" },
+      { "<leader>m",     group = "markdown note" },
+      { "<leader>q",     group = "quit/session" },
+      { "<leader>s",     group = "search" },
+      { "<leader>u",     group = "ui" },
+      { "<leader>w",     group = "windows" },
+      { "<leader>x",     group = "diagnostics/quickfix" },
+      { "[",             group = "prev" },
+      { "]",             group = "next" },
+      { "g",             group = "goto" },
+      { "gs",            group = "surround" },
     },
   },
   config = function(_, opts)
     local wk = require("which-key")
     wk.setup(opts)
-    wk.register(opts.keys)
+    wk.add(opts.keys)
   end,
 }
