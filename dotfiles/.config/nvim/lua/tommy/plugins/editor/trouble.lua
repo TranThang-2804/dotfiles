@@ -3,10 +3,26 @@ return {
   cmd = { "Trouble" },
   opts = { use_diagnostic_signs = true },
   keys = {
-    { "<leader>xx", "<cmd>Trouble document_diagnostics<cr>",  desc = "Document Diagnostics (Trouble)" },
-    { "<leader>xX", "<cmd>Trouble workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
-    { "<leader>xl", "<cmd>Trouble loclist<cr>",               desc = "Location List (Trouble)" },
-    { "<leader>xq", "<cmd>Trouble quickfix<cr>",              desc = "Quickfix List (Trouble)" },
+    {
+      "<leader>xX",
+      "<cmd>Trouble diagnostics toggle<cr>",
+      desc = "Diagnostics workspace (Trouble)",
+    },
+    {
+      "<leader>xx",
+      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+      desc = "Buffer Diagnostics (Trouble)",
+    },
+    {
+      "<leader>xL",
+      "<cmd>Trouble loclist toggle<cr>",
+      desc = "Location List (Trouble)",
+    },
+    {
+      "<leader>xQ",
+      "<cmd>Trouble qflist toggle<cr>",
+      desc = "Quickfix List (Trouble)",
+    },
     {
       "<leader>kq",
       function()
