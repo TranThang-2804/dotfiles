@@ -14,10 +14,10 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = tr
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 
 -- Resize window using <ctrl-r> keys
-vim.keymap.set("n", "<C-r>k", "<cmd>resize +20<cr>", { desc = "Increase window height" })
-vim.keymap.set("n", "<C-r>j", "<cmd>resize -20<cr>", { desc = "Decrease window height" })
-vim.keymap.set("n", "<C-r>h", "<cmd>vertical resize -20<cr>", { desc = "Decrease window width" })
-vim.keymap.set("n", "<C-r>l", "<cmd>vertical resize +20<cr>", { desc = "Increase window width" })
+vim.keymap.set("n", "<A-r>k", "<cmd>resize +20<cr>", { desc = "Increase window height" })
+vim.keymap.set("n", "<A-r>j", "<cmd>resize -20<cr>", { desc = "Decrease window height" })
+vim.keymap.set("n", "<A-r>h", "<cmd>vertical resize -20<cr>", { desc = "Decrease window width" })
+vim.keymap.set("n", "<A-r>l", "<cmd>vertical resize +20<cr>", { desc = "Increase window width" })
 
 -- Move Lines
 vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
