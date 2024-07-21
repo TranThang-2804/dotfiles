@@ -18,15 +18,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
--- resize splits if window got resized
-vim.api.nvim_create_autocmd({ "VimResized" }, {
-  group = augroup("resize_splits"),
-  callback = function()
-    local current_tab = vim.fn.tabpagenr()
-    vim.cmd("tabdo wincmd =")
-    vim.cmd("tabnext " .. current_tab)
-  end,
-})
+-- -- resize splits if window got resized
+-- vim.api.nvim_create_autocmd({ "VimResized" }, {
+--   group = augroup("resize_splits"),
+--   callback = function()
+--     local current_tab = vim.fn.tabpagenr()
+--     vim.cmd("tabdo wincmd =")
+--     vim.cmd("tabnext " .. current_tab)
+--   end,
+-- })
 
 -- go to last loc when opening a buffer
 vim.api.nvim_create_autocmd("BufReadPost", {
@@ -81,26 +81,14 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Auto create dir when saving a file, in case some intermediate directory does not exist
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  group = augroup("auto_create_dir"),
-  callback = function(event)
-    if event.match:match("^%w%w+://") then
-      return
-    end
-    local file = vim.loop.fs_realpath(event.match) or event.match
-    vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
-  end,
-})
-
--- -- This function triggered when detected a git conflict
--- vim.api.nvim_create_autocommand('User', {
---   pattern = 'GitConflictDetected',
---   callback = function()
---     vim.notify('Conflict detected in '..vim.fn.expand('<afile>'))
---     vim.keymap.set('n', 'cww', function()
---       engage.conflict_buster()
---       create_buffer_local_mappings()
---     end)
---   end
+-- -- Auto create dir when saving a file, in case some intermediate directory does not exist
+-- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+--   group = augroup("auto_create_dir"),
+--   callback = function(event)
+--     if event.match:match("^%w%w+://") then
+--       return
+--     end
+--     local file = vim.loop.fs_realpath(event.match) or event.match
+--     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
+--   end,
 -- })
