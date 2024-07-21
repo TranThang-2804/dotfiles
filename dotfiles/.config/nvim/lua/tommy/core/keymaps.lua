@@ -13,7 +13,7 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = tr
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 
--- Resize window using <ctrl> arrow keys
+-- Resize window using <ctrl-r> keys
 vim.keymap.set("n", "<C-r>k", "<cmd>resize +20<cr>", { desc = "Increase window height" })
 vim.keymap.set("n", "<C-r>j", "<cmd>resize -20<cr>", { desc = "Decrease window height" })
 vim.keymap.set("n", "<C-r>h", "<cmd>vertical resize -20<cr>", { desc = "Decrease window width" })
@@ -29,7 +29,7 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- Clear search with <esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
-vim.keymap.set({ "i", "n" }, "<C-c>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
+-- vim.keymap.set({ "i", "n" }, "<C-c>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
 -- taken from runtime/lua/_editor.lua
 vim.keymap.set(
@@ -61,14 +61,14 @@ vim.keymap.set("n", "<leader>K", "<cmd>norm! K<cr>", { desc = "Keywordprg" })
 -- lazy
 vim.keymap.set("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
--- new file
-vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
+-- -- new file
+-- vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
-vim.keymap.set("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location List" })
-vim.keymap.set("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
+-- vim.keymap.set("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location List" })
+-- vim.keymap.set("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
 
-vim.keymap.set("n", "[q", vim.cmd.cprev, { desc = "Previous quickfix" })
-vim.keymap.set("n", "]q", vim.cmd.cnext, { desc = "Next quickfix" })
+-- vim.keymap.set("n", "[q", vim.cmd.cprev, { desc = "Previous quickfix" })
+-- vim.keymap.set("n", "]q", vim.cmd.cnext, { desc = "Next quickfix" })
 
 -- diagnostic
 local diagnostic_goto = function(next, severity)
@@ -80,12 +80,12 @@ local diagnostic_goto = function(next, severity)
 end
 
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
-vim.keymap.set("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
-vim.keymap.set("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
-vim.keymap.set("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
-vim.keymap.set("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
-vim.keymap.set("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
-vim.keymap.set("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
+vim.keymap.set("n", "<leader>jd", diagnostic_goto(true), { desc = "Next Diagnostic" })
+vim.keymap.set("n", "<leader>kd", diagnostic_goto(false), { desc = "Prev Diagnostic" })
+vim.keymap.set("n", "<leader>je", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
+vim.keymap.set("n", "<leader>ke", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
+vim.keymap.set("n", "<leader>jw", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
+vim.keymap.set("n", "<leader>kw", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
 -- stylua: ignore start
 
@@ -163,12 +163,6 @@ vim.keymap.set({ "n" }, "<leader>id", "0\"_d$", { desc = "Delete content of the 
 vim.keymap.set({ "n" }, "<leader>iD", "0\"+d$", { desc = "Cut content of the line but keep the line exists" })
 
 vim.keymap.set({ "n" }, "<leader>iy", "0y$", { desc = "Copy the content of a line" })
-
--- -- This is for resizing window MacOS specific
--- vim.keymap.set({ "n", "t" }, "˚", "<cmd>resize +2<cr>", { desc = "Increase window height" })
--- vim.keymap.set({ "n", "t" }, "∆", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
--- vim.keymap.set({ "n", "t" }, "˙", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
--- vim.keymap.set({ "n", "t" }, "¬", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- This is for global config for terminal mode
 vim.keymap.set("t", "<C-s>", "<C-\\><C-n>", { desc = "esc outside of insert mode in terminal to navigate" })
