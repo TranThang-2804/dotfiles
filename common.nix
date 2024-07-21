@@ -46,6 +46,7 @@
     pkgs.go-task
     pkgs.go
     pkgs.nodejs_18
+    pkgs.corepack_18
     pkgs.nodePackages.aws-cdk
     pkgs.yarn
     pkgs.gcc
