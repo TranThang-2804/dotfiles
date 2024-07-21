@@ -4,7 +4,7 @@ return {
   priority = 1000,
   opts = {
     flavour = "macchiato", -- latte, frappe, macchiato, mocha
-    background = {     -- :h background
+    background = {         -- :h background
       light = "latte",
       dark = "frappe",
     },
