@@ -32,6 +32,7 @@
     pkgs.jq
     pkgs.tree
     pkgs.kitty
+    pkgs.wezterm
     pkgs.thefuck
     pkgs.gnumake42
 
