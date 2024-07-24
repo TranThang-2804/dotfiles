@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local config = {
   font = wezterm.font('JetBrains Mono', { weight = "Regular", stretch = "Normal", style = "Normal" }),
-  font_size = 14.0,
+  font_size = 16.0,
 
   audible_bell = "Disabled",
   check_for_updates = false,
@@ -29,8 +29,12 @@ local config = {
     brightness = 1.0,
   },
 
-  window_background_opacity = 0.8,
+  enable_tab_bar = false,
+
+  window_decorations = "RESIZE",
+  window_background_opacity = 0.75,
   text_background_opacity = 1.0,
+  macos_window_background_blur = 10,
 
   keys = {
     -- Send "CTRL-ALT" to the terminal when pressing CTRL-ALT, CTRL-ALT
