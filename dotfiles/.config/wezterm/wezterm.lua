@@ -1,20 +1,37 @@
 local wezterm = require("wezterm")
 local config = {
   font = wezterm.font('JetBrains Mono', { weight = "Regular", stretch = "Normal", style = "Normal" }),
+  font_size = 14.0,
+
   audible_bell = "Disabled",
   check_for_updates = false,
-  color_scheme = "Builtin Solarized Dark",
-  window_background_opacity = 0.8,
-  text_background_opacity = 1.0,
+  launch_menu = {},
+
+  leader = { key = "m", mods = "CTRL", timeout_miliseconds = 2000 },
+  disable_default_key_bindings = true,
+
+  -- color_scheme = "Builtin Solarized Dark",
+  colors = {
+    foreground = "#CBE0F0",
+    background = "#011423",
+    cursor_bg = "#47FF9C",
+    cursor_border = "#47FF9C",
+    cursor_fg = "#011423",
+    selection_bg = "#033259",
+    selection_fg = "#CBE0F0",
+    ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
+    brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
+  },
+
   inactive_pane_hsb = {
     hue = 1.0,
     saturation = 1.0,
     brightness = 1.0,
   },
-  font_size = 14.0,
-  launch_menu = {},
-  leader = { key = "m", mods = "CTRL", timeout_miliseconds = 2000 },
-  disable_default_key_bindings = true,
+
+  window_background_opacity = 0.8,
+  text_background_opacity = 1.0,
+
   keys = {
     -- Send "CTRL-ALT" to the terminal when pressing CTRL-ALT, CTRL-ALT
     { key = "a", mods = "LEADER|CTRL",  action = wezterm.action { SendString = "\x01" } },
@@ -67,7 +84,7 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
     })
   end
 else
-  config.default_prog = { '/bin/zsh' }
+  config.default_prog = { '/usr/bin/env zsh' }
   config.default_cwd = "~/Documents"
 end
 
