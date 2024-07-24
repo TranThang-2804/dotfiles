@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local config = {
   font = wezterm.font('JetBrains Mono', { weight = "Regular", stretch = "Normal", style = "Normal" }),
-  font_size = 16.0,
+  font_size = 14.0,
 
   audible_bell = "Disabled",
   check_for_updates = false,
