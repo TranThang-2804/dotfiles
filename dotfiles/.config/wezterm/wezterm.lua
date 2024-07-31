@@ -88,7 +88,7 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
     })
   end
 else
-  config.default_prog = { '/usr/bin/env zsh' }
+  -- config.default_prog = { '/usr/bin/env zsh' }
   config.default_cwd = "~/Documents"
 end
 
