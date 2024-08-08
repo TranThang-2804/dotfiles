@@ -7,7 +7,12 @@ return {
   end,
   opts = {
     plugins = { spelling = true },
-    keys = {
+  },
+  config = function(_, opts)
+    local wk = require("which-key")
+    wk.setup(opts)
+
+    local keys = {
       mode = { "n", "v" },
       { "<leader><tab>", group = "tabs" },
       { "<leader>a",     group = "ai suggest" },
@@ -30,11 +35,7 @@ return {
       { "]",             group = "next" },
       { "g",             group = "goto" },
       { "gs",            group = "surround" },
-    },
-  },
-  config = function(_, opts)
-    local wk = require("which-key")
-    wk.setup(opts)
-    wk.add(opts.keys)
+    }
+    wk.add(keys)
   end,
 }
