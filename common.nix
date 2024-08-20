@@ -17,6 +17,7 @@
     pkgs.git
     pkgs.curl
     pkgs.tmux
+    pkgs.bat
     pkgs.unzip
     pkgs.zsh
     pkgs.zsh-powerlevel10k
@@ -111,6 +112,9 @@
 
         # Command alias
         ls="ls -la --color";
+        
+        # Find and open file with nvim
+        fnvim="nvim $(fzf --height 40% --preview \"bat --color=always --style=numbers {}\")";
       };
 
       plugins = [
