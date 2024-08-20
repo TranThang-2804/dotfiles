@@ -202,18 +202,8 @@ return {
         end,
         desc = "CopilotChat - Ask input",
       },
-      -- Generate commit message based on the git diff
-      {
-        "<leader>am",
-        "<cmd>CopilotChatCommit<cr>",
-        desc = "CopilotChat - Generate commit message for all changes",
-      },
-      {
-        "<leader>aM",
-        "<cmd>CopilotChatCommitStaged<cr>",
-        desc = "CopilotChat - Generate commit message for staged changes",
-      },
-      -- Quick chat with Copilot
+      { "<leader>am", "<cmd>CopilotChatCommit<cr>", desc = "CopilotChat - Generate commit message for all changes" },
+      { "<leader>aM", "<cmd>CopilotChatCommitStaged<cr>", desc = "CopilotChat - Generate commit message for staged changes" },
       {
         "<leader>aq",
         function()
