@@ -202,7 +202,7 @@ return {
         end,
         desc = "CopilotChat - Ask input",
       },
-      { "<leader>am", "<cmd>CopilotChatCommit<cr>", desc = "CopilotChat - Generate commit message for all changes" },
+      { "<leader>am", "<cmd>CopilotChatCommit<cr>",       desc = "CopilotChat - Generate commit message for all changes" },
       { "<leader>aM", "<cmd>CopilotChatCommitStaged<cr>", desc = "CopilotChat - Generate commit message for staged changes" },
       {
         "<leader>aq",
