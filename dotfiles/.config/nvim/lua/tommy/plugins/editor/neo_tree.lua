@@ -12,7 +12,7 @@ return {
     {
       "<leader>fe",
       function()
-        require("neo-tree.command").execute({ reveal = true, toggle = true, dir = vim.loop.cwd(), position = "current" })
+        require("neo-tree.command").execute({ reveal = true, toggle = true, dir = vim.loop.cwd(), position = "float" })
       end,
       desc = "Explorer NeoTree (cwd)",
     },
@@ -20,14 +20,14 @@ return {
     {
       "<leader>ge",
       function()
-        require("neo-tree.command").execute({ source = "git_status", reveal = true, toggle = true, position = "current" })
+        require("neo-tree.command").execute({ source = "git_status", reveal = true, toggle = true, position = "float" })
       end,
       desc = "Git explorer",
     },
     {
       "<leader>be",
       function()
-        require("neo-tree.command").execute({ source = "buffers", reveal = true, toggle = true, position = "current" })
+        require("neo-tree.command").execute({ source = "buffers", reveal = true, toggle = true, position = "float" })
       end,
       desc = "Buffer explorer",
     },
@@ -36,7 +36,7 @@ return {
     vim.cmd([[Neotree close]])
   end,
   opts = {
-    -- close_if_last_window = true, -- Close Neo-tree if it is the last window current in the tab
+    -- close_if_last_window = true, -- Close Neo-tree if it is the last window float in the tab
     popup_border_style = "rounded",
     sources = { "filesystem", "buffers", "git_status", "document_symbols" },
     open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
@@ -71,6 +71,22 @@ return {
         expander_collapsed = "",
         expander_expanded = "",
         expander_highlight = "NeoTreeExpander",
+      },
+      file_size = {
+        enabled = true,
+        required_width = 64, -- min width of window required to show this column
+      },
+      type = {
+        enabled = false,
+        required_width = 122, -- min width of window required to show this column
+      },
+      last_modified = {
+        enabled = false,
+        required_width = 88, -- min width of window required to show this column
+      },
+      created = {
+        enabled = true,
+        required_width = 110, -- min width of window required to show this column
       },
     },
   },
