@@ -44,7 +44,7 @@ return {
     workspaces = {
       {
         name = "tommy-note-vault",
-        path = "~/Documents/Note",
+        path = "~/.notes",
       },
     },
     daily_notes = {
