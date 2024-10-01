@@ -63,12 +63,12 @@ local config = {
     { key = "&", mods = "LEADER|SHIFT", action = wezterm.action { CloseCurrentTab = { confirm = true } } },
     { key = "x", mods = "LEADER",       action = wezterm.action { CloseCurrentPane = { confirm = true } } },
 
-    { key = "n", mods = "LEADER",   action = "ToggleFullScreen" },
-    { key = "v", mods = "LEADER",   action = wezterm.action.PasteFrom 'Clipboard' },
-    -- { key = "c", mods = "LEADER",   action = wezterm.action.CopyTo 'Clipboard' },
-    { key = "+", mods = "LEADER",   action = "IncreaseFontSize" },
-    { key = "-", mods = "LEADER",   action = "DecreaseFontSize" },
-    { key = "0", mods = "LEADER",   action = "ResetFontSize" },
+    { key = "n", mods = "LEADER",       action = "ToggleFullScreen" },
+    { key = "v", mods = "LEADER",       action = wezterm.action.PasteFrom 'Clipboard' },
+    { key = "c", mods = "SHIFT|CTRL",   action = wezterm.action.CopyTo 'Clipboard' },
+    { key = "+", mods = "LEADER",       action = "IncreaseFontSize" },
+    { key = "-", mods = "LEADER",       action = "DecreaseFontSize" },
+    { key = "0", mods = "LEADER",       action = "ResetFontSize" },
   },
   set_environment_variables = {},
 }
