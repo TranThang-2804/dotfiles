@@ -23,7 +23,10 @@
     pkgs.zsh-powerlevel10k
     pkgs.zsh-autocomplete
     pkgs.zsh-autosuggestions
-    pkgs.python3
+    (pkgs.python311.withPackages (ppkgs: [
+          ppkgs.numpy
+          ppkgs.pip
+    ]))
     pkgs.docker
     pkgs.neofetch
     pkgs.lazygit
