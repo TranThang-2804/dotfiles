@@ -33,7 +33,26 @@ This project requires executing a setup script to configure the local machine en
 - home-manager
 - flake
 
-NOTE: You will need to enable flake with this command:
+To install them, you can follow this guide:
+1. install nixpkg
+- MacOS
+```
+sh <(curl -L https://nixos.org/nix/install)
+```
+
+- WSL2/Linux
+```
+sh <(curl -L https://nixos.org/nix/install) --daemon
+```
+
+2. Install home-manager
+```
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+nix-shell '<home-manager>' -A install
+```
+
+3. Enable flake with this command:
 ```
 mkdir ~/.config/nix/
 touch ~/.config/nix/nix.conf
