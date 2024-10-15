@@ -59,6 +59,9 @@ touch ~/.config/nix/nix.conf
 echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
 ```
 
+### Neovim dotfiles
+[Neovim Configuration](./dotfiles/.config/nvim/README.md)
+
 ### For wsl
 For neovim to work properly with the wsl clipboard you should install:
 win32yank using powershell:

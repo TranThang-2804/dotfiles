@@ -12,7 +12,7 @@
 Clone the repository and install the plugins:
 
 ```sh
-git clone git@github.com:TranThang-2804/dotfiles ~/.config/$USER/dotfiles
+git clone https://github.com/TranThang-2804/dotfiles ~/.config/TranThang-2804/dotfiles
 ```
 
 Open Neovim with this config:
