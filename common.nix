@@ -50,6 +50,9 @@
     # Dev Tools
     pkgs.go-task
     pkgs.go
+    pkgs.golangci-lint
+    pkgs.tilt
+    pkgs.docker-compose
     pkgs.nodejs_18
     pkgs.corepack_18
     pkgs.nodePackages.aws-cdk
