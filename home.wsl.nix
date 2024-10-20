@@ -2,7 +2,6 @@
 
 {
   home.packages = [
-    pkgs.helm
   ];
 
 }
