@@ -13,17 +13,17 @@ local config = {
   leader = { key = "m", mods = "CTRL", timeout_milliseconds = 2000 },
   disable_default_key_bindings = true,
 
-  -- color_scheme = "Builtin Solarized Dark",
+  color_scheme = "rose-pine-moon",
   colors = {
-    foreground = "#CBE0F0",
-    background = "#232136",
-    cursor_bg = "#eb6f92",
-    cursor_border = "#eb6f92",
-    cursor_fg = "#011423",
-    selection_bg = "#033259",
-    selection_fg = "#CBE0F0",
-    ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
-    brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
+    -- foreground = "#CBE0F0",
+    -- background = "#232136",
+    -- cursor_bg = "#eb6f92",
+    -- cursor_border = "#eb6f92",
+    -- cursor_fg = "#011423",
+    -- selection_bg = "#033259",
+    -- selection_fg = "#CBE0F0",
+    -- ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
+    -- brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
   },
 
   inactive_pane_hsb = {
@@ -95,6 +95,18 @@ else
   config.default_cwd = "~/Documents"
 end
 
-bar.apply_to_config(config)
+bar.apply_to_config(config, {
+  modules = {
+    spotify = {
+      enabled = false,
+    },
+    hostname = {
+      enabled = false,
+    },
+    pane = {
+      enabled = false,
+    },
+  },
+})
 
 return config
