@@ -1,4 +1,7 @@
 local wezterm = require("wezterm")
+
+local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
+
 local config = {
   font = wezterm.font('JetBrains Mono', { weight = "Regular", stretch = "Normal", style = "Normal" }),
   font_size = 16.0,
@@ -7,15 +10,15 @@ local config = {
   check_for_updates = false,
   launch_menu = {},
 
-  leader = { key = "m", mods = "CTRL", timeout_miliseconds = 2000 },
+  leader = { key = "m", mods = "CTRL", timeout_milliseconds = 2000 },
   disable_default_key_bindings = true,
 
   -- color_scheme = "Builtin Solarized Dark",
   colors = {
     foreground = "#CBE0F0",
     background = "#232136",
-    cursor_bg = "#47FF9C",
-    cursor_border = "#47FF9C",
+    cursor_bg = "#eb6f92",
+    cursor_border = "#eb6f92",
     cursor_fg = "#011423",
     selection_bg = "#033259",
     selection_fg = "#CBE0F0",
@@ -64,7 +67,7 @@ local config = {
     { key = "x", mods = "LEADER",       action = wezterm.action { CloseCurrentPane = { confirm = true } } },
 
     { key = "n", mods = "LEADER",       action = "ToggleFullScreen" },
-    { key = "v", mods = "SHIFT|CTRL",       action = wezterm.action.PasteFrom 'Clipboard' },
+    { key = "v", mods = "SHIFT|CTRL",   action = wezterm.action.PasteFrom 'Clipboard' },
     { key = "c", mods = "SHIFT|CTRL",   action = wezterm.action.CopyTo 'Clipboard' },
     { key = "+", mods = "LEADER",       action = "IncreaseFontSize" },
     { key = "-", mods = "LEADER",       action = "DecreaseFontSize" },
@@ -91,5 +94,7 @@ else
   -- config.default_prog = { '/usr/bin/env zsh' }
   config.default_cwd = "~/Documents"
 end
+
+bar.apply_to_config(config)
 
 return config
