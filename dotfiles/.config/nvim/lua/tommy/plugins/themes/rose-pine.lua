@@ -4,9 +4,9 @@ return {
   lazy = false,
   priority = 1000,
   opts = {
-    variant = "auto",      -- auto, main, moon, or dawn
+    variant = "moon",      -- auto, main, moon, or dawn
     dark_variant = "moon", -- main, moon, or dawn
-    dim_inactive_windows = false,
+    dim_inactive_windows = true,
     extend_background_behind_borders = true,
 
     enable = {
@@ -54,10 +54,10 @@ return {
 
     palette = {
       -- Override the builtin palette per variant
-      -- moon = {
-      --     base = '#18191a',
-      --     overlay = '#363738',
-      -- },
+      moon = {
+          -- base = '#18191a',
+          overlay = '#363738',
+      },
     },
 
     highlight_groups = {
