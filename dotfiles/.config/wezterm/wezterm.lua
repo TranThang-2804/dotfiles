@@ -29,7 +29,7 @@ local config = {
     brightness = 1.0,
   },
 
-  enable_tab_bar = false,
+  enable_tab_bar = true,
 
   window_decorations = "TITLE | RESIZE",
   window_background_opacity = 1,

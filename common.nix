@@ -144,11 +144,6 @@
         recursive = true;
     };
 
-    ".config/kitty" = {
-        source = dotfiles/.config/kitty;
-        recursive = true;
-    };
-
     ".config/libinput-gestures" = {
         source = dotfiles/.config/libinput-gestures;
         recursive = true;
