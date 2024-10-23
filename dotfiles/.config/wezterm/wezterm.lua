@@ -13,7 +13,7 @@ local config = {
   leader = { key = "m", mods = "CTRL", timeout_milliseconds = 2000 },
   disable_default_key_bindings = true,
 
-  color_scheme = "rose-pine-moon",
+  color_scheme = "Catppuccin Mocha",
   colors = {
     -- foreground = "#CBE0F0",
     -- background = "#232136",

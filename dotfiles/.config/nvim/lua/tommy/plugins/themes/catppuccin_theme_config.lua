@@ -3,7 +3,7 @@ return {
   name = "catppuccin",
   priority = 1000,
   opts = {
-    flavour = "macchiato", -- latte, frappe, macchiato, mocha
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
     background = {         -- :h background
       light = "latte",
       dark = "frappe",
@@ -14,7 +14,7 @@ return {
     dim_inactive = {
       enabled = false,              -- dims the background color of inactive window
       shade = "dark",
-      percentage = 0.15,            -- percentage of the shade to apply to the inactive window
+      percentage = 0.3,            -- percentage of the shade to apply to the inactive window
     },
     no_italic = false,              -- Force no italic
     no_bold = false,                -- Force no bold
@@ -40,7 +40,7 @@ return {
         crust = "#5756a8",
       },
       macchiato = {
-        base = "#000000",
+        -- base = "#000000",
         -- mantle = "#422b11",
         crust = "#5756a8",
       }
