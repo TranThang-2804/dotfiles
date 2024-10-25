@@ -34,7 +34,7 @@ local config = {
 
   enable_tab_bar = true,
 
-  window_decorations = "TITLE | RESIZE",
+  window_decorations = "RESIZE",
   window_background_opacity = 1,
   text_background_opacity = 1.0,
   macos_window_background_blur = 10,
