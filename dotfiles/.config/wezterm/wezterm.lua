@@ -13,7 +13,8 @@ local config = {
   leader = { key = "m", mods = "CTRL", timeout_milliseconds = 2000 },
   disable_default_key_bindings = true,
 
-  color_scheme = "Catppuccin Mocha",
+  color_scheme = "Rose Pine",
+
   colors = {
     -- foreground = "#CBE0F0",
     -- background = "#232136",
@@ -35,7 +36,7 @@ local config = {
   enable_tab_bar = true,
 
   window_decorations = "RESIZE",
-  window_background_opacity = 1,
+  window_background_opacity = 0.8,
   text_background_opacity = 1.0,
   macos_window_background_blur = 10,
 

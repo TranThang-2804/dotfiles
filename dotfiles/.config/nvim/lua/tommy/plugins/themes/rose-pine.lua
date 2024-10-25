@@ -4,9 +4,9 @@ return {
   lazy = false,
   priority = 1000,
   opts = {
-    variant = "moon",      -- auto, main, moon, or dawn
-    dark_variant = "moon", -- main, moon, or dawn
-    dim_inactive_windows = true,
+    variant = "main",      -- auto, main, moon, or dawn
+    dark_variant = "main", -- main, moon, or dawn
+    dim_inactive_windows = false,
     extend_background_behind_borders = true,
 
     enable = {
@@ -18,7 +18,7 @@ return {
     styles = {
       bold = true,
       italic = true,
-      transparency = false,
+      transparency = true,
     },
 
     groups = {
@@ -34,7 +34,7 @@ return {
       warn = "gold",
 
       git_add = "foam",
-      git_change = "rose",
+      git_change = "gold",
       git_delete = "love",
       git_dirty = "rose",
       git_ignore = "muted",
