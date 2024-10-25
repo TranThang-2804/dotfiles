@@ -144,6 +144,11 @@
         recursive = true;
     };
 
+    ".config/aerospace/aerospace.toml" = {
+        source = dotfiles/.config/hypr;
+        recursive = true;
+    };
+
     ".config/libinput-gestures" = {
         source = dotfiles/.config/libinput-gestures;
         recursive = true;
