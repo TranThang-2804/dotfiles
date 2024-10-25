@@ -144,8 +144,8 @@
         recursive = true;
     };
 
-    ".config/aerospace/.aerospace.toml" = {
-        source = dotfiles/.config/aerospace/.aerospace.toml;
+    ".aerospace.toml" = {
+        source = dotfiles/.aerospace.toml;
         recursive = true;
     };
 
