@@ -13,7 +13,7 @@ local config = {
   leader = { key = "m", mods = "CTRL", timeout_milliseconds = 2000 },
   disable_default_key_bindings = true,
 
-  color_scheme = "Rose Pine",
+  color_scheme = "rose-pine",
 
   colors = {
     -- foreground = "#CBE0F0",
@@ -104,9 +104,9 @@ bar.apply_to_config(config, {
     hostname = {
       enabled = false,
     },
-    pane = {
-      enabled = false,
-    },
+    -- pane = {
+    --   enabled = false,
+    -- },
   },
 })
 
