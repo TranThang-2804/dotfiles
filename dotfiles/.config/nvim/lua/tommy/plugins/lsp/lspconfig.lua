@@ -110,11 +110,11 @@ return {
     })
 
     -- configure dartls server (with special settings)
-    require("flutter-tools").setup({
-      lsp = {
-        capabilities = capabilities,
-        on_attach = on_attach,
-      }
-    })
+    -- require("flutter-tools").setup({
+    --   lsp = {
+    --     capabilities = capabilities,
+    --     on_attach = on_attach,
+    --   }
+    -- })
   end,
 }
