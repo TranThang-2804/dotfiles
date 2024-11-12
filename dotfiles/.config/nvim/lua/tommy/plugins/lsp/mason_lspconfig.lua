@@ -6,7 +6,6 @@ return {
       "terraformls",
       "tflint",
       "lua_ls",
-      "tsserver",
       "eslint",
       "jdtls",
       "dockerls",
