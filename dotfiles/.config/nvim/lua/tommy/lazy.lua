@@ -20,6 +20,7 @@ require("lazy").setup({
     { import = "tommy.plugins.ui" },
     { import = "tommy.plugins.cmp" },
     { import = "tommy.plugins.telescope" },
+    { import = "tommy.plugins.dap" },
   },
   {
     checker = {
