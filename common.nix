@@ -53,7 +53,7 @@
     pkgs.golangci-lint
     pkgs.tilt
     pkgs.docker-compose
-    pkgs.nodejs_18
+    pkgs.nodejs_20
     pkgs.corepack_18
     pkgs.nodePackages.aws-cdk
     pkgs.yarn
