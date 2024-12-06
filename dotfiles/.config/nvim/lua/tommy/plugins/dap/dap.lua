@@ -4,11 +4,25 @@ return {
   desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
 
   dependencies = {
-    "rcarriga/nvim-dap-ui",
+    {
+      "rcarriga/nvim-dap-ui",
+      opts = {},
+      keys = {
+        { "<leader>du", function() require("dapui").toggle({}) end, desc = "Dap UI" },
+        { "<leader>de", function() require("dapui").eval() end,     desc = "Eval",  mode = { "n", "v" } },
+      },
+    },
     -- virtual text for the debugger
     {
       "theHamsta/nvim-dap-virtual-text",
       opts = {},
+    },
+    {
+      "leoluz/nvim-dap-go",
+      opts = {},
+    },
+    {
+      "nvim-neotest/nvim-nio",
     },
   },
 
@@ -35,26 +49,19 @@ return {
   },
 
   config = function()
-    -- -- load mason-nvim-dap here, after all adapters have been setup
-    -- if LazyVim.has("mason-nvim-dap.nvim") then
-    --   require("mason-nvim-dap").setup(LazyVim.opts("mason-nvim-dap.nvim"))
-    -- end
-    --
-    -- vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
-    --
-    -- for name, sign in pairs(LazyVim.config.icons.dap) do
-    --   sign = type(sign) == "table" and sign or { sign }
-    --   vim.fn.sign_define(
-    --     "Dap" .. name,
-    --     { text = sign[1], texthl = sign[2] or "DiagnosticInfo", linehl = sign[3], numhl = sign[3] }
-    --   )
-    -- end
-    --
-    -- -- setup dap config by VsCode launch.json file
-    -- local vscode = require("dap.ext.vscode")
-    -- local json = require("plenary.json")
-    -- vscode.json_decode = function(str)
-    --   return vim.json.decode(json.json_strip_comments(str))
-    -- end
+    local dap = require("dap")
+    local dapui = require("dapui")
+
+    require("dap-go").setup()
+
+    dap.listeners.after.event_initialized["dapui_config"] = function()
+      dapui.open({})
+    end
+    dap.listeners.before.event_terminated["dapui_config"] = function()
+      dapui.close({})
+    end
+    dap.listeners.before.event_exited["dapui_config"] = function()
+      dapui.close({})
+    end
   end,
 }
