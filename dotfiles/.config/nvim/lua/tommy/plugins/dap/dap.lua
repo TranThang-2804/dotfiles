@@ -52,6 +52,7 @@ return {
     local dap = require("dap")
     local dapui = require("dapui")
 
+    require("dap-ui").setup()
     require("dap-go").setup()
 
     dap.listeners.after.event_initialized["dapui_config"] = function()
