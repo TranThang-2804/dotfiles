@@ -10,16 +10,9 @@ typeset -U path cdpath fpath manpath
 path+="$(devbox global path)/.devbox/nix/profile/default/share/powerlevel10k"
 fpath+="$(devbox global path)/.devbox/nix/profile/default/share/powerlevel10k"
 
-
-
-
 source $(devbox global path)/.devbox/nix/profile/default/share/oh-my-zsh/oh-my-zsh.sh
 source $(devbox global path)/.devbox/nix/profile/default/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(devbox global path)/.devbox/nix/profile/default/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source $(devbox global path)/.devbox/nix/profile/default/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-
-
-
 
 # History options should be set in .zshrc and after oh-my-zsh sourcing.
 HISTSIZE="10000"
