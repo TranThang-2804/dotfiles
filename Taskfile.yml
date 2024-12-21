@@ -26,5 +26,20 @@ tasks:
       - ln -sf "$(pwd)/devbox.json" {{.DEVBOX_DIR_PATH}}/devbox.json
       - ln -sf "$(pwd)/devbox.lock" {{.DEVBOX_DIR_PATH}}/devbox.lock
       - devbox global install 
+      - task: 
     silent: false
+
+  dotfiles:
+    desc: create symblink to dotfiles
+    cmds:
+      - ln -sf "$(pwd)/.config/hypr"        $HOME/.config/hypr
+      - ln -sf "$(pwd)/.aerospace.toml"     $HOME/.aerospace.toml
+      - ln -sf "$(pwd)/.aerospace.toml"     $HOME/.aerospace.toml
+      - ln -sf "$(pwd)/.aerospace.toml"     $HOME/.aerospace.toml
+      - ln -sf "$(pwd)/.aerospace.toml"     $HOME/.aerospace.toml
+      - ln -sf "$(pwd)/.aerospace.toml"     $HOME/.aerospace.toml
+      - ln -sf "$(pwd)/.aerospace.toml"     $HOME/.aerospace.toml
+      - ln -sf "$(pwd)/.aerospace.toml"     $HOME/.aerospace.toml
+    silent: true
+    internal: true
 
