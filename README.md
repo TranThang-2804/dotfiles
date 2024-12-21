@@ -1,11 +1,11 @@
-# Project Setup
-As an enthusiast on NeoVim, developer environment configuration, I created a framework that can easilly be used to setup a new machine with all the necessary tools and configurations. This project is based on NixOS and Home-Manager, which are the best tools for declarative system configuration and package management.
+# Overview
 
-This framework will make sure you will have the expected environment, tools, dotfiles configurations on any machines, OS, or architecture. (Except Windows, I'm sorry for that. :D - Be a man and use Arch Linux instead!)
+This repo provide a framework structure for storing all of your working environment configuration using declarative way. This code skeleton uses devbox for configuring the environment. Please read below instruction
+for how to use it.
 
 This project requires executing a setup script to configure the local machine environment. Please follow the instructions below based on your operating system.
 
-## Project structure
+# Project structure
 ```
 .
 ├── dotfiles                    - Contains all the dotfiles for the local machine
@@ -28,48 +28,26 @@ This project requires executing a setup script to configure the local machine en
 └── README.md
 ```
 
-## Prerequisites
-- nixpkg
-- home-manager
-- flake
+# Prerequisites
+- devbox
 
 To install them, you can follow this guide:
-1. install nixpkg
-- MacOS
+1. install devbox (Linux/MacOS/WSL2)
 ```
-sh <(curl -L https://nixos.org/nix/install)
-```
-
-- WSL2/Linux
-```
-sh <(curl -L https://nixos.org/nix/install) --daemon
+curl -fsSL https://get.jetify.com/devbox | bash
 ```
 
-2. Install home-manager
-```
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --update
-nix-shell '<home-manager>' -A install
-```
-
-3. Enable flake with this command:
-```
-mkdir ~/.config/nix/
-touch ~/.config/nix/nix.conf
-echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
-```
-
-### Neovim dotfiles
+## Neovim dotfiles
 [Neovim Configuration](./dotfiles/.config/nvim/README.md)
 
-### For wsl
+## For wsl
 For neovim to work properly with the wsl clipboard you should install:
 win32yank using powershell:
 ```
 choco install win32yank
 ```
 
-## Installation
+# Installation
 1. For amd64 architecture, run the following command:
 ```
 home-manager switch --impure --flake .#amd64
