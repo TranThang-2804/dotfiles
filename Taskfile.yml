@@ -22,11 +22,17 @@ tasks:
   setup:
     desc: install the environment, setup env for macOS and Ubuntu
     cmds:
+      - echo "----------------------------------------------------------------"
+      - echo "This requires sudo permission to run"
+      - echo "Are you okay with it? This only uses the role to create symblink"
+      - echo "----------------------------------------------------------------"
+      - sudo echo "Starting to setup system"
+      - echo "----------------------------------------------------------------"
+      - task: copydotfiles
       - command -v devbox &> /dev/null || { curl -fsSL https://get.jetify.com/devbox | bash; }
       - ln -sf "$(pwd)/devbox.json" "{{.DEVBOX_DIR_PATH}}/devbox.json"
       - ln -sf "$(pwd)/devbox.lock" "{{.DEVBOX_DIR_PATH}}/devbox.lock"
       - devbox global install 
-      - task: copydotfiles
     silent: true
 
   copydotfiles:
@@ -39,11 +45,10 @@ tasks:
       - ln -sf "$(pwd)/config/swaylock/"                "$HOME/.config"
       - ln -sf "$(pwd)/config/waybar/"                  "$HOME/.config"
       - ln -sf "$(pwd)/config/wezterm/"                 "$HOME/.config"
-      - ln -sf "$(pwd)/config/.aerospace.toml"          "$HOME/.config/.aerospace.toml"
-      - ln -sf "$(pwd)/config/.p10k.zsh"                "$HOME/.config/.p10k.zsh"
-      - ln -sf "$(pwd)/config/.tmux.conf"               "$HOME/.config/.tmux.config"
-      - ln -sf "$(pwd)/config/.vimrc"                   "$HOME/.config/.vimrc"
-      - ln -sf "$(pwd)/config/.zshrc"                   "$HOME/.config/.zshrc"
+      - ln -sf "$(pwd)/config/.aerospace.toml"          "$HOME/.aerospace.toml"
+      - ln -sf "$(pwd)/config/.p10k.zsh"                "$HOME/.p10k.zsh"
+      - ln -sf "$(pwd)/config/.tmux.conf"               "$HOME/.tmux.config"
+      - ln -sf "$(pwd)/config/.vimrc"                   "$HOME/.vimrc"
+      - ln -sf "$(pwd)/config/.zshrc"                   "$HOME/.zshrc"
     silent: true
-    internal: true
 
