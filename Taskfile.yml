@@ -23,7 +23,8 @@ tasks:
     desc: install the environment, setup env for macOS and Ubuntu
     cmds:
       - command -v devbox &> /dev/null || { curl -fsSL https://get.jetify.com/devbox | bash; }
-      - ln -sf {{.DEVBOX_DIR_PATH}}/devbox.json ./devbox.json
-      - ln -sf {{.DEVBOX_DIR_PATH}}/devbox.lock ./devbox.lock
+      - cp -f ./devbox.json {{.DEVBOX_DIR_PATH}}/devbox.json
+      - cp -f ./devbox.lock {{.DEVBOX_DIR_PATH}}/devbox.lock
+      - devbox global install 
     silent: true
 
