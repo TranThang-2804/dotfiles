@@ -29,7 +29,6 @@ tasks:
       - sudo echo "Starting to setup system"
       - echo "----------------------------------------------------------------"
       - task: copydotfiles
-      - task: installzsh
       - command -v devbox &> /dev/null || { curl -fsSL https://get.jetify.com/devbox | bash; }
       - ln -sf "$(pwd)/devbox.json" "{{.DEVBOX_DIR_PATH}}/devbox.json"
       - ln -sf "$(pwd)/devbox.lock" "{{.DEVBOX_DIR_PATH}}/devbox.lock"
