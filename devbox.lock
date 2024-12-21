@@ -241,6 +241,54 @@
         }
       }
     },
+    "earthly@0.8.15": {
+      "last_modified": "2024-11-28T07:51:56Z",
+      "resolved": "github:NixOS/nixpkgs/226216574ada4c3ecefcbbec41f39ce4655f78ef#earthly",
+      "source": "devbox-search",
+      "version": "0.8.15",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/myjf5lbw65c3db6da2rnjiza7wr1h1j1-earthly-0.8.15",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/myjf5lbw65c3db6da2rnjiza7wr1h1j1-earthly-0.8.15"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hk7lywm8783rzbfy3drbdvg4xv8l3l0x-earthly-0.8.15",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/hk7lywm8783rzbfy3drbdvg4xv8l3l0x-earthly-0.8.15"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/1rsymaimpgz732m7nw2myhzc60h6bpgk-earthly-0.8.15",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/1rsymaimpgz732m7nw2myhzc60h6bpgk-earthly-0.8.15"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/kzsnib3vdzzb3jg0y5iqaj7rjvgz1w6p-earthly-0.8.15",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/kzsnib3vdzzb3jg0y5iqaj7rjvgz1w6p-earthly-0.8.15"
+        }
+      }
+    },
     "fzf@latest": {
       "last_modified": "2024-12-17T11:43:56Z",
       "resolved": "github:NixOS/nixpkgs/4989a246d7a390a859852baddb1013f825435cee#fzf",

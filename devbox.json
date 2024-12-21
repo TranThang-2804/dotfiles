@@ -30,7 +30,8 @@
     "cdk@latest",
     "yarn@latest",
     "gcc@latest",
-    "go@latest"
+    "go@latest",
+    "earthly@0.8.15"
   ],
   "shell": {
     "init_hook": [
