@@ -27,7 +27,7 @@ tasks:
       - ln -sf "$(pwd)/devbox.lock" "{{.DEVBOX_DIR_PATH}}/devbox.lock"
       - devbox global install 
       - task: copydotfiles
-    silent: false
+    silent: true
 
   copydotfiles:
     desc: create symblink to dotfiles
@@ -43,6 +43,7 @@ tasks:
       - ln -sf "$(pwd)/config/.p10k.zsh"                "$HOME/.config/.p10k.zsh"
       - ln -sf "$(pwd)/config/.tmux.conf"               "$HOME/.config/.tmux.config"
       - ln -sf "$(pwd)/config/.vimrc"                   "$HOME/.config/.vimrc"
+      - ln -sf "$(pwd)/config/.zshrc"                   "$HOME/.config/.zshrc"
     silent: true
     internal: true
 
