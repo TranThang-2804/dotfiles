@@ -51,4 +51,5 @@ tasks:
       - ln -sf "$(pwd)/config/.vimrc"                   "$HOME/.vimrc"
       - ln -sf "$(pwd)/config/.zshrc"                   "$HOME/.zshrc"
     silent: true
+    internal: true
 
