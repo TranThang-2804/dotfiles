@@ -77,6 +77,7 @@
         export GOBIN=$HOME/go/bin;
         eval $(thefuck --alias)
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
+        eval "$(devbox global shellenv)"
       '';
       
       shellAliases = {
