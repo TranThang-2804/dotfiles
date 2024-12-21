@@ -1118,6 +1118,54 @@
       "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#nodejs_18",
       "source": "nixpkg"
     },
+    "oh-my-zsh@latest": {
+      "last_modified": "2024-11-28T07:51:56Z",
+      "resolved": "github:NixOS/nixpkgs/226216574ada4c3ecefcbbec41f39ce4655f78ef#oh-my-zsh",
+      "source": "devbox-search",
+      "version": "2024-10-01",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/75mpnk2ymbycgnq818q6jv2qwjdkbky3-oh-my-zsh-2024-10-01",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/75mpnk2ymbycgnq818q6jv2qwjdkbky3-oh-my-zsh-2024-10-01"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/giq7fiad25kd9pdriyvmhhbms422dw2z-oh-my-zsh-2024-10-01",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/giq7fiad25kd9pdriyvmhhbms422dw2z-oh-my-zsh-2024-10-01"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/c1qj1cpywiqibpgwqim1ci8ak8gy2jcs-oh-my-zsh-2024-10-01",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/c1qj1cpywiqibpgwqim1ci8ak8gy2jcs-oh-my-zsh-2024-10-01"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zqsxfn1xq5qacvm3qxqp2vy3nxw78k6n-oh-my-zsh-2024-10-01",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/zqsxfn1xq5qacvm3qxqp2vy3nxw78k6n-oh-my-zsh-2024-10-01"
+        }
+      }
+    },
     "ripgrep@latest": {
       "last_modified": "2024-12-03T12:40:06Z",
       "resolved": "github:NixOS/nixpkgs/566e53c2ad750c84f6d31f9ccb9d00f823165550#ripgrep",

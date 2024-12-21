@@ -7,10 +7,12 @@ fi
 
 typeset -U path cdpath fpath manpath
 
-path+="$HOME/.zsh/plugins/powerlevel10k"
-fpath+="$HOME/.zsh/plugins/powerlevel10k"
+path+="$(devbox global path)/.devbox/nix/profile/default/share/powerlevel10k"
+fpath+="$(devbox global path)/.devbox/nix/profile/default/share/powerlevel10k"
 
-source $ZSH/oh-my-zsh.sh
+source $(devbox global path)/.devbox/nix/profile/default/share/oh-my-zsh/oh-my-zsh.sh
+source $(devbox global path)/.devbox/nix/profile/default/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(devbox global path)/.devbox/nix/profile/default/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 if [[ -f "$HOME/.zsh/plugins/powerlevel10k/share/zsh-powerlevel10k/powerlevel10k.zsh-theme" ]]; then
   source "$HOME/.zsh/plugins/powerlevel10k/share/zsh-powerlevel10k/powerlevel10k.zsh-theme"
