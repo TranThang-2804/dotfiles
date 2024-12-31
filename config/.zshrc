@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-eval "$(devbox global shellenv --init-hook)"
+eval "$(devbox global shellenv)"
 
 typeset -U path cdpath fpath manpath
 
@@ -67,7 +67,13 @@ alias -- 'tka'='tmux kill-session -a'
 alias -- 'tl'='tmux ls'
 alias -- 'tn'='tmux new-session -t'
 
+source <(kubectl completion zsh)
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-if [ -e /home/thangtd18ngt/.nix-profile/etc/profile.d/nix.sh ]; then . /home/thangtd18ngt/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/tranthang/Documents/development/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tranthang/Documents/development/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/tranthang/Documents/development/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tranthang/Documents/development/google-cloud-sdk/completion.zsh.inc'; fi

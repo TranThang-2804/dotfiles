@@ -9,6 +9,7 @@
     "zsh-powerlevel10k@latest",
     "zsh-autosuggestions@latest",
     "zsh-autocomplete@latest",
+    "zsh-syntax-highlighting@latest",
     "oh-my-zsh@latest",
     "neofetch@latest",
     "lazygit@latest",
