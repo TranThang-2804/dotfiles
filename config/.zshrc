@@ -40,7 +40,6 @@ export GOBIN=$HOME/go/bin;
 eval $(thefuck --alias)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
 
-
 # Aliases
 alias -- 'fnvim'='nvim $(fzf --height 40% --preview "bat --color=always --style=numbers {}")'
 alias -- 'ga'='git add'
