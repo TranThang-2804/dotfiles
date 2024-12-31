@@ -13,8 +13,12 @@ local config = {
   leader = { key = "m", mods = "CTRL", timeout_milliseconds = 2000 },
   disable_default_key_bindings = true,
 
-  cursor_blink_rate = 500,
+  cursor_blink_rate = 360,
   default_cursor_style = 'BlinkingBlock',
+  -- Add this if your laptop/pc doesn't have gpu
+  -- animation_fps = 1,
+  cursor_blink_ease_in = 'Constant',
+  cursor_blink_ease_out = 'Constant',
 
   color_scheme = "rose-pine",
 

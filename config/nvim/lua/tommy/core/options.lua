@@ -29,7 +29,7 @@ opt.confirm = true            -- Confirm to save changes before exiting modified
 opt.cursorline = true         -- Enable highlighting of the current line
 
 opt.guicursor =
-"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait100-blinkoff400-blinkon250,sm:block-blinkwait100-blinkoff150-blinkon175" -- blinking cursor
+"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait120-blinkoff360-blinkon240,sm:block-blinkwait120-blinkoff180-blinkon180" -- blinking cursor
 
 opt.expandtab = true                                                                                                                             -- Use spaces instead of tabs
 opt.formatoptions = "jcroqlnt"                                                                                                                   -- tcqj
