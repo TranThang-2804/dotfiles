@@ -1,10 +1,16 @@
 # Set up the prompt at the bottom of the terminal
-# Define a precmd function
-precmd() {
-    # This makes the prompt stays at least 8 lines from the bottom
-    print $'\n\n\n\n\n\n\n\n\e[5A'
-}
+printf "\e[H\ec\e[${LINES}B"
 alias clear="clear && printf '\n%.0s' {1..$LINES}"
+
+print_horizontal_line() {
+    local cols=$(tput cols)  # Get the number of columns in the terminal
+    printf '%*s\n' "$cols" '' | tr ' ' '-'
+}
+
+# Example usage in precmd function
+precmd() {
+    print_horizontal_line
+}
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -85,3 +91,5 @@ if [ -f '/Users/tranthang/Documents/development/google-cloud-sdk/path.zsh.inc' ]
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/tranthang/Documents/development/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tranthang/Documents/development/google-cloud-sdk/completion.zsh.inc'; fi
+
+clear
