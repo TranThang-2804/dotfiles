@@ -1,5 +1,9 @@
 # Set up the prompt at the bottom of the terminal
-printf "\e[H\ec\e[${LINES}B"
+# Define a precmd function
+precmd() {
+    # This makes the prompt stays at least 8 lines from the bottom
+    print $'\n\n\n\n\n\n\n\n\e[5A'
+}
 alias clear="clear && printf '\n%.0s' {1..$LINES}"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
