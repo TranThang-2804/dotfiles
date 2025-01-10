@@ -33,7 +33,8 @@
     "yarn@latest",
     "gcc@latest",
     "go@latest",
-    "earthly@0.8.15"
+    "earthly@0.8.15",
+    "docker-compose@latest"
   ],
   "shell": {
     "init_hook": [

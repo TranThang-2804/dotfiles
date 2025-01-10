@@ -32,7 +32,7 @@ tasks:
       - command -v devbox &> /dev/null || { curl -fsSL https://get.jetify.com/devbox | bash; }
       - sh -c '[ -d "{{.DEVBOX_DIR_PATH}}" ] || mkdir -p "{{.DEVBOX_DIR_PATH}}"'
       - ln -sf "$(pwd)/devbox.json" "{{.DEVBOX_DIR_PATH}}/devbox.json"
-      - ln -sf "$(pwd)/devbox.lock" "{{.DEVBOX_DIR_PATH}}/devbox.lock"
+      # - ln -sf "$(pwd)/devbox.lock" "{{.DEVBOX_DIR_PATH}}/devbox.lock"
       - devbox global install 
     silent: true
 
