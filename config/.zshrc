@@ -1,6 +1,6 @@
 # Set up the prompt at the bottom of the terminal
 printf "\e[H\ec\e[${LINES}B"
-alias clear="clear && printf '\n%.0s' {1..$LINES}"
+alias clear="clear && printf '\e[H\ec\e[${LINES}B'"
 
 print_horizontal_line() {
     local cols=$(tput cols)  # Get the number of columns in the terminal
