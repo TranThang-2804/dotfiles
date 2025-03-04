@@ -5,7 +5,7 @@ return {
   version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
   opts = {
     ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-    provider = "copilot", -- The provider used in Aider mode or in the planning phase of Cursor Planning Mode
+    provider = "openai", -- The provider used in Aider mode or in the planning phase of Cursor Planning Mode
 
     -- WARNING: Since auto-suggestions are a high-frequency operation and therefore expensive,
     -- currently designating it as `copilot` provider is dangerous because: https://github.com/yetone/avante.nvim/issues/1048
@@ -73,7 +73,7 @@ return {
       ---@type "right" | "left" | "top" | "bottom"
       position = "right", -- the position of the sidebar
       wrap = true,        -- similar to vim.o.wrap
-      width = 30,         -- default % based on available width
+      width = 40,         -- default % based on available width
       sidebar_header = {
         enabled = true,   -- true, false to enable/disable the header
         align = "center", -- left, center, right for title
@@ -115,6 +115,13 @@ return {
     suggestion = {
       debounce = 600,
       throttle = 600,
+    },
+    rag_service = {
+      enabled = true,                         -- Enables the RAG service, requires OPENAI_API_KEY to be set
+      provider = "openai",                    -- The provider to use for RAG service (e.g. openai or ollama)
+      llm_model = "",                         -- The LLM model to use for RAG service
+      embed_model = "",                       -- The embedding model to use for RAG service
+      endpoint = "https://api.openai.com/v1", -- The API endpoint for RAG service
     },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`

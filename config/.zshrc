@@ -93,3 +93,7 @@ if [ -f '/Users/tranthang/Documents/development/google-cloud-sdk/path.zsh.inc' ]
 if [ -f '/Users/tranthang/Documents/development/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tranthang/Documents/development/google-cloud-sdk/completion.zsh.inc'; fi
 
 clear
+
+if [ -f ~/.env ]; then
+    source ~/.env
+fi
