@@ -95,5 +95,5 @@ if [ -f '/Users/tranthang/Documents/development/google-cloud-sdk/completion.zsh.
 clear
 
 if [ -f ~/.env ]; then
-    source ~/.env
+   . ~/.env
 fi
