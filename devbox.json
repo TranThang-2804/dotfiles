@@ -21,20 +21,19 @@
     "thefuck@latest",
     "gnumake@latest",
     "awscli2@latest",
-    "terraform@latest",
     "terragrunt@latest",
     "kubectl@latest",
     "go-task@latest",
     "golangci-lint@latest",
     "tilt@latest",
-    "nodejs_18",
     "corepack_18",
-    "cdk@latest",
     "yarn@latest",
     "gcc@latest",
     "go@latest",
     "earthly@0.8.15",
-    "docker-compose@latest"
+    "docker-compose@latest",
+    "terraform@1.11.2",
+    "markdownlint-cli2@latest"
   ],
   "shell": {
     "init_hook": [
