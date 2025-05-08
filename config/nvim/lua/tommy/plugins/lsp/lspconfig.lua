@@ -2,9 +2,6 @@ return {
   "neovim/nvim-lspconfig",
   event = { 'BufEnter', 'BufNewFile' },
   config = function()
-    -- import lspconfig plugin
-    local lspconfig = require("lspconfig")
-
     -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -63,15 +60,6 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    require('mason-lspconfig').setup_handlers({
-      function(server)
-        lspconfig[server].setup({
-          capabilities = capabilities,
-          on_attach = on_attach,
-        })
-      end,
-    })
-
     -- Set default filetype of ft to terraform
     vim.cmd([[
       augroup terraform_filetype
@@ -81,33 +69,36 @@ return {
     ]])
 
     -- configure lua server (with special settings)
-    lspconfig["lua_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = { -- custom settings for lua
-        Lua = {
-          -- make the language server recognize "vim" global
-          diagnostics = {
-            globals = { "vim" },
-          },
-          workspace = {
-            -- make language server aware of runtime files
-            library = {
-              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              [vim.fn.stdpath("config") .. "/lua"] = true,
+    vim.lsp.config('lua_ls',
+      {
+        capabilities = capabilities,
+        on_attach = on_attach,
+        settings = { -- custom settings for lua
+          Lua = {
+            -- make the language server recognize "vim" global
+            diagnostics = {
+              globals = { "vim" },
+            },
+            workspace = {
+              -- make language server aware of runtime files
+              library = {
+                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                [vim.fn.stdpath("config") .. "/lua"] = true,
+              },
             },
           },
         },
-      },
-    })
+      }
+    )
 
     -- configure java server (with special settings)
-    lspconfig["jdtls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      cmd = { 'jdtls' },
-      -- root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
-    })
+    vim.lsp.config("jdtls",
+      {
+        capabilities = capabilities,
+        on_attach = on_attach,
+        cmd = { 'jdtls' },
+        -- root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
+      })
 
     -- configure dartls server (with special settings)
     -- require("flutter-tools").setup({
