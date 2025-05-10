@@ -37,7 +37,7 @@ tasks:
     silent: true
 
   copydotfiles:
-    desc: create symblink to dotfiles
+    desc: create symlink to dotfiles
     cmds:
       - ln -sf "$(pwd)/config/hypr/"                    "$HOME/.config"
       - ln -sf "$(pwd)/config/libinput-gestures/"       "$HOME/.config"
