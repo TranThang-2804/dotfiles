@@ -23,7 +23,7 @@ This project requires executing a setup script to configure the local machine en
 ```
 
 # Prerequisites
-- devbox
+- taskfile
 
 To install them, you can follow this guide:
 1. install taskfile
