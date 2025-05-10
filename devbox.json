@@ -33,7 +33,8 @@
     "earthly@0.8.15",
     "docker-compose@latest",
     "terraform@1.11.2",
-    "markdownlint-cli2@latest"
+    "markdownlint-cli2@latest",
+    "luarocks@latest"
   ],
   "shell": {
     "init_hook": [
