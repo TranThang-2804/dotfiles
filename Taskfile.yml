@@ -1,0 +1,56 @@
+version: '3'
+
+vars:
+  DEVBOX_DIR_PATH: "$HOME/.local/share/devbox/global/default"
+
+tasks:
+  default:
+    cmds:
+      - task help
+    silent: true
+
+  help:
+    cmds:
+      - echo "Welcome to my project - maintainer<Tommy Tran Duc Thang> - email<tommytran.dev@gmail.com>"
+      - echo "Run task <task_name> to run predefined script"
+      - echo ""
+      - echo "For setting up the environment            task local:install"
+      - echo ""
+      - task -l
+    silent: true
+
+  setup:
+    desc: install the environment, setup env for macOS and Ubuntu
+    cmds:
+      - echo "----------------------------------------------------------------"
+      - echo "This requires sudo permission to run"
+      - echo "Are you okay with it? This only uses the role to create symblink"
+      - echo "----------------------------------------------------------------"
+      - sudo echo "Starting to setup system"
+      - echo "----------------------------------------------------------------"
+      - task: copydotfiles
+      - command -v devbox &> /dev/null || { curl -fsSL https://get.jetify.com/devbox | bash; }
+      - sh -c '[ -d "{{.DEVBOX_DIR_PATH}}" ] || mkdir -p "{{.DEVBOX_DIR_PATH}}"'
+      - ln -sf "$(pwd)/devbox.json" "{{.DEVBOX_DIR_PATH}}/devbox.json"
+      # - ln -sf "$(pwd)/devbox.lock" "{{.DEVBOX_DIR_PATH}}/devbox.lock"
+      - devbox global install 
+    silent: true
+
+  copydotfiles:
+    desc: create symlink to dotfiles
+    cmds:
+      - ln -sf "$(pwd)/config/hypr/"                    "$HOME/.config"
+      - ln -sf "$(pwd)/config/libinput-gestures/"       "$HOME/.config"
+      - ln -sf "$(pwd)/config/nvim/"                    "$HOME/.config"
+      - ln -sf "$(pwd)/config/sway/"                    "$HOME/.config"
+      - ln -sf "$(pwd)/config/swaylock/"                "$HOME/.config"
+      - ln -sf "$(pwd)/config/waybar/"                  "$HOME/.config"
+      - ln -sf "$(pwd)/config/wezterm/"                 "$HOME/.config"
+      - ln -sf "$(pwd)/config/.aerospace.toml"          "$HOME/.aerospace.toml"
+      - ln -sf "$(pwd)/config/.p10k.zsh"                "$HOME/.p10k.zsh"
+      - ln -sf "$(pwd)/config/.tmux.conf"               "$HOME/.tmux.config"
+      - ln -sf "$(pwd)/config/.vimrc"                   "$HOME/.vimrc"
+      - ln -sf "$(pwd)/config/.zshrc"                   "$HOME/.zshrc"
+    silent: true
+    internal: true
+

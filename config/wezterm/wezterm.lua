@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 
-local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
+-- local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
 
 local config = {
   font = wezterm.font('JetBrains Mono', { weight = "Regular", stretch = "Normal", style = "Normal" }),
@@ -13,18 +13,17 @@ local config = {
   leader = { key = "m", mods = "CTRL", timeout_milliseconds = 2000 },
   disable_default_key_bindings = true,
 
+  cursor_blink_rate = 360,
+  default_cursor_style = 'BlinkingBlock',
+  -- Add this if your laptop/pc doesn't have gpu
+  -- animation_fps = 1,
+  cursor_blink_ease_in = 'Constant',
+  cursor_blink_ease_out = 'Constant',
+
   color_scheme = "rose-pine",
 
   colors = {
-    -- foreground = "#CBE0F0",
-    -- background = "#232136",
-    -- cursor_bg = "#eb6f92",
-    -- cursor_border = "#eb6f92",
-    -- cursor_fg = "#011423",
-    -- selection_bg = "#033259",
-    -- selection_fg = "#CBE0F0",
-    -- ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
-    -- brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
+    cursor_bg = "#eb6f92",
   },
 
   inactive_pane_hsb = {
@@ -33,12 +32,12 @@ local config = {
     brightness = 1.0,
   },
 
-  enable_tab_bar = true,
+  enable_tab_bar = false,
 
   window_decorations = "RESIZE",
   window_background_opacity = 1,
   text_background_opacity = 1.0,
-  macos_window_background_blur = 10,
+  macos_window_background_blur = 25,
 
   keys = {
     -- Send "CTRL-ALT" to the terminal when pressing CTRL-ALT, CTRL-ALT
@@ -96,18 +95,18 @@ else
   config.default_cwd = "~/Documents"
 end
 
-bar.apply_to_config(config, {
-  modules = {
-    spotify = {
-      enabled = false,
-    },
-    hostname = {
-      enabled = false,
-    },
-    -- pane = {
-    --   enabled = false,
-    -- },
-  },
-})
+-- bar.apply_to_config(config, {
+--   modules = {
+--     spotify = {
+--       enabled = false,
+--     },
+--     hostname = {
+--       enabled = false,
+--     },
+--     -- pane = {
+--     --   enabled = false,
+--     -- },
+--   },
+-- })
 
 return config

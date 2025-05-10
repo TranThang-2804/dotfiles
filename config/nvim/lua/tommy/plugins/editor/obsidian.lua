@@ -57,5 +57,8 @@ return {
       -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
       template = nil
     },
-  },
+    ui = {
+      enable = false,
+    }
+  }
 }

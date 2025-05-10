@@ -21,14 +21,18 @@ vim.g.loaded_netrwPlugin = 1
 -- opt.rocks.enabled = false
 
 opt.shell = "/usr/bin/env zsh"
-opt.autowrite = true           -- Enable auto write
-opt.clipboard = "unnamedplus"  -- Sync with system clipboard
+opt.autowrite = true          -- Enable auto write
+opt.clipboard = "unnamedplus" -- Sync with system clipboard
 opt.completeopt = "menu,menuone,noselect"
-opt.conceallevel = 0           -- Hide * markup for bold and italic
-opt.confirm = true             -- Confirm to save changes before exiting modified buffer
-opt.cursorline = true          -- Enable highlighting of the current line
-opt.expandtab = true           -- Use spaces instead of tabs
-opt.formatoptions = "jcroqlnt" -- tcqj
+opt.conceallevel = 0          -- Hide * markup for bold and italic
+opt.confirm = true            -- Confirm to save changes before exiting modified buffer
+opt.cursorline = true         -- Enable highlighting of the current line
+
+opt.guicursor =
+"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait120-blinkoff360-blinkon240,sm:block-blinkwait120-blinkoff180-blinkon180" -- blinking cursor
+
+opt.expandtab = true                                                                                                                             -- Use spaces instead of tabs
+opt.formatoptions = "jcroqlnt"                                                                                                                   -- tcqj
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
 opt.ignorecase = true      -- Ignore case
