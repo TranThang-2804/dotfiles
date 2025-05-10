@@ -8,34 +8,26 @@ This project requires executing a setup script to configure the local machine en
 # Project structure
 ```
 .
-├── dotfiles                    - Contains all the dotfiles for the local machine
-│   ├── .config                 - Nvim configuration is maintained in this dir
-│   ├── .alias
-│   ├── .p10k.zsh
-│   ├── .tmux.conf
-│   ├── .vimrc
-│   └── .zshrc
-├── hosts                       - NixOS configurations for the local machine
-│   └── nixos
-├── common.nix                  - Common home-manager configuration for all machines
-├── home.amd64.nix              - Home-manager configuration for amd64 architecture
-├── home.arm64.nix              - Home-manager configuration for arm64 architecture
-├── flake.lock                  - flake.lock file, remove if needed
-├── flake.nix                   - flake configuration file
-├── .gitignore
-├── Dockerfile                  - Dev container that has all the tools installed
 ├── LICENSE
-└── README.md
+├── README.md
+├── Taskfile.yml
+├── config
+│   ├── hypr
+│   ├── libinput-gestures
+│   ├── nvim                    # nvim configuration
+│   ├── sway
+│   ├── swaylock
+│   ├── waybar
+│   └── wezterm                 # Wezterm configuration file
+└── devbox.json                 # Maintain all your binaries in declarative
 ```
 
 # Prerequisites
 - devbox
 
 To install them, you can follow this guide:
-1. install devbox (Linux/MacOS/WSL2)
-```
-curl -fsSL https://get.jetify.com/devbox | bash
-```
+1. install taskfile
+[Link to install taskfile](https://taskfile.dev/installation/)
 
 ## Neovim dotfiles
 [Neovim Configuration](./dotfiles/.config/nvim/README.md)
@@ -48,22 +40,9 @@ choco install win32yank
 ```
 
 # Installation
-1. For amd64 architecture, run the following command:
 ```
-home-manager switch --impure --flake .#amd64
-```
-
-2. For arm64 architecture, run the following command:
-```
-home-manager switch --impure --flake .#arm64
+task setup
 ```
 
-3. For wsl architecture, run the following command:
-```
-home-manager switch --impure --flake .#wsl
-```
-
-4. For darwin architecture, run the following command:
-```
-home-manager switch --impure --flake .#darwin
-```
+>NOTE: when running task setup, it will install devbox, and install
+all required binaries (git, zsh, ...)
