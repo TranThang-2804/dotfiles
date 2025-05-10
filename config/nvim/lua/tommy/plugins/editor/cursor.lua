@@ -127,7 +127,7 @@ return {
       throttle = 600,
     },
     rag_service = {
-      enabled = true,                         -- Enables the RAG service, requires OPENAI_API_KEY to be set
+      enabled = false,                        -- Enables the RAG service, requires OPENAI_API_KEY to be set
       host_mount = os.getenv("HOME"),         -- Host mount path for the rag service
       provider = "openai",                    -- The provider to use for RAG service (e.g. openai or ollama)
       llm_model = "",                         -- The LLM model to use for RAG service
