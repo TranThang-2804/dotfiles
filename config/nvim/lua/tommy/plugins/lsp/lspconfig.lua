@@ -112,7 +112,6 @@ return {
       end,
     })
 
-
     -- configure lua server (with special settings)
     vim.lsp.config('lua_ls',
       {
