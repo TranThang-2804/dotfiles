@@ -96,7 +96,7 @@ return {
 
         if checkBufferMethod('textDocument/codeAction') then
           opts.desc = "See available code actions"
-          keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+          keymap.set({ "n", "v" }, "<leader>ca", "<cmd>FzfLua lsp_code_actions<CR>", opts)
         else
           opts.desc = "Code action not supported"
           keymap.set({ "n", "v" }, "<leader>ca", function() print("LSP: code action not supported") end, opts)
