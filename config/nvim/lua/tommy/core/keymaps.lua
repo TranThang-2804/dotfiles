@@ -47,28 +47,16 @@ vim.keymap.set("n", "N", "'nN'[v:searchforward].'zvzz'", { expr = true, desc = "
 vim.keymap.set("x", "N", "'nN'[v:searchforward].'zvzz'", { expr = true, desc = "Prev search result" })
 vim.keymap.set("o", "N", "'nN'[v:searchforward].'zvzz'", { expr = true, desc = "Prev search result" })
 
--- Add undo break-points
-vim.keymap.set("i", ",", ",<c-g>u")
-vim.keymap.set("i", ".", ".<c-g>u")
-vim.keymap.set("i", ";", ";<c-g>u")
+-- -- Add undo break-points
+-- vim.keymap.set("i", ",", ",<c-g>u")
+-- vim.keymap.set("i", ".", ".<c-g>u")
+-- vim.keymap.set("i", ";", ";<c-g>u")
 
 -- save file
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
---keywordprg
-vim.keymap.set("n", "<leader>K", "<cmd>norm! K<cr>", { desc = "Keywordprg" })
-
 -- lazy
 vim.keymap.set("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
-
--- -- new file
--- vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
-
--- vim.keymap.set("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location List" })
--- vim.keymap.set("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
-
--- vim.keymap.set("n", "[q", vim.cmd.cprev, { desc = "Previous quickfix" })
--- vim.keymap.set("n", "]q", vim.cmd.cnext, { desc = "Next quickfix" })
 
 -- diagnostic
 local diagnostic_goto = function(next, severity)
@@ -99,9 +87,6 @@ vim.keymap.set("n", "<leader>uT",
 
 -- quit
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
-
--- highlights under cursor
-vim.keymap.set("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 
 -- Terminal Mappings
 vim.keymap.set("t", "<C-o><C-o>", "<c-\\><c-n>", { silent = true, remap = true, desc = "Esc" })
