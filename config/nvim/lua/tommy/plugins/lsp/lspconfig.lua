@@ -55,6 +55,23 @@ return {
         opts.desc = "Show buffer diagnostics"
         keymap.set("n", "<leader>cD", "<cmd>FzfLua diagnostics_document<CR>", opts)
 
+
+        -- diagnostic
+        local diagnostic_goto = function(next, severity)
+          local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+          severity = severity and vim.diagnostic.severity[severity] or nil
+          return function()
+            go({ severity = severity })
+          end
+        end
+
+        vim.keymap.set("n", "<leader>jd", diagnostic_goto(true), { desc = "Next Diagnostic" })
+        vim.keymap.set("n", "<leader>kd", diagnostic_goto(false), { desc = "Prev Diagnostic" })
+        vim.keymap.set("n", "<leader>je", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
+        vim.keymap.set("n", "<leader>ke", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
+        vim.keymap.set("n", "<leader>jw", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
+        vim.keymap.set("n", "<leader>kw", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
+
         opts.desc = "Show line diagnostics"
         keymap.set("n", "<leader>cd", vim.diagnostic.open_float, opts)
 

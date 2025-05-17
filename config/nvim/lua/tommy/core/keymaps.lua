@@ -47,33 +47,11 @@ vim.keymap.set("n", "N", "'nN'[v:searchforward].'zvzz'", { expr = true, desc = "
 vim.keymap.set("x", "N", "'nN'[v:searchforward].'zvzz'", { expr = true, desc = "Prev search result" })
 vim.keymap.set("o", "N", "'nN'[v:searchforward].'zvzz'", { expr = true, desc = "Prev search result" })
 
--- -- Add undo break-points
--- vim.keymap.set("i", ",", ",<c-g>u")
--- vim.keymap.set("i", ".", ".<c-g>u")
--- vim.keymap.set("i", ";", ";<c-g>u")
-
--- save file
-vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+-- save all files
+vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>wa!<cr><esc>", { desc = "Save file" })
 
 -- lazy
 vim.keymap.set("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
-
--- diagnostic
-local diagnostic_goto = function(next, severity)
-  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-  severity = severity and vim.diagnostic.severity[severity] or nil
-  return function()
-    go({ severity = severity })
-  end
-end
-
-vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
-vim.keymap.set("n", "<leader>jd", diagnostic_goto(true), { desc = "Next Diagnostic" })
-vim.keymap.set("n", "<leader>kd", diagnostic_goto(false), { desc = "Prev Diagnostic" })
-vim.keymap.set("n", "<leader>je", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
-vim.keymap.set("n", "<leader>ke", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
-vim.keymap.set("n", "<leader>jw", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
-vim.keymap.set("n", "<leader>kw", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
 -- stylua: ignore start
 
@@ -150,7 +128,7 @@ vim.keymap.set({ "n" }, "<leader>iD", "0\"+d$", { desc = "Cut content of the lin
 vim.keymap.set({ "n" }, "<leader>iy", "0y$", { desc = "Copy the content of a line" })
 
 -- This is for global config for terminal mode
-vim.keymap.set("t", "<C-s>", "<C-\\><C-n>", { desc = "esc outside of insert mode in terminal to navigate" })
+vim.keymap.set("t", "<C-o><C-o>", "<C-\\><C-n>", { desc = "esc outside of insert mode in terminal to navigate" })
 
 -- This is for global selection
 vim.keymap.set({ "n", "i" }, "<C-a>", function() vim.cmd("normal! ggVG") end, { desc = "Global selection" })
