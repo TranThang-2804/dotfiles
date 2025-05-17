@@ -43,6 +43,7 @@ return {
   },
   config = function()
     require("fzf-lua").setup({
+      "telescope",
       winopts = {
         fullscreen = true,
         preview = {
@@ -53,28 +54,21 @@ return {
         },
         on_create = function()
           -- called once upon creation of the fzf main window
-          -- vim.keymap.set("t", "<C-j>", "<Down>", { silent = true, buffer = true })
-          -- vim.keymap.set("t", "<C-k>", "<Up>", { silent = true, buffer = true })
-          -- vim.keymap.set("t", "<C-o><C-o>", "<Esc>", { silent = true, remap = true, desc = "Esc" })
+          vim.keymap.set("t", "<C-j>", "<Down>", { silent = true, buffer = true })
+          vim.keymap.set("t", "<C-k>", "<Up>", { silent = true, buffer = true })
+          vim.keymap.set("t", "<C-o><C-o>", "<Esc>", { silent = true, remap = true, desc = "Esc" })
         end,
       },
       keymap = {
         builtin = {
-          false,
-          ["<C-j>"] = "down",
-          ["<C-k>"] = "up",
-          ["<C-o><C-o>"] = "abort",
-          ["<C-/>"] = "toggle-help",
-          ["C-u"] = "preview-page-up",
-          ["C-d"] = "preview-page-down",
+          ["<C-d>"] = "preview-page-down",
+          ["<C-u>"] = "preview-page-up",
+          ["<C-/>"] = "toggle-help", -- show help window
         },
         fzf = false
       },
       files = {
         prompt = 'FILES❯ ',
-      },
-      grep = {
-        rg_opts = "--hidden --column --line-number --no-heading --color=always --smart-case -g '!.git'",
       },
     })
   end,
