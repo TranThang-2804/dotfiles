@@ -74,7 +74,7 @@ alias ta='tmux attach-session -t'
 alias tk='tmux kill-session -t'
 alias tka='tmux kill-session -a'
 alias tl='tmux ls'
-alias tn='tmux new-session -t'
+alias tn='tmux new-session -s'
 
 # misc
 alias ls='ls -la --color'

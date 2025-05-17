@@ -1,13 +1,11 @@
 local wezterm = require("wezterm")
 
--- local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
-
 local config = {
   font = wezterm.font('JetBrains Mono', { weight = "Regular", stretch = "Normal", style = "Normal" }),
   font_size = 16.0,
   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
   audible_bell = "Disabled",
-  check_for_updates = false,
+  check_for_updates = true,
   launch_menu = {},
 
   leader = { key = "m", mods = "CTRL", timeout_milliseconds = 2000 },
@@ -80,34 +78,9 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   -- config.front_end = "Software" -- OpenGL doesn't work quite well with RDP.
   -- config.term = "" -- Set to empty so FZF works on windows
   table.insert(config.launch_menu, { label = "PowerShell", args = { "powershell.exe", "-NoLogo" } })
-
-  -- Find installed visual studio version(s) and add their compilation
-  -- environment command prompts to the menu
-  for _, vsvers in ipairs(wezterm.glob("Microsoft Visual Studio/20*", "C:/Program Files (x86)")) do
-    local year = vsvers:gsub("Microsoft Visual Studio/", "")
-    table.insert(config.launch_menu, {
-      label = "x64 Native Tools VS " .. year,
-      args = { "cmd.exe", "/k", "C:/Program Files (x86)/" .. vsvers .. "/BuildTools/VC/Auxiliary/Build/vcvars64.bat" },
-    })
-  end
 else
-
   config.default_prog = { '/usr/bin/env', 'zsh', '-l' }
   config.default_cwd = "~/Documents"
 end
-
--- bar.apply_to_config(config, {
---   modules = {
---     spotify = {
---       enabled = false,
---     },
---     hostname = {
---       enabled = false,
---     },
---     -- pane = {
---     --   enabled = false,
---     -- },
---   },
--- })
 
 return config

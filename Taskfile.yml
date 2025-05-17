@@ -48,7 +48,7 @@ tasks:
       - ln -sf "$(pwd)/config/wezterm/"                 "$HOME/.config"
       - ln -sf "$(pwd)/config/.aerospace.toml"          "$HOME/.aerospace.toml"
       - ln -sf "$(pwd)/config/.p10k.zsh"                "$HOME/.p10k.zsh"
-      - ln -sf "$(pwd)/config/.tmux.conf"               "$HOME/.tmux.config"
+      - ln -sf "$(pwd)/config/.tmux.conf"               "$HOME/.tmux.conf"
       - ln -sf "$(pwd)/config/.vimrc"                   "$HOME/.vimrc"
       - ln -sf "$(pwd)/config/.zshrc"                   "$HOME/.zshrc"
     silent: true
