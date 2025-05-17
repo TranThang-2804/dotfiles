@@ -38,84 +38,43 @@ return {
     { "<leader>sD",      "<cmd>FzfLua diagnostics_workspace<cr>",    desc = "Workspace Diagnostics" },
 
     -- Errors
-    { "<leader>se",      "<cmd>FzfLua quickfix<cr>",                 desc = "Quickfix" },
-    { "<leader>sE",      "<cmd>FzfLua loclist<cr>",                  desc = "Location List" },
+    { "<leader>sq",      "<cmd>FzfLua quickfix<cr>",                 desc = "Quickfix" },
+    { "<leader>sl",      "<cmd>FzfLua loclist<cr>",                  desc = "Location List" },
   },
   config = function()
-    local actions = require("fzf-lua").actions
-    actions = {
-      -- Below are the default actions, setting any value in these tables will override
-      -- the defaults, to inherit from the defaults change [1] from `false` to `true`
-      files = {
-        true,
-        -- Pickers inheriting these actions:
-        --   files, git_files, git_status, grep, lsp, oldfiles, quickfix, loclist,
-        --   tags, btags, args, buffers, tabs, lines, blines
-        -- `file_edit_or_qf` opens a single selection or sends multiple selection to quickfix
-        -- replace `enter` with `file_edit` to open all files/bufs whether single or multiple
-        -- replace `enter` with `file_switch_or_edit` to attempt a switch in current tab first
-        ["enter"]  = actions.file_edit_or_qf,
-        ["ctrl-s"] = actions.file_split,
-        ["ctrl-v"] = actions.file_vsplit,
-        ["ctrl-e"] = actions.file_tabedit,
-        ["ctrl-q"]  = actions.file_sel_to_qf,
-        ["ctrl-Q"]  = actions.file_sel_to_ll,
-      },
-    }
-
     require("fzf-lua").setup({
       winopts = {
-        height = 0.85,
-        width = 0.85,
-        row = 0.3,
-        col = 0.5,
+        fullscreen = true,
         preview = {
-          default = "bat", -- or "builtin"
+          default = "builtin",
           border = "border",
           layout = "vertical",
           scrollbar = "float",
         },
         on_create = function()
           -- called once upon creation of the fzf main window
-          vim.keymap.set("t", "<C-j>", "<Down>", { silent = true, buffer = true })
-          vim.keymap.set("t", "<C-k>", "<Up>", { silent = true, buffer = true })
-          vim.keymap.set("t", "<C-o><C-o>", "<Esc>", { silent = true, remap = true, desc = "Esc" })
+          -- vim.keymap.set("t", "<C-j>", "<Down>", { silent = true, buffer = true })
+          -- vim.keymap.set("t", "<C-k>", "<Up>", { silent = true, buffer = true })
+          -- vim.keymap.set("t", "<C-o><C-o>", "<Esc>", { silent = true, remap = true, desc = "Esc" })
         end,
       },
-      fzf_opts = {
-        ['--layout'] = 'reverse',
-        ['--info'] = 'inline',
+      keymap = {
+        builtin = {
+          false,
+          ["<C-j>"] = "down",
+          ["<C-k>"] = "up",
+          ["<C-o><C-o>"] = "abort",
+          ["<C-/>"] = "toggle-help",
+          ["C-u"] = "preview-page-up",
+          ["C-d"] = "preview-page-down",
+        },
+        fzf = false
       },
       files = {
-        prompt = 'Files❯ ',
-        fd_opts = "--color=never --type f --hidden --follow --exclude .git",
-      },
-      git = {
-        status = {
-          previewer = "builtin",
-        },
+        prompt = 'FILES❯ ',
       },
       grep = {
         rg_opts = "--hidden --column --line-number --no-heading --color=always --smart-case -g '!.git'",
-      },
-      keymap = {
-        -- Below are the default binds, setting any value in these tables will override
-        -- the defaults, to inherit from the defaults change [1] from `false` to `true`
-        builtin = {
-          -- neovim `:tmap` mappings for the fzf win
-          -- true,        -- uncomment to inherit all the below in your custom config
-          ["ctrl-Left"]  = "preview-reset",
-          ["ctrl-d"]     = "preview-page-down",
-          ["ctrl-u"]     = "preview-page-up",
-          ["ctrl-o"]     = "hide",
-          ["<M-S-down>"] = "preview-down",
-          ["<M-S-up>"]   = "preview-up",
-        },
-        fzf = {
-          -- Only valid with fzf previewers (bat/cat/git/etc)
-          ["ctrl-d"] = "preview-page-down",
-          ["ctrl-u"] = "preview-page-up",
-        },
       },
     })
   end,
