@@ -1,6 +1,10 @@
 # Overview
 
-This repository provides a framework structure for storing all of your working environment configurations in a declarative way. This code skeleton uses Devbox for configuring the environment. Please read the instructions below on how to use it.
+This repository provides a framework structure for storing all of your working environment configurations in a declarative way, aiming to achieve a unified environment across different platforms and machines. The framework works by storing all configuration files in the `/config` folder, and creating symlinks from the configuration files in `/.config` to the files in this repository. This means that when you update the repository, all configuration files are automatically updated.
+
+Additionally, this framework uses Devbox to install all required binaries and maintain consistent versions across platforms on all machines. Please read the instructions below on how to use it.
+
+I use Taskfile for all CLI scripting to ensure easy maintenance and readability.
 
 This project requires executing a setup script to configure the local machine environment. Please follow the instructions below based on your operating system.
 
@@ -33,12 +37,19 @@ For details of my vim configuration, see: [Neovim Configuration](./config/nvim/R
 
 # Installation
 
-> **IMPORTANT**: When running `task setup`, it will overwrite all of your environment configuration files. Please run it with care and backup your configuration first. To check which files will be overwritten, check taskfile.yml
-
-To set up the environment, run the following command:
+To install the environment, run the following command:
 ```
 task setup
 ```
+
+>**NOTE**: This command will only succeed if the target configuration files do not exist beforehand.
+So you will need to backup your existing configuration files firsts.
+
+To force overwrite (In case this framework is the main way you maintain your environment)
+```
+task setup -- force
+```
+> **IMPORTANT**: When running `task setup -- force`, it will overwrite all of your environment configuration files if exists. Please run it with care and backup your configuration first. To check which files will be overwritten, check taskfile.yml
 
 This command will:
 - Install Devbox if it's not already installed.
