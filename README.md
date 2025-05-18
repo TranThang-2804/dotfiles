@@ -1,6 +1,6 @@
 # Overview
 
-This repository provides a framework structure for storing all of your working environment configurations in a declarative way, aiming to achieve a unified environment across different platforms and machines. The framework works by storing all configuration files in the `/config` folder, and creating symlinks from the configuration files in `/.config` to the files in this repository. This means that when you update the repository, all configuration files are automatically updated.
+This repository provides a framework structure for storing all of your working environment configurations in a declarative way, aiming to achieve a unified environment across different platforms and machines. The framework works by storing all configuration files in the `/config` folder, and creating symlinks from the configuration files in your `~/.config` to the files in this repository. This means that when you update the repository, all configuration files are automatically updated.
 
 Additionally, this framework uses Devbox to install all required binaries and maintain consistent versions across platforms on all machines. Please read the instructions below on how to use it.
 
