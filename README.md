@@ -74,10 +74,9 @@ The `Taskfile.yml` provides several tasks to manage your environment:
   ```
   task setup
   ```
-
-- **Copy Dotfiles**: Creates symlinks to dotfiles (internal task).
+  Or
   ```
-  task copydotfiles
+  task setup -- force
   ```
 
 # For WSL Specifically
