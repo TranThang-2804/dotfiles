@@ -20,7 +20,9 @@ tasks:
     silent: true
 
   setup:
-    desc: install the environment, setup env for macOS and Ubuntu
+    desc: "install the environment, setup env for macOS and Ubuntu. To force update existing files run: task setup -- force"
+    vars:
+      COPYDOTFILES_MODE: "{{.CLI_ARGS}}"
     cmds:
       - echo "----------------------------------------------------------------"
       - echo "This requires sudo permission to run"
@@ -29,6 +31,9 @@ tasks:
       - sudo echo "Starting to setup system"
       - echo "----------------------------------------------------------------"
       - task: copydotfiles
+        vars: {
+          COPYDOTFILES_MODE: '{{.COPYDOTFILES_MODE}}'
+        }
       - command -v devbox &> /dev/null || { curl -fsSL https://get.jetify.com/devbox | bash; }
       - sh -c '[ -d "{{.DEVBOX_DIR_PATH}}" ] || mkdir -p "{{.DEVBOX_DIR_PATH}}"'
       - ln -sf "$(pwd)/devbox.json" "{{.DEVBOX_DIR_PATH}}/devbox.json"
@@ -38,19 +43,24 @@ tasks:
 
   copydotfiles:
     desc: create symlink to dotfiles
-    cmds:
-      - ln -sf "$(pwd)/config/hypr/"                    "$HOME/.config"
-      - ln -sf "$(pwd)/config/libinput-gestures/"       "$HOME/.config"
-      - ln -sf "$(pwd)/config/nvim/"                    "$HOME/.config"
-      - ln -sf "$(pwd)/config/sway/"                    "$HOME/.config"
-      - ln -sf "$(pwd)/config/swaylock/"                "$HOME/.config"
-      - ln -sf "$(pwd)/config/waybar/"                  "$HOME/.config"
-      - ln -sf "$(pwd)/config/wezterm/"                 "$HOME/.config"
-      - ln -sf "$(pwd)/config/.aerospace.toml"          "$HOME/.aerospace.toml"
-      - ln -sf "$(pwd)/config/.p10k.zsh"                "$HOME/.p10k.zsh"
-      - ln -sf "$(pwd)/config/.tmux.conf"               "$HOME/.tmux.conf"
-      - ln -sf "$(pwd)/config/.vimrc"                   "$HOME/.vimrc"
-      - ln -sf "$(pwd)/config/.zshrc"                   "$HOME/.zshrc"
-    silent: true
+    vars:
+      COPYDOTFILES_MODE: '{{default "" .COPYDOTFILES_MODE}}' 
+    env: 
+      FORCE_FLAG: ""
     internal: true
-
+    silent: false
+    cmds:
+      - if [ "{{.COPYDOTFILES_MODE}}" = "force" ]; then FORCE_FLAG="-f"; fi
+      - echo $FORCE_FLAG
+      - ln -s${FORCE_FLAG} "$(pwd)/config/hypr/"                    "$HOME/.config"
+      - ln -s${FORCE_FLAG} "$(pwd)/config/libinput-gestures/"       "$HOME/.config"
+      - ln -s${FORCE_FLAG} "$(pwd)/config/nvim/"                    "$HOME/.config"
+      - ln -s${FORCE_FLAG} "$(pwd)/config/sway/"                    "$HOME/.config"
+      - ln -s${FORCE_FLAG} "$(pwd)/config/swaylock/"                "$HOME/.config"
+      - ln -s${FORCE_FLAG} "$(pwd)/config/waybar/"                  "$HOME/.config"
+      - ln -s${FORCE_FLAG} "$(pwd)/config/wezterm/"                 "$HOME/.config"
+      - ln -s${FORCE_FLAG} "$(pwd)/config/.aerospace.toml"          "$HOME/.aerospace.toml"
+      - ln -s${FORCE_FLAG} "$(pwd)/config/.p10k.zsh"                "$HOME/.p10k.zsh"
+      - ln -s${FORCE_FLAG} "$(pwd)/config/.tmux.conf"               "$HOME/.tmux.conf"
+      - ln -s${FORCE_FLAG} "$(pwd)/config/.vimrc"                   "$HOME/.vimrc"
+      - ln -s${FORCE_FLAG} "$(pwd)/config/.zshrc"                   "$HOME/.zshrc"
