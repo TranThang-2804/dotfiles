@@ -26,7 +26,6 @@
     "go-task@latest",
     "golangci-lint@latest",
     "tilt@latest",
-    "corepack_18",
     "yarn@latest",
     "gcc@latest",
     "go@latest",
