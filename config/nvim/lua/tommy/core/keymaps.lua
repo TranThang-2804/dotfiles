@@ -127,9 +127,6 @@ vim.keymap.set({ "n" }, "<leader>iD", "0\"+d$", { desc = "Cut content of the lin
 
 vim.keymap.set({ "n" }, "<leader>iy", "0y$", { desc = "Copy the content of a line" })
 
--- This is for global config for terminal mode
-vim.keymap.set("t", "<C-o><C-o>", "<C-\\><C-n>", { desc = "esc outside of insert mode in terminal to navigate" })
-
 -- This is for global selection
 vim.keymap.set({ "n", "i" }, "<C-a>", function() vim.cmd("normal! ggVG") end, { desc = "Global selection" })
 
