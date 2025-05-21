@@ -56,7 +56,7 @@ return {
           -- called once upon creation of the fzf main window
           vim.keymap.set("t", "<C-j>", "<Down>", { silent = true, buffer = true })
           vim.keymap.set("t", "<C-k>", "<Up>", { silent = true, buffer = true })
-          vim.keymap.set("t", "<C-o><C-o>", "<Esc>", { silent = true, remap = true, desc = "Esc" })
+          -- vim.keymap.set("t", "<C-o><C-o>", "<Esc>", { silent = true, remap = true, desc = "Esc" })
         end,
       },
       keymap = {
