@@ -4,19 +4,17 @@ return {
   priority = 1000,
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+    "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
-    -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
   },
   keys = {
     {
-      "<leader>fe",
+      "<leader>e",
       function()
         require("neo-tree.command").execute({ reveal = true, toggle = true, dir = vim.loop.cwd(), position = "float" })
       end,
       desc = "Explorer NeoTree (cwd)",
     },
-    { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (cwd)", remap = true },
     {
       "<leader>ge",
       function()

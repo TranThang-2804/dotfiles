@@ -67,7 +67,7 @@ vim.keymap.set("n", "<leader>uT",
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 
 -- Terminal Mappings
-vim.keymap.set("t", "<C-o><C-o>", "<c-\\><c-n>", { silent = true, remap = true, desc = "Esc" })
+vim.keymap.set("t", "<C-n>", "<c-\\><c-n>", { silent = true, remap = false, desc = "Esc" })
 vim.keymap.set("t", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to left window" })
 vim.keymap.set("t", "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
 vim.keymap.set("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
