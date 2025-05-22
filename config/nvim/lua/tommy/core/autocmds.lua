@@ -129,7 +129,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 -- Center cursor when entering a window
-vim.api.nvim_create_autocmd({ "BufWinEnter", "WinEnter", "FocusGained" }, {
+vim.api.nvim_create_autocmd({ "BufWinEnter", "WinEnter" }, {
   callback = function()
     vim.cmd("normal! zz")
   end,

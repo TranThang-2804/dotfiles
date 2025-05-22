@@ -8,7 +8,8 @@ return {
     trailing_stiffness_insert_mode = 0.6, -- 0.4      [0, 1]
     distance_stop_animating = 0.7,        -- 0.1      > 0
 
-    time_interval = 20,
+    time_interval = 10,
+    cursor_color = "none",
 
     -- Smear cursor when switching buffers or windows.
     smear_between_buffers = true,
