@@ -4,4 +4,4 @@ require("tommy.core.keymaps")
 require("tommy.core.autocmds")
 
 -- Choose colerscheme
-vim.cmd([[colorscheme moonfly]])
+vim.cmd([[colorscheme catppuccin]])
