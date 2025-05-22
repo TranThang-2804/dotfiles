@@ -98,7 +98,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
       local stat = vim.loop.fs_stat(vim.fn.argv(0))
       if stat and stat.type == "directory" then
         vim.cmd.bdelete()
-        require("neo-tree.command").execute({ reveal = false, toggle = true, dir = vim.loop.cwd(), position = "float" })
+        require("neo-tree.command").execute({ reveal = false, toggle = true, dir = vim.loop.cwd(), position = "current" })
       end
     end
   end,

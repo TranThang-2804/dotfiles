@@ -18,7 +18,7 @@ local config = {
   cursor_blink_ease_in = 'Constant',
   cursor_blink_ease_out = 'Constant',
 
-  color_scheme = "rose-pine",
+  color_scheme = "moonfly",
 
   colors = {
     cursor_bg = "#eb6f92",
