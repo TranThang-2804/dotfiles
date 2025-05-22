@@ -110,11 +110,11 @@ local function close_stray_buffers()
     local name = vim.api.nvim_buf_get_name(buf)
 
     if
-      name == ""  -- No filepath
-      and vim.api.nvim_buf_is_loaded(buf)
-      and not vim.api.nvim_buf_get_option(buf, "modified")
-      and vim.api.nvim_buf_get_option(buf, "buflisted")
-      and vim.api.nvim_buf_get_option(buf, "buftype") == ""
+        name == "" -- No filepath
+        and vim.api.nvim_buf_is_loaded(buf)
+        and not vim.api.nvim_buf_get_option(buf, "modified")
+        and vim.api.nvim_buf_get_option(buf, "buflisted")
+        and vim.api.nvim_buf_get_option(buf, "buftype") == ""
     then
       vim.api.nvim_buf_delete(buf, { force = true })
     end
@@ -125,5 +125,12 @@ end
 vim.api.nvim_create_autocmd("BufEnter", {
   callback = function()
     vim.defer_fn(close_stray_buffers, 1)
+  end,
+})
+
+-- Center cursor when entering a window
+vim.api.nvim_create_autocmd({ "BufWinEnter", "WinEnter", "FocusGained" }, {
+  callback = function()
+    vim.cmd("normal! zz")
   end,
 })

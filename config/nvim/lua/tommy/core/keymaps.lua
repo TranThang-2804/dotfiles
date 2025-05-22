@@ -97,12 +97,6 @@ vim.keymap.set("n", "<C-e>", "4zh", { remap = true, desc = "Scrol tab/buffer to 
 vim.keymap.set("n", "<BS>", "kdd", { desc = "Delete line above" })
 vim.keymap.set("n", "<CR>", "O<Esc>j", { desc = "Bring this line down to a newline" })
 
--- This is keymap for LSP navigate
-vim.keymap.set("n", "g*", "g*zz", { remap = true, desc = "Go to the same name" })
-vim.keymap.set("n", "g#", "g#zz", { remap = true, desc = "Go to the same name" })
-vim.keymap.set("n", "gD", "gDzz", { remap = true, desc = "Go to Declaration" })
-vim.keymap.set("n", "gd", "gdZZ", { remap = true, desc = "Go to definition" })
-
 vim.keymap.set("x", "<Tab>", ">gv", { desc = "Tab indent selection to the right" })
 vim.keymap.set("x", "<S-Tab>", "<gv", { desc = "Tab indent selection to the left" })
 

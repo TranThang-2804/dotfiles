@@ -62,6 +62,7 @@ return {
           severity = severity and vim.diagnostic.severity[severity] or nil
           return function()
             go({ severity = severity })
+            vim.cmd("normal! zz")
           end
         end
 
@@ -81,7 +82,7 @@ return {
         -- Per-capability mappings
         if checkBufferMethod('textDocument/declaration') then
           opts.desc = "Go to declaration"
-          keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+          keymap.set("n", "gD", "<cmd>FzfLua lsp_declarations", opts)
         else
           opts.desc = "Declaration not supported"
           keymap.set("n", "gD", function() print("LSP: declaration not supported") end, opts)
