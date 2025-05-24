@@ -18,27 +18,27 @@ return {
   },
   keys = {
     {
-      "<leader>mf",
+      "<leader>of",
       function()
         return require("obsidian").util.gf_passthrough()
       end,
       desc = "passthrough"
     },
     {
-      "<leader>mcb",
+      "<leader>ocb",
       function()
         return require("obsidian").util.toggle_checkbox()
       end
       ,
       desc = "toggle checkbox"
     },
-    { "<leader>mq", "<cmd>ObsidianQuickSwitch<CR>", desc = "quick switch" },
-    { "<leader>md", "<cmd>ObsidianToday<cr>",       desc = "today note" },
-    { "<leader>mm", "<cmd>ObsidianTomorrow<cr>",    desc = "tomorrow note" },
-    { "<leader>my", "<cmd>ObsidianYesterday<cr>",   desc = "yesterday note" },
-    { "<leader>mn", "<cmd>ObsidianNew<cr>",         desc = "new note" },
-    { "<leader>ms", "<cmd>ObsidianSearch<cr>",      desc = "search" },
-    { "<leader>mp", "<cmd>ObsidianPasteImage<cr>",  desc = "paste image" },
+    { "<leader>oq", "<cmd>ObsidianQuickSwitch<CR>", desc = "quick switch" },
+    { "<leader>od", "<cmd>ObsidianToday<cr>",       desc = "today note" },
+    { "<leader>om", "<cmd>ObsidianTomorrow<cr>",    desc = "tomorrow note" },
+    { "<leader>oy", "<cmd>ObsidianYesterday<cr>",   desc = "yesterday note" },
+    { "<leader>on", "<cmd>ObsidianNew<cr>",         desc = "new note" },
+    { "<leader>os", "<cmd>ObsidianSearch<cr>",      desc = "search" },
+    { "<leader>op", "<cmd>ObsidianPasteImage<cr>",  desc = "paste image" },
   },
   opts = {
     workspaces = {
