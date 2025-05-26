@@ -79,14 +79,14 @@ return {
       ["<BS>"] = { "actions.parent", mode = "n" },
       ["gs"] = { "actions.change_sort", mode = "n" },
       ["gx"] = "actions.open_external",
-      ["g."] = { "actions.toggle_hidden", mode = "n" },
+      ["gh"] = { "actions.toggle_hidden", mode = "n" },
       ["g\\"] = { "actions.toggle_trash", mode = "n" },
     },
     -- Set to false to disable all of the above keymaps
     use_default_keymaps = true,
     view_options = {
       -- Show files and directories that start with "."
-      show_hidden = true,
+      show_hidden = false,
       -- This function defines what is considered a "hidden" file
       is_hidden_file = function(name, bufnr)
         local m = name:match("^%.")

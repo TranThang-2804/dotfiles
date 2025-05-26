@@ -120,6 +120,16 @@ vim.api.nvim_create_autocmd("BufEnter", {
 -- Center cursor when entering a window
 vim.api.nvim_create_autocmd({ "BufWinEnter", "WinEnter" }, {
   callback = function()
-    vim.cmd("normal! zz")
+    local buf = vim.api.nvim_get_current_buf()
+    local buftype = vim.api.nvim_get_option_value("buftype", { buf = buf })
+    local filetype = vim.api.nvim_get_option_value("filetype", { buf = buf })
+    local listed = vim.api.nvim_get_option_value("buflisted", { buf = buf })
+    local win_config = vim.api.nvim_win_get_config(0)
+    local is_floating = win_config.relative ~= ""
+
+    -- Only center for real file buffers in non-floating windows
+    if buftype == "" and filetype ~= "" and listed and not is_floating then
+      vim.cmd("normal! zz")
+    end
   end,
 })
